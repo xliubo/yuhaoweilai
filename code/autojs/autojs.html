@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>AUTOJS图鉴 | 手机自动化</title>
+	<style type="text/css">
+		.navbar{
+			font-size: 16px;
+			color: #2c3e50;
+			padding: .7rem 1.5rem;
+			line-height: 2.2rem;
+			z-index: 20;
+			right: 0;
+			height: 3.6rem;
+			background-color: #fff;
+			box-sizing: border-box;
+			border-bottom: 1px solid #eaecef;
+			position: fixed;
+			top: 0;
+			left: 0;}
+		.site-name{
+			line-height: 2.2rem;
+			box-sizing: border-box;
+			display: inline-block;
+			font-size: 1.3rem;
+			font-weight: 600;
+			color: #2c3e50;
+			position: relative;}
+		.links{
+			color: #2c3e50;
+			line-height: 2.2rem;
+			box-sizing: border-box;
+			font-size: .9rem;
+			position: absolute;
+			right: 1.5rem;
+			top: .7rem;}
+		.search-box{
+			color: #2c3e50;
+			line-height: 2.2rem;
+			font-size: .9rem;
+			box-sizing: border-box;
+			display: inline-block;
+			position: relative;
+			margin-right: .5rem;}
+		.search-box input{
+			box-sizing: border-box;
+			cursor: text;
+			color: #4e6e8e;
+			display: inline-block;
+			border: 1px solid #cfd4db;
+			border-radius: 2rem;
+			font-size: .9rem;
+			line-height: 2rem;
+			padding: 0 .5rem 0 2rem;
+			outline: none;
+			transition: all .2s ease;
+			background-size: 1rem;
+			width: 5.2rem;}	
+		.search-box input:focus {
+		    cursor: auto;
+		    border-color: #35c4ff;}	
+		.sidebar{
+			color: #2c3e50;
+			font-size: 15px;
+			background-color: #fff;
+			width: 15rem;
+			position: fixed;
+			z-index: 10;
+			margin: 0;
+			top: 3.6rem;
+			left: 0;
+			bottom: 0;
+			box-sizing: border-box;
+			border-right: 1px solid #eaecef;
+			overflow-y: auto;}
+		.sidebar p{
+			padding-top: 1.5rem;
+			box-sizing: border-box;
+			line-height: 1.7;
+			transition: color .15s ease;
+			cursor: pointer;
+			font-size: 1.1em;
+			font-weight: 700;
+			padding-left: 1.5rem;
+			margin-top: 0;
+			margin-bottom: .5rem;
+			color: inherit;}
+		.sidebar-group-items{
+			line-height: 1.7;
+			transition: height .1s ease-out;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;}
+		.sidebar-group-items li a{
+			text-decoration: none;
+			font-weight: 400;
+			color: #2c3e50;
+			border-left: .25rem solid transparent;
+			padding: .35rem 1rem .35rem 1.25rem;
+			line-height: 1.4;
+			width: 100%;
+			box-sizing: border-box;
+			display: inline-block;
+			padding-left: 2rem;}
+		a.sidebar-link:hover{color: #35c4ff;}
+		.page{
+			font-size: 16px;
+			color: #2c3e50;
+			box-sizing: border-box;
+			padding-bottom: 2rem;
+			overflow: hidden;
+			padding-left: 15rem;}
+		.content{
+			width: 60%;
+			padding: 2rem 2rem;
+			margin-left: auto;
+			margin-right: auto;}
+		.content h1{
+			font-weight: 600;
+			line-height: 1.25;
+			font-size: 2.2rem;
+			padding-top: 4.6rem;
+			margin-top: -1.5rem;
+			margin-bottom: 1rem;}
+		.language-python{
+			font-size: 16px;
+			box-sizing: border-box;
+			color: #ccc;
+			font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+			text-align: left;
+			word-spacing: normal;
+			tab-size: 0;
+			hyphens: none;
+			background: #2d2d2d;
+			background-color: #282c34;
+			line-height: 1.4;
+			border-radius: 6px;
+			padding: 0rem 2rem;
+			
+			white-space: pre-wrap;
+			word-break: break-word;
+			overflow: auto;
+			position: relative;}
+		code{
+			line-height: 1.4;
+			font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+			font-size: .85em;
+			color: #fff;
+			}
+		code .pink{color: #cc99cd;}
+		code .blue{color: #80b2ff;}
+		code .brown{color: #cc6600;}
+		code .green{color: #009900;}
+		code .red{color: #cc3300;}
+		code .l_brown{color:#ffbb99;}
+		.content ol p{line-height: 1.8}  
+		</style>
+</head>
+<body>
+	<header class="navbar">
+		<span class="site-name">
+	      Autojs源码图鉴
+	    </span>
+	    <div class="links">
+	    	<div class="search-box">
+	    		<input aria-label="Search" autocomplete="off" spellcheck="false" placeholder="搜索" value="" style="width:5.2rem;">
+	    	</div>
+	    </div>
+	</header>
+	<div class="sidebar">
+		<p class="sidebar-heading open">
+			<span>AUTOJS</span>
+		</p>
+		<ul class="sidebar-group-items">
+			<li>
+				<a href="min-frame.html" class="sidebar-link">微信抢红包 (red-envelope)
+				</a>
+			</li>
+			<li>
+				<a href="Modules.html" class="sidebar-link">自动刷视频 (auto-video)
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="page">
+		<div class="content">
+			<h1>微信抢红包20210207</h1>
+			<pre class="language-python">
+				<code>
+					<span class="pink">import</span> pygame, sys
+
+					pygame.<span class="blue">init</span>()
+					screen <span class="l_brown">=</span> pygame.display.<span class="blue">set_mode</span>((<span class="brown">600,400</span>))
+					pygame.display.<span class="blue">set_caption</span>(<span class="green">"Pygame游戏之旅"</span>)
+
+					<span class="pink">while</span> <span class="red">True</span>:
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> pygame.QUIT:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update()</span>
+				</code>
+			</pre>	
+			<ol>
+				<li>
+					<p>
+						<span>该脚本只适用于安卓手机</span>
+						<br>
+						<span>手机需安装Auto.js的app</span>
+						<br>
+						<span>app需设置开启无障碍模式</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>脚本存在很多bug未调试</span>
+						<br>
+						<span>脚本仅用于教学或自学不得转载及商用</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span></span>
+						<br>
+						<span></span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span></span>
+						<br>
+						<span></span>
+				</li>
+				<li>
+					<p>
+						<span></span>
+						<br>
+						<span></span>
+					</p>	
+				</li>
+			</ol>
+		</div>			
+	</div>
+</body>
+</html>
