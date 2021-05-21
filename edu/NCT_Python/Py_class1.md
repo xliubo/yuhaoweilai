@@ -637,9 +637,45 @@ A.  1	B.  97	C.  25	D.  0
 
 ## 考查方向
 
+~~~mermaid
+graph LR
+Y1(字符串表示方式)-->A(字符串类型)-->X1(字符串常用方法和函数)
+Y2(字符串运算)-->A(字符串类型)-->X2(字符串格式化)
+X1-->a("count()方法")
+X1-->b("find()方法")
+X1-->c("join()方法")
+X1-->d("splite()方法")
+X1-->e("len()函数")
+X2-->f(格式化字符串和整数)
+X2-->g(格式化浮点数)
+h(单/双引号字符串)-->Y1
+i(三引号字符串)-->Y1
+j(转义字符)-->Y1
+k(字符串加法)-->Y2
+l(字符串乘法)-->Y2
+m(字符串索引)-->Y2
+n(字符串切片)-->Y2
+o(成员运算符)-->Y2
+~~~
+
+
+
 ## 知识点清单
 
 ### 知识点1 字符串表示方法
+
+1. 单引号/双引号字符串
+
+   在**Python**语言中，一般使用一对单引号或一对双引号表示字符串
+
+   ~~~python
+   s1 = 'hello world'
+   s2 = "hello python"
+   ~~~
+
+   
+
+2. 
 
 ### 知识点2 字符串运算
 
@@ -693,7 +729,8 @@ A.  1	B.  97	C.  25	D.  0
 
 ## 复习
 
-1. 编写一段程序，将列表  [3,1,7,2,4,8,5]，用冒泡法按照从小到大排序
+1. 编写三段程序，分别实现l列表的count()方法以及sum()，max()函数功能
+2. 编写一段程序，将列表  [3,1,7,2,4,8,5]，用冒泡法按照从小到大排序
 
 # 专题6 类型转换
 
@@ -712,10 +749,6 @@ A.  1	B.  97	C.  25	D.  0
 <center><font color=blue>...End!...</font></center>
 
 ------
-
-## 复习
-
-1. 学习使用**PySimpleGUI**库制作简单的图形界面
 
 # 专题7 分支结构
 
@@ -736,6 +769,90 @@ A.  1	B.  97	C.  25	D.  0
 ------
 
 ## 复习
+
+1. 用**PySimpleGUI**库制作简单的登录界面，登录成功后(用户名：admin，密码：123)访问百度页面
+
+   主要任务
+
+   - 学习PySimpleGUI创建程序的基本框架
+
+   ~~~python
+   import PySimpleGUI as sg
+   
+   layout=[[sg.Text('请输入3'),sg.Input()],
+           [sg.Button('ok')]]
+   window=sg.Window('window_title',layout)
+   
+   while True:
+       event,values=window.read()
+       if event==sg.WIN_CLOSED:
+           break   
+       # print(event,values)
+       # if event=='ok'and values[0]=='3':
+       #     sg.popup('输入正确')
+       # else:
+       #     sg.popup('输入错误')
+   window.close()
+   ~~~
+
+   - 手绘登录图形界面
+
+     ![](C:\Users\Lenovo\Downloads\yuhaoweilai-html-master\yuhaoweilai-html-master\html\edu\NCT_Python\img\pysimplegui_login.png)
+
+   - 编写界面代码
+
+     - 书写框架
+
+     ~~~python
+     import PySimpleGUI as sg
+     
+     layout=[[sg.Text('账号'),sg.Input(key='user')],
+             [sg.Text('密码'),sg.Input(key='password')],
+             [sg.Button('提交',key='login')]]
+     window=sg.Window('登录',layout)
+     
+     while True:
+         event,values=window.read()
+         if event==sg.WIN_CLOSED:
+             break 
+         #此处编写逻辑代码
+         
+     window.close()
+     ~~~
+
+     ==说明==：key 用来标识控件,用于接收事件或者获取用户输入。
+
+     - 美化界面
+
+     ~~~python
+     # sg.theme_previewer() 查看主题
+     sg.theme('Light Blue7')
+     layout=[[sg.Text('账号',size=(6,1), font=("雅黑", 15), text_color='blue'),sg.Input(key='user',size=(16,1))],
+             [sg.Text('密码',size=(6,1), font=("雅黑", 15), text_color='blue'),sg.Input(key='password',size=(16,1))],
+             [sg.Text(' '*15),sg.Button('提交',key='login',font=("雅黑", 15))]]
+     ~~~
+
+     
+
+   - 编写逻辑代码
+   
+     ~~~python
+     if event == 'login':  
+         if values['user'] == 'admin' and values['password'] == '123':
+             sg.popup('登录成功!') 
+             #此处编写访问百度代码
+          else:
+             sg.popup('登录失败!', text_color='red')            
+     ~~~
+   
+     ~~~python
+     #访问百度代码
+     import webbrowser #在程序开头引入
+     webbrowser.open('https://www.baidu.com/')  
+     ~~~
+     
+     
+
 # 专题8 循环结构
 
 ## 考查方向
@@ -808,6 +925,8 @@ A.  1	B.  97	C.  25	D.  0
 ------
 
 ## 复习
+
+结合socket库与PySimpleGUI库
 
 # 附录
 
