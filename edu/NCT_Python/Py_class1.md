@@ -797,7 +797,7 @@ o(成员运算符)-->Y2
 
    - 手绘登录图形界面
 
-     ![](C:\Users\Lenovo\Downloads\yuhaoweilai-html-master\yuhaoweilai-html-master\html\edu\NCT_Python\img\pysimplegui_login.png)
+     ![](.\img\pysimplegui_login.png)
 
    - 编写界面代码
 
