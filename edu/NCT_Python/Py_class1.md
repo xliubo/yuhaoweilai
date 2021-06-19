@@ -1286,17 +1286,225 @@ A. / , in	B.    / , not in	C.  % , in  	D. % , not in
 
 ## 考查方向
 
+~~~mermaid
+graph LR
+a(异常处理)-->x(常见的异常)
+a-->b(try...except语句)
+a-->c(try...except...else语句)
+a-->d(try...except...finally语句)
+~~~
+
+
+
 ## 知识点清单
 
-### 知识点1 try...except 语句
+### 知识点1 常见的异常
 
-### 知识点2 try...except...else 语句
+使用python语言编程时，会碰到各种报错信息，这些错误统称为异常。常见的异常如下：
 
-### 知识点3 try...except...finally 语句
+- TypeError：类型错误
+
+  ~~~python
+  age=18
+  print(‘我的年龄是’+age)
+  ~~~
+
+- AttributeError：属性错误
+
+  ~~~python
+  tp='123456'
+  tp.append('7')
+  print(tp)
+  ~~~
+
+- NameError：命名错误
+
+  ~~~python
+  name = 'xiaoming'
+  print('你好，''+nane)
+  ~~~
+
+- SyntaxError：语法错误
+
+  ~~~python
+  age = int(input('请输入你的年龄：'))
+  if age==18
+  	print('你已成年！')
+  ~~~
+
+- IndexError：索引错误
+
+  ~~~python
+  li=[2,8,1,4,5,3]
+  for i in range(0,6):
+      if li[i]>li[i+1]:
+          print(li[i])
+  ~~~
+
+- IndentationError：缩进错误
+
+  ~~~python
+  if 5>3:
+      print('真')
+  else:
+  print('假')
+  ~~~
+
+### 知识点2 异常的处理
+
+异常处理就是捕获异常并处理异常
+
+1. try...except 语句
+
+   ~~~python
+   try：
+   	<可能抛出异常的语句>
+   except：
+   	<处理异常时使用的语句>
+   ~~~
+
+   **当try代码块中语句抛出异常时，except中的代码块将被执行**
+
+   例如下面这段功能代码：要求输入一个整数，输出这个数是几位数。
+
+   ~~~python
+   a = int(input('请输入一个整数：'))
+   L = 0
+   while True:
+       a = a//10
+       L += 1
+       if a==0:
+           break
+   print(L)     
+   ~~~
+
+   运行后如果输入是65，输出结果是2；如果输入是“abc”呢？？？当然会发生异常！
+
+   为了处理异常所以我们可以这样写：
+
+   ~~~python
+   try:
+       a = int(input('请输入一个整数：'))
+       L = 0
+       while True:
+           a = a//10
+           L += 1
+           if a==0:
+               break
+       print(L)
+   except:
+   	print('你确定你输入的是整数吗？会不会是火星文！')
+   ~~~
+
+2. try...except...else 语句
+
+   ~~~python
+   try：
+   	<可能抛出异常的语句>
+   except：
+   	<处理异常时使用的语句>
+   else:
+       <无异常时使用的语句>
+   ~~~
+
+   **当try代码块中语句抛出异常时，except中的代码块将被执行，无异常时else中的代码块将被执行**
+
+   例如修改之前的代码：
+
+   ~~~python
+   try:
+       a = int(input('请输入一个整数：'))
+       L = 0
+       while True:
+           a = a//10
+           L += 1
+           if a==0:
+               break
+       print(L)
+   except:
+   	print('你确定你输入的是整数吗？会不会是火星文！')
+   else:
+   	print('输入正确，你输入的是%d位整数！'%L)
+   ~~~
+
+3. try...except...finally
+
+   ~~~python
+   try：
+   	<可能抛出异常的语句>
+   except：
+   	<处理异常时使用的语句>
+   finally:
+       <无论是否异常都将执行的语句>
+   ~~~
+
+   **当try代码块中语句抛出异常时，except中的代码块将被执行，无论是否异常finally中的代码块都将被执行**
+
+   ~~~python
+   name = 'xiaoming'
+   try:
+   	print('你是%s'%nane)
+   except:
+       print('你不是xiaoming')
+   finally:
+   	print('你是不是xiaoming无所谓，我们一起踢球吧！')
+   ~~~
 
 ## 知识点探秘
 
+<font color=blue>----></font>输入12,0 下列代码输出的结果是（）
+
+~~~python
+try:
+	a = int(input('输入被除数：'))
+	b = int(input('输入除数：'))
+    c=a/b
+except:
+	print('输入有误')
+else:
+	print(c)
+~~~
+
+A. 12	B. 0	C.  程序没有任何输出  	D. 输入有误 
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输入3.14，输出结果是（）
+
+~~~python
+try:
+	a = float(input('请输入PI的值：'))
+except:
+	print('输入有误')
+finally:
+	print('完成PI值的输入')
+~~~
+
+A.  3.14	B.  输入有误	C.  完成PI值的输入  	D. 3.14  完成PI值的输入
+
+答案：<font color='white'>C</font>
+
 ## 巩固练习
+
+1. 自行编写任意一个小程序，程序代码要满足以下两个要求：
+
+   - 对字符串进行索引
+
+   - 发生异常，类型为索引错误
+
+2. 运行下列代码，输入5.0，输出结果是（）
+
+   ~~~python
+   while True:
+       try:
+           x=int(input('请输入一个整数：'))
+           print(x)
+           break
+       except:
+           print('你输入的不是整数，请再次尝试输入！')
+   ~~~
+
+   答案：<font color='white'>你输入的不是整数，请再次尝试输入！</font>
 
 ------
 
