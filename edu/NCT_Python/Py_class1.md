@@ -89,7 +89,7 @@ print(c)
 - input()函数用于接收键盘输入，参数为字符串类型的提示性语句，参数为可选参数（可以省略）
 - print()函数用于在控制台显示输出内容，输出的内容可以是字符串，数字或者变量
 - int()函数用于将字符串类型的数字转换为数字类型的数字
-- a，b，c为三个变量，分别用于存储两个输入的书局和求和的值
+- a，b，c为三个变量，分别用于存储两个输入的数据和求和的值
 
 ## 知识点探秘
 
@@ -701,11 +701,10 @@ o(成员运算符)-->Y2
      |    \\    | 反斜杠 |
      |    \r    | 回车符 |
      |    \n    | 换行符 |
-
-     
-
+     |    \t    | 制表符 |
+   
    - 转义字符示例
-
+   
      ~~~python
      s1="I'm Andy"
      s2='I\'m Lily'
@@ -852,9 +851,235 @@ o(成员运算符)-->Y2
 
 3. join( )方法
 
+   ​		join( )方法用于将可迭代对象中的元素以指定的字符串作为分隔符，连接生成一个新的字符串。该迭代对象只能包含字符串类型的元素。
+
+   使用格式：str.join(iterable)
+
+   参数说明如下：
+
+   sep：字符串类型分隔符
+
+   iterable：由字符串类型元素组成的可迭代对象（可迭代对象：能够使用for循环进行循环遍历的对象，如字符串，列表等）
+
+   ~~~python
+   a = '-'
+   b = 'hello'
+   print(a.join(b))
+   ~~~
+
+   ~~~python
+   x=['A','B','C','D']
+   print('#'.join(x))
+   ~~~
+
+4. split( )方法
+
+   split( )方法是以指定的分隔符对字符串进行拆分，并将拆分结果以列表的形式返回
+
+   使用格式：str.split(sep, maxsplit=-1)
+
+   参数说明如下：
+
+   sep：分隔符，若不指定默认为空字符（空格，换行(\\n)，制表符(\\t)等）
+
+   maxsplit：最多拆分次数，可省略（默认maxsplit=-1，代表不限制拆分次数）
+
+   ~~~python
+   s = 'hello python！'
+   print(s.split())
+   print(s.split('o'))
+   print(s.split('o',maxsplit=1))
+   ~~~
+
+5. len( )函数
+
+   len( )函数用于计算字符串的长度，也可用于计算列表、元祖等的长度
+
+   ~~~python
+   s = 'hello python！'
+   print(len(s))
+   ~~~
+
+6. 字符串的遍历
+
+   Python语言中用for循环实现遍历，语法为：
+
+   ~~~python
+   for <变量> in <可迭代的对象>：
+   	<需要循环的语句>
+   ~~~
+
+   for循环主要有以下两种方法：
+
+   - 遍历循环
+
+     ~~~python
+     s = 'hello pyhon!'
+     for i in s:
+         print(i)
+     ~~~
+
+   - 计数循环(结合range( )函数实现)
+
+     ~~~python
+     for i in range(0,10):
+         print(i)
+     ~~~
+
+     ~~~python
+     s = 'hello pyhon!'
+     for i in range(0,len(s)):
+         print(s[i])  
+     ~~~
+
 ### 知识点4 字符串格式化
 
+字符串的格式化也叫字符串的插值运算，是将一个值插入另一个含有标记符“%”的字符串中。“%”用于在字符串中标记转换符的位置，待插入的值放入一个序列中
+
+| 转换符 |     描述     | 格式符 |     描述     |
+| :----: | :----------: | :----: | :----------: |
+|   s    |    字符串    |   %s   | 格式化字符串 |
+|   d    |  十进制整数  |   %d   |  格式化整数  |
+|   f    | 十进制浮点数 |   %f   | 格式化浮点数 |
+
+- 格式化输出整数或字符串：
+
+~~~python
+print('我的语文成绩是%d分'%98)
+print('我的%s成绩是98分'%'语文')
+print('我的%s成绩是%d分'%('语文',98))
+~~~
+
+~~~python
+a = '小明'
+b = int(input('请输入分数：'))
+print('%s的数学成绩是%d分'%(a,b))
+~~~
+
+- 格式化输出浮点数：
+
+~~~python
+a = 3.1415926
+b = 30
+print('%.2f'%a)
+print('%f'%b)
+print('将%d打印成一位小数是%.1f'%(b,b))
+~~~
+
 ## 知识点探秘
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+a = 'Code'
+b = 'Python'
+print('a+b输出结果是:',a+b)
+~~~
+
+A.  Code+Python	B.  CodePython	C.  a+b输出结果是:CodePython	D.  a+b输出结果是:  CodePython
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+a = '我爱你我的祖国!'
+print(a[:-1]+a[-1])
+~~~
+
+A.  我爱你我的祖国!	B. 我爱你我的祖国!!	C. !!	D.  我爱你我的祖国
+
+答案：<font color='white'>A</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+a = 'Code Python'
+print((a[1:3]+a[-1])*2)
+~~~
+
+A.  CodeCode	B. CodnCodn	C. odenoden	D.  odnodn
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输入30C，输出结果是（）
+
+~~~python
+a = input('请输入温度值，例如30C：')
+b = 1.8*float(a[0:-1])+32
+print("%.1fF"%(b,))
+~~~
+
+A.  86.0C	B. 86.0F	C. 86F	D.  86C
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+st = '两个黄鹂鸣翠柳，一行白鹭上青天'
+print(st[1:10:2])
+~~~
+
+A.  两黄鸣柳一	B. 个鹏翠，行	C. 个黄鹂鸣翠柳，一行	D.  个鹂翠，
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+s = 'aphyfaspypypvnepyndd'
+sub = 'py'
+print(s.count(sub,0,8))
+~~~
+
+A.  0	B.  1	C.  2	D.  3
+
+答案：<font color='white'>A</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+print("\\n是换行符，加入\\n，后面的内容就会自动换行。\n我们来试一下。")
+~~~
+
+A.  \\n是换行符，加入\\n，后面的内容就会自动换行。\n我们来试一下。	
+
+B.  "\\n是换行符，加入\\n，后面的内容就会自动换行。\n我们来试一下。"	
+
+C.  是换行符，加入，后面的内容就会自动换行。\n我们来试一下。	
+
+D.  \\n是换行符，加入\\n，后面的内容就会自动换行。
+
+​	  我们来试一下。
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+s = 'aphyfaspypypvnepyndd'
+if 'ne' in s:
+    print(s.find('ne',0,12))
+else:
+    print(0)
+~~~
+
+A.  0	B.  1	C.  2	D.  -1
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+lis = ['中','国','加','油']
+s = ''.join(lst)  #''这里是空字符串，没有空格
+print(s)
+~~~
+
+A.  中，国，加，油	B.  中 国 加 油	C.  中国加油	D.  程序报错
+
+答案：<font color='white'>C</font>
 
 ## 巩固练习
 
@@ -868,6 +1093,112 @@ o(成员运算符)-->Y2
 
 <div style="color:white";>
 print('python中使用"\\"对字符进行转义，\n例如：换行使用转义字符"\\n"表示。')
+</div>
+---->按要求写程序(采用两种方法)：
+
+​		从键盘输入一个字符串，输出该字符串中字母a的个数
+
+​		如输入：abstract，输出：2
+
+答案：见下面**两段**隐藏代码块
+
+<div style="color:white";>
+s1 = input('请输入任意字符串：')
+n = 0
+for i in s1:
+    if i=='a':
+        n+=1
+print(n)
+</div>
+
+<div style="color:white";>
+s1 = input('请输入任意字符串：')
+print(s1.count('a'))
+</div>
+--->编写一段程序，查找出两个字符串中相同的字母，例如：
+
+输入
+
+~~~python
+asdghlkjgf
+fhoub
+~~~
+
+输出
+
+~~~python
+h
+f
+~~~
+
+答案：见下面隐藏代码块
+
+<div style="color:white";>
+s1 = input()
+s2 = input()
+for i in s1:
+    if i in s2:
+    	print(i)
+</div>
+
+--->按要求写程序
+
+输入：用户一次输入若干整数，用空格隔开
+
+输出：依次输出这些整数（不限制数据类型）
+
+输入样例：
+
+~~~python
+10 2 5 6
+~~~
+
+输出样例：
+
+~~~python
+10
+2
+5
+6
+~~~
+
+答案：见下面隐藏代码块
+
+<div style="color:white";>
+s1 = input()
+s2 = s1.split()
+for i in s2:
+    print(i)
+</div>
+
+--->按要求写程序
+
+输入：用户随机输入一串字符
+
+输出：输出该字符串的前半个子字符串
+
+**注：若字字符串中字符个数为奇数，将中间位置的字符划入前半个子字符串**
+
+输入样例：
+
+~~~python
+落霞与孤鹜齐飞，秋水共长天一色
+~~~
+
+输出样例：
+
+~~~python
+落霞与孤鹜齐飞，
+~~~
+
+答案：见下面隐藏代码块
+
+<div style="color:white";>
+s1 = input()
+if len(s1)%2==0:
+    print(s1[:int(len(s1)/2)])
+else:
+    print(s1[:round(len(s1)/2)])
 </div>
 
 
@@ -1259,11 +1590,87 @@ A. / , in	B.    / , not in	C.  % , in  	D. % , not in
 
 ## 考查方向
 
+~~~mermaid
+graph LR
+ORI(循环结构)-->a(for循环结构)
+a-->a1(语法格式)
+a-->a2(计数循环)
+a-->a3(遍历循环)
+ORI-->b(while循环结构)
+b-->b1(条件循环)
+b-->b2(无限循环)
+b-->b3(循环条件)
+x(break与continue语句)-->ORI
+y(循环结构嵌套)-->ORI
+z(循环与分支结构组合)-->ORI
+x1(break语句)-->x
+x2(continue语句)-->x
+z1(循环和单分支结构组合)-->z
+z2(循环和多分支结构组合)-->z
+~~~
+
+
+
 ## 知识点清单
 
 ### 知识点1 for 循环语句
 
+1. 语法格式
+
+   ~~~python
+   for <变量> in <遍历结构>:
+       循环体
+   ~~~
+
+2. 计数循环
+
+   for循环语句与range( )函数组合在一起，构成计数循环
+
+   - range( )函数
+
+     range( )函数用于生成一个整数序列，其语法结构如下：
+
+     ~~~python
+     range(start,end,step)
+     ~~~
+
+     start：计数起始值，默认为0（可省略）
+
+     end：计数结算值，但不包含该值
+
+     step：步长，默认为1（可省略），可以为负数，如range(6,1,-1)生成6,5,4,3,2的整数序列
+     
+     ~~~python
+     for i in range(5,0,-1):
+         print(i)
+     ~~~
+     
+     ~~~python
+     s = ['a','b','c']
+     for i in range(len(s)):
+         print(i)
+     ~~~
+     
+     
+
+3. 遍历循环
+
+   用for循环的变量遍历读取字符串或列表的每一项
+
+   ~~~python
+   lis_books = ['西游记','红楼梦','三国演义','水浒传']
+   for i in list_books:
+       print(i)
+   ~~~
+
+   ~~~python
+   for i in '我爱你中国':
+       print(i)
+   ~~~
+
 ### 知识点2 while 循环语句
+
+while循环用于在某种条件下重复执行多次代码块的场景，
 
 ### 知识点3 break 语句和 continue语句
 
@@ -1275,6 +1682,36 @@ A. / , in	B.    / , not in	C.  % , in  	D. % , not in
 
 ## 巩固练习
 
+1. 编写程序，计算1+2+3+......+99+100的值
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   s = 0
+   for i in range(1,101):
+       s+=i
+   print(s)
+   </div>
+
+   
+
+2. 编写程序，求出列表[64,34,25,12,22,11,90]元素中的最大值
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   ls = [64,34,25,12,22,11,90]
+   max = ls[0]
+   for i in range(len(ls)-1):
+       if ls[i]<=ls[i+1]:
+           max = ls[i+1]
+   print('列表中最大的元素：%d'%max)
+   </div>
+
+   
+
+3. 
+
 ------
 
 <center><font color=blue>...End!...</font></center>
@@ -1282,6 +1719,9 @@ A. / , in	B.    / , not in	C.  % , in  	D. % , not in
 ------
 
 ## 复习
+
+1. 编写一段程序，将列表  [3,1,7,2,4,8,5]，用冒泡法按照从小到大排序
+
 # 专题9 异常处理
 
 ## 考查方向
