@@ -1619,7 +1619,7 @@ z2(循环和多分支结构组合)-->z
 
    ~~~python
    for <变量> in <遍历结构>:
-       循环体
+       <循环体>
    ~~~
 
 2. 计数循环
@@ -1650,16 +1650,14 @@ z2(循环和多分支结构组合)-->z
      for i in range(len(s)):
          print(i)
      ~~~
-     
-     
-
+   
 3. 遍历循环
 
    用for循环的变量遍历读取字符串或列表的每一项
 
    ~~~python
    lis_books = ['西游记','红楼梦','三国演义','水浒传']
-   for i in list_books:
+   for i in lis_books:
        print(i)
    ~~~
 
@@ -1670,15 +1668,275 @@ z2(循环和多分支结构组合)-->z
 
 ### 知识点2 while 循环语句
 
-while循环用于在某种条件下重复执行多次代码块的场景，
+1. 条件循环
+
+   while循环用于在某种条件下重复执行多次代码块的场景，这种循环称为条件循环
+
+   ~~~python
+   while <判断条件>：
+   	<循环体>
+   ~~~
+
+   条件循环执行次数取决于判断条件，一般循环体中会出现影响判断条件的语句，从而使得判断失效结束循环
+
+   例如，计算20以内奇数的和：
+
+   ~~~python
+   i = 1
+   s = 0
+   while i<20:
+       s+=i
+       i+=2
+   print(s)
+   ~~~
+
+2. 无限循环
+
+   无限循环又叫死循环，判断条件永远为True，循环会一直执行下去
+
+   ~~~python
+   while True:
+       num = input('请输入任意内容：')
+       print('你输入的是：'，num)
+   print('我无法执行')
+   ~~~
+
+3. 循环条件
+
+   在while循环中，0、空字符串、空列表都可以用来做判断条件，表示False；同理，非0，非空也可以作为判断条件表示True
+
+   ~~~python
+   i = int(input('请输入整数：'))
+   while i:
+       print(i)
+       i = int(input('请输入整数：'))
+   ~~~
 
 ### 知识点3 break 语句和 continue语句
 
+1. break语句
+
+   在for或者while循环结构中使用break语句，用于退出当前循环体
+
+   例如，修改上一个示例
+
+   ~~~python
+   while True:
+       i = int(input('请输入整数：'))
+       if i==0:
+           break
+       print(i)
+   ~~~
+
+2. continue语句
+
+   在for或者while循环结构中使用break语句，会跳出当前循环进入下一次循环
+   
+   ~~~python
+   lis_books = ['西游记','红楼梦','三国演义','水浒传']
+   for i in lis_books:
+       if i=='三国演义':
+           continue
+       print(i)
+   ~~~
+
 ### 知识点4 循环结构的嵌套
+
+若一个循环结构作为另一个循环结构的循环体，就称为循环结构的嵌套
+
+猜一猜以下代码想做什么？
+
+~~~python
+for i in range(1,10):
+    for j in range(1,i+1):
+        print('%d*%d=%d\t'%(i,j,i*j),end='')
+	print('\n')
+~~~
 
 ### 知识点5 循环结构和分支结构的组合
 
+1. 循环单分支组合
+
+   编写程序，输出0~100中7的倍数的个数
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   n = 0
+   for i in range(0,101):
+       if i%7==0:
+       	n+=1
+   print(n)
+   </div>
+   
+   
+2. 循环多分支组合
+
+   编写程序，将列表[1,-1,5,-5,7-7,2,-2]中的正数和负数分开，分别存储在两个新列表中
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   L1 = [1,-1,5,-5,7,-7,2,-2]
+   L2 = []
+   L3 = []
+   for i in L1:
+       if i>0:
+           L2.append(i)
+       else:
+           L3.append(i)
+   print(L2)
+   print(L3)
+   </div>
+
+
 ## 知识点探秘
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+s = 0
+for i in range(5):
+    s+=i
+print(s)
+~~~
+
+A.  4	B.   5	C.   10	D.  15
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+s = 0
+for i in range(0,10,2):
+    s+=i
+print(s)
+~~~
+
+A.  20	B.   55	C.   25	D.  45
+
+答案：<font color='white'>a</font>
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+a = 1
+n = 0
+while a<10:
+    a+=2
+    n+=1
+print(a,n)
+~~~
+
+A.  10 5	B.   11 5	C.   10 4	D.  11 6
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+lst = [1,2,3,4,5,6,7,8,9,10]
+sum = 0
+while lst:
+    sum+=lst.pop()
+print(sum)
+~~~
+
+A.  10	B.   1	C.   55	D.  45
+
+答案：<font color='white'>C</font>
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+#代码1
+n = 5
+while n>0:
+    n = n-1
+    if n==2:
+        n=n-1
+        break
+print('代码1：'，n)
+~~~
+
+~~~python
+#代码2
+n = 5
+while n>0:
+    n = n-1
+    if n==2:
+        n=n-1
+        continue
+print('代码1：'，n)
+~~~
+
+
+
+A.  代码1: 2   代码2: 0   B.   代码1: 1   代码2: 0	C.   代码1: 1   代码2:1	D.  代码1: 1   代码2: 2
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>运行下列代码，输出的结果是（）
+
+~~~python
+a = [[1,2,3],[4,5,6],[7,8,9]]
+s = 0
+for c in a:
+    for j in range(3):
+        s+=c[j]
+print(s)
+~~~
+
+A.  0	B.   45	C.   24	D.  以上答案都不对
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>下列代码，不能求解1+3+5+7+...+17+19的是（）
+
+A.
+
+~~~python
+i = 1
+s = 0
+while i<=19:
+    s+=i
+    i+=2
+print(s)
+~~~
+
+B.
+
+~~~python
+i = 1
+s = 0
+while True:
+    s+=i
+    i+=2
+    if i==19:
+        break
+print(s)
+~~~
+
+C.
+
+~~~python
+s = 0
+for i in range(1,20,2):
+	s+=i
+print(s)
+~~~
+
+D.
+
+~~~python
+s = 0
+for i in range(1,10):
+	s+=2*i+1
+print(s)
+~~~
+
+答案：<font color='white'>D</font>
 
 ## 巩固练习
 
@@ -1692,9 +1950,8 @@ while循环用于在某种条件下重复执行多次代码块的场景，
        s+=i
    print(s)
    </div>
-
    
-
+   
 2. 编写程序，求出列表[64,34,25,12,22,11,90]元素中的最大值
 
    答案：见下面隐藏代码块
@@ -1707,10 +1964,42 @@ while循环用于在某种条件下重复执行多次代码块的场景，
            max = ls[i+1]
    print('列表中最大的元素：%d'%max)
    </div>
-
    
+   
+3. 编写程序，输出0~100中7的倍数的个数
 
-3. 
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   n = 0
+   for i in range(0,101):
+       if i%7==0:
+       	n+=1
+   print(n)
+   </div>
+   
+   
+4. 按要求编写程序
+
+   ​		小朋友们在玩报数游戏，从1开始，除了报到3的倍数或含有3的数字，每次报数都需要拍手一次。指定一个数n，假设报数到n时，结算游戏，小朋友们需要拍手多少次呢？例如，
+
+   输入样例：10
+
+   输出样例：7
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   n=int(input("请说出一个数："))
+   count=0
+   while n>0:
+       if n%3!=0 and "3" not in str(n):
+           count+=1
+       n-=1
+   print("拍手次数：%d"%count)
+   </div>
+
+
 
 ------
 
