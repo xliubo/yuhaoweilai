@@ -1,4 +1,4 @@
-# NCT编程能力等级划分
+# 编程能力等级划分
 
 ## 图形化编程能力等级划分
 
@@ -19,7 +19,7 @@
 
 
 
-#专题1 Python 语言概述
+# 专题1 Python 语言概述
 
 ## 考查方向
 
@@ -1622,6 +1622,7 @@ print(mylist)
 #数字0-9对应编码号48-57
 #大写字母A-Z对应编码号65-90
 #小写字母a-z对应编码号97-122
+#ord函数将字母转换成ASCII码值，chr函数将ASCII码值转换成字母
 ~~~
 
 A. [''a1b2',a1b1',  'a2b1', 'a2b2']	   B.  [ 'a2b1', 'a1b1', 'a1b2','a2b2']	
@@ -1644,7 +1645,71 @@ A. print(max(L))	B.  print(min(L))	C. print(sum(L))  	D.  print(len(L))
 
 答案：<font color='white'>C</font>
 
+<font color=blue>----></font>运行下列代码，输出结果与选项中输出结果相同的是（）
+
+~~~python
+L = [2,34,65,23,44,109,3,17]
+L.sort(reverse = True)
+print(L[3],L[-3])
+~~~
+
+A. 23 109	B.  65 109	C. 44 17  	D. 34 17
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+name = ['Tom','flower','China','jng','bei']
+name.sort(key = str.lower)
+print(name)
+~~~
+
+输出结果是_____________________________
+
+答案：<font color='white'>'['bei', 'China', 'flower', 'jng', 'Tom']</font>
+
+<font color=blue>----></font>编写一段程序可以手工输入一个列表（）
+
+~~~python
+#eval()函数返回一个字符串表达式的值，就是先去除字符串的引号（去除后不能为变量），然后对可以计算的表达式进行计算
+~~~
+
+答案：见下面隐藏代码块
+
+<div style="color:white";>
+lis1=eval(input('请输入一个列表：'))
+print(lis1)
+</div>
+
+
+
 ## 巩固练习
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+L = ['77','80','87']
+L[-1] = 92
+print(L)	
+~~~
+
+输出结果是_____________________________
+
+答案：<font color='white'>['77', '80', 92]</font>
+
+<font color=blue>----></font>运行下列代码，输出结果是（）
+
+~~~python
+L = [100,90,100,91,91]
+L.remove(91)
+L.pop(3)
+print(L)	
+~~~
+
+输出结果是_____________________________
+
+答案：<font color='white'>[100, 90, 100]</font>
 
 ------
 
@@ -1654,8 +1719,60 @@ A. print(max(L))	B.  print(min(L))	C. print(sum(L))  	D.  print(len(L))
 
 ## 复习
 
-1. 编写三段程序，分别实现l列表的count()方法以及sum()，max()函数功能
-2. 编写一段程序，将列表  [3,1,7,2,4,8,5]，用冒泡法按照从小到大排序
+1. 对于列表[1,2,3,3,1.33,4,2]编写一段程序，实现l查找某个数的个数（要求：不使用count()方法）
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   lis = [1,2,3,3,1.33,1,2]
+   content = eval(input('请输入你要查找的内容：')) 
+   count = 0
+   for i in lis:
+       if i==content:
+       	count+=1
+   print(count)
+   </div>
+
+2. 对于列表[1,2,3,3,1.33,4,2]编写一段程序，实现计算列表的数据和（要求：不使用sum()方法）
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   lis = [1,2,3,3,1.33,1,2]
+   sum = 0
+   for i in lis:
+       if type(i) is int or float :
+           sum+=i
+   print(sum)
+   </div>
+
+3. 对于列表[1,2,3,3,1.33,4,2]编写一段程序，实现l查找列表的最大值（要求：不使用max()方法）
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   lis=[1,2,3,3,1.33,4,2]
+   max = 1
+   for i in lis:
+       if i>max:
+       	max=i
+   print(max)
+   </div>
+   
+   
+5. 编写一段程序，将列表  [3,1,7,2,4,8,5]，用冒泡法按照从小到大排序(如果从大到小排序有该如何修改代码呢？)
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>
+   lis = [3,1,7,2,4,8,5]
+   for i in range(0,len(lis)-1):
+       for j in range(0,len(lis)-1-i):
+           if lis[j]>lis[j+1]: #逆序只需把大于改成小于
+               lis[j],lis[j+1]=lis[j+1],lis[j]
+   print(lis)
+   </div>
+   
 
 # 专题6 类型转换
 
@@ -3200,8 +3317,9 @@ print(out)
 
 # 附录
 
-## 附录一	青少年编程能力等级标准：第一部分
+## 附录一	真题演练及参考答案<a href="./pdf/py1_result.pdf"><font color="white">py1_result</font></a>
 
+真题演练： <a href="./pdf/py1_test.pdf"><font color="red">py1_test</font></a>
 
+参考答案： 详见附录一标题
 
-## 附录二	真题演练及参考答案
