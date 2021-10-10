@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ASTM_LIST</title>
+    <style type="text/css">
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        table.tableizer-table {
+            font-size: 16px;
+            border: 1px solid #CCC; 
+            font-family: Arial, Helvetica, sans-serif;
+        } 
+        .tableizer-table td {
+            padding: 4px;
+            margin: 3px;
+            border: 1px solid #CCC;
+        }
+        .tableizer-table th {
+            background-color: #009ACD; 
+            color: #FFF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #myInput {
+            background-image: url('./searchicon.png'); /* 搜索按钮 */
+            background-position: 10px 12px; /* 定位搜索按钮 */
+            background-repeat: no-repeat; /* 不重复图片 */
+            width: calc(100% - 62px);
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px; 
+        }
+        .tableizer-table tr:hover {
+            /* 表头及鼠标移动过 tr 时添加背景 */
+            background-color: #d1eeee;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+    <div id="content">  
+        <table class="tableizer-table" id="myTable">
+            <thead><tr class="tableizer-firstrow"><th>编号</th><th>标准号</th><th>标准名称</th></tr></thead>
+            <tbody>
+                 <tr><td>1</td><td>ASTM A1-2000（R2010）</td><td>T型碳素钢轨</td></tr>
+                 <tr><td>2</td><td>ASTM A2-2002（R2008）</td><td>碳钢宽腹梁轨、槽型梁轨和板梁护轨</td></tr>
+                 <tr><td>3</td><td>ASTM A3-2001（R2012）</td><td>低、中和高碳钢的鱼尾板（未热处理）</td></tr>
+                 <tr><td>4</td><td>ASTM A6-2011</td><td>结构用轧制钢板、型钢、板桩和棒钢通用要求</td></tr>
+                 <tr><td>5</td><td>ASTM A18-1983（R1990）</td><td>碳钢钢轨用锣栓和螺母</td></tr>
+                 <tr><td>6</td><td>ASTM A20-2011</td><td>压力容器用钢板通用要求</td></tr>
+                 <tr><td>7</td><td>ASTM A21-1994（R1999）</td><td>铁路用非热处理和热处理碳素钢车轴</td></tr>
+                 <tr><td>8</td><td>ASTM A25-1989</td><td>电气铁路用锻钢车轮</td></tr>
+                 <tr><td>9</td><td>ASTM A27-2010</td><td>一般用途碳钢铸件标准技术条件</td></tr>
+                 <tr><td>10</td><td>ASTM A29-2011a</td><td>热锻碳素钢和合金钢棒材一般要求标准规范</td></tr>
+                 <tr><td>11</td><td>ASTM A31-2004(R2009)</td><td>钢铆钉和压力容器铆钉用棒材</td></tr>
+                 <tr><td>12</td><td>ASTM A36/A36M-2008</td><td>碳结构钢标准规范</td></tr>
+                 <tr><td>13</td><td>ASTM A43-1991</td><td>商品生锈</td></tr>
+                 <tr><td>14</td><td>ASTM A47M-1999(R2009)</td><td>铁素体可锻铁铸件（米制）</td></tr>
+                 <tr><td>15</td><td>ASTM A48-2003（R2008）</td><td>灰铸铁铸件标准技术条件</td></tr>
+                 <tr><td>16</td><td>ASTM A49-2001（R2006）</td><td>热处理碳钢鱼尾板</td></tr>
+                 <tr><td>17</td><td>ASTM A53-2010</td><td>无镀层及热浸镀锌焊接与无缝公称钢管标准技术条件</td></tr>
+                 <tr><td>18</td><td>ASTM A65-2007</td><td>钢轨道钉</td></tr>
+                 <tr><td>19</td><td>ASTM A66-2007</td><td>钢制螺纹道钉</td></tr>
+                 <tr><td>20</td><td>ASTM A67-2000（R2010）</td><td>低碳和高碳钢热加工钢轨垫板</td></tr>
+                 <tr><td>21</td><td>ASTM A74-2009</td><td>灰口铁铸件</td></tr>
+                 <tr><td>22</td><td>ASTM A82-2007</td><td>钢筋混凝土用普通钢丝</td></tr>
+                 <tr><td>23</td><td>ASTM A90-2011</td><td>在铁和钢件上决定锌或锌合金重量的标准测试方法</td></tr>
+                 <tr><td>24</td><td>ASTM A98-1964（R1985）</td><td>低锰铁</td></tr>
+                 <tr><td>25</td><td>ASTM A99-2003（R2009）</td><td>锰铁</td></tr>
+                 <tr><td>26</td><td>ASTM A100-2007</td><td>硅铁</td></tr>
+                 <tr><td>27</td><td>ASTM A101-2004（R2009）</td><td>铬铁</td></tr>
+                 <tr><td>28</td><td>ASTM A102-2004（R2009）</td><td>钒铁</td></tr>
+                 <tr><td>29</td><td>ASTM A105-2011a</td><td>管道元件用碳钢锻件</td></tr>
+                 <tr><td>30</td><td>ASTM A106-2011</td><td>高温用无缝碳钢公称管规范</td></tr>
+                 <tr><td>31</td><td>ASTM A108-2007</td><td>冷加工碳素和合金钢条标准规范</td></tr>
+                 <tr><td>32</td><td>ASTM A109M-2008</td><td>碳素钢冷轧钢带（米制）</td></tr>
+                 <tr><td>33</td><td>ASTM A111-1999a(R2009)</td><td>电话和电报线路用镀锌"铁"丝</td></tr>
+                 <tr><td>34</td><td>ASTM A112-1976（R1985）</td><td>镀锌系结钢丝</td></tr>
+                 <tr><td>35</td><td>ASTM A116-2011</td><td>镀锌编织钢丝栅栏网</td></tr>
+                 <tr><td>36</td><td>ASTM A121-2007</td><td>镀锌刺钢丝</td></tr>
+                 <tr><td>37</td><td>ASTM A123-2009</td><td>钢铁产品镀锌品层(热浸镀)标准规范</td></tr>
+                 <tr><td>38</td><td>ASTM A125-1996（R2007）</td><td>热处理的螺旋弹簧</td></tr>
+                 <tr><td>39</td><td>ASTM A126-2004（R2009）</td><td>阀门、法兰和管道附件用灰铁铸件</td></tr>
+                 <tr><td>40</td><td>ASTM A128-1993（R2007）</td><td>奥氏体锰钢铸件</td></tr>
+                 <tr><td>41</td><td>ASTM A131-2008</td><td>船舶用结构钢</td></tr>
+                 <tr><td>42</td><td>ASTM A132-2004（R2009）</td><td>钼铁</td></tr>
+                 <tr><td>43</td><td>ASTM A134-1996（R2005）</td><td>电容（电弧）焊接钢管（NPS等于和大于6）</td></tr>
+                 <tr><td>44</td><td>ASTM A135-2009</td><td>电阻焊公称钢管</td></tr>
+                 <tr><td>45</td><td>ASTM A139-2004（R2010）</td><td>电容（电弧）焊接钢管（公称尺寸等于和大于4英寸）</td></tr>
+                 <tr><td>46</td><td>ASTM A143-2007</td><td>热浸镀锌结构钢制品防脆化的标准实施规程和催化探测方法</td></tr>
+                 <tr><td>47</td><td>ASTM A144-2004（R2009）</td><td>钨铁</td></tr>
+                 <tr><td>48</td><td>ASTM A146-2004（R2009）</td><td>氧化钼</td></tr>
+                 <tr><td>49</td><td>ASTM A148-2008</td><td>结构用高强度铸钢件</td></tr>
+                 <tr><td>50</td><td>ASTM A153-2009</td><td>钢铁构件镀锌层(热浸镀)标准规范</td></tr>
+                 <tr><td>51</td><td>ASTM A159-1983（R2011）</td><td>机动车灰口铁铸件</td></tr>
+                 <tr><td>52</td><td>ASTM A161-1994</td><td>炼油设备用低碳钢和碳钼钢无缝蒸馏管</td></tr>
+                 <tr><td>53</td><td>ASTM A167-1999（R2009）</td><td>不锈和耐热铬镍钢中厚板、薄板和钢带</td></tr>
+                 <tr><td>54</td><td>ASTM A176-1999（R2009）</td><td>不锈和耐热铬钢中厚板、薄板和钢带</td></tr>
+                 <tr><td>55</td><td>ASTM A178-2002（R2007）</td><td>电阻焊碳钢和碳锰钢锅炉及过热器管子</td></tr>
+                 <tr><td>56</td><td>ASTM A179-1990a（R2005）</td><td>换热器及冷凝器用无缝冷拔低碳钢管子</td></tr>
+                 <tr><td>57</td><td>ASTM A181-2006</td><td>一般管道用碳钢锻件</td></tr>
+                 <tr><td>58</td><td>ASTM A182-2011a</td><td>高温用锻制或轧制合金钢法兰、锻制和扎制合金钢法兰、锻制管件、阀门和部件</td></tr>
+                 <tr><td>59</td><td>ASTM A183-2003（R2009）</td><td>碳钢钢轨用螺栓和螺母</td></tr>
+                 <tr><td>60</td><td>ASTM A184-2006（R2011）</td><td>混凝土配筋用变形钢筋网</td></tr>
+                 <tr><td>61</td><td>ASTM A185-2007</td><td>混凝土配筋用普通焊接钢丝网</td></tr>
+                 <tr><td>62</td><td>ASTM A192-2002（R2007）</td><td>高压设备用无缝碳钢锅炉管标准规范</td></tr>
+                 <tr><td>63</td><td>ASTM A193-2011a</td><td>高温用合金钢和不锈钢螺栓材料</td></tr>
+                 <tr><td>64</td><td>ASTM A194-2011</td><td>高压或高温螺栓用碳钢及合金钢螺母</td></tr>
+                 <tr><td>65</td><td>ASTM A197-2000（R2011）</td><td>化铁炉可锻铸铁（米制）</td></tr>
+                 <tr><td>66</td><td>ASTM A199-1992</td><td>热交换器和冷凝器用合金钢冷拔无缝钢管</td></tr>
+                 <tr><td>67</td><td>ASTM A200-1994</td><td>精炼设备中无缝蒸馏管</td></tr>
+                 <tr><td>68</td><td>ASTM A202-2003</td><td>ASTM A202/A202M-1990</td></tr>
+                 <tr><td>69</td><td>ASTM A203-1997(R2007)</td><td>压力容器用镍合金钢板</td></tr>
+                 <tr><td>70</td><td>ASTM A204-2003(R2007)</td><td>压力容器用钼合金钢板</td></tr>
+                 <tr><td>71</td><td>ASTM A209-2003(R2007)</td><td>锅炉和过热器用无缝碳钼合金钢管标准规范</td></tr>
+                 <tr><td>72</td><td>ASTM A210-2002(R2007)</td><td>无缝中碳钢锅炉管和过热器管标准规范</td></tr>
+                 <tr><td>73</td><td>ASTM A211-1975（R1985）</td><td>螺旋焊钢管</td></tr>
+                 <tr><td>74</td><td>ASTM A213-2011a</td><td>无缝铁素体和奥氏体合金钢锅炉管、过热器管和换热器管标准规范</td></tr>
+                 <tr><td>75</td><td>ASTM A214-1996(R2005)</td><td>热交换器和冷凝器用电阻焊碳素钢钢管</td></tr>
+                 <tr><td>76</td><td>ASTM A216-2008</td><td>可熔焊高温用碳钢铸件</td></tr>
+                 <tr><td>77</td><td>ASTM A217-2011</td><td>高温承压件用马氏体不锈钢和合金钢铸件标准规范</td></tr>
+                 <tr><td>78</td><td>ASTM A220-1999（R2009）</td><td>珠光体可锻铁铸件（米制）</td></tr>
+                 <tr><td>79</td><td>ASTM A225-2003(R2007)</td><td>压力容器用锰钒镍合金钢板</td></tr>
+                 <tr><td>80</td><td>ASTM A226-1995</td><td>高压用电阻焊碳素钢锅炉管和过热器管</td></tr>
+                 <tr><td>81</td><td>ASTM A227-2006（R2011）</td><td>机械弹簧用冷拔钢丝</td></tr>
+                 <tr><td>82</td><td>ASTM A228-2007</td><td>乐器级弹性钢丝</td></tr>
+                 <tr><td>83</td><td>ASTM A229-1999（R2005）</td><td>油回火机械弹簧用钢丝</td></tr>
+                 <tr><td>84</td><td>ASTM A230-2005（R2011）</td><td>油回火阀门弹簧级碳素钢丝</td></tr>
+                 <tr><td>85</td><td>ASTM A231-2010</td><td>铬-钒合金钢弹簧钢丝</td></tr>
+                 <tr><td>86</td><td>ASTM A232-2005（R2011）e1</td><td>阀门弹簧级铬－钒合金钢丝</td></tr>
+                 <tr><td>87</td><td>ASTM A234-2011a</td><td>中、高温用锻制碳钢和合金钢管道配件</td></tr>
+                 <tr><td>88</td><td>ASTM A240-2011b</td><td>压力容器和一般用途用耐热铬及铬镍不锈钢板、薄板和钢带</td></tr>
+                 <tr><td>89</td><td>ASTM A242-2004（R2009）</td><td>高强度低合金结构钢</td></tr>
+                 <tr><td>90</td><td>ASTM A247-2010</td><td>评定在铁铸件里石墨的微观结构的标准试验方法</td></tr>
+                 <tr><td>91</td><td>ASTM A249-2010a</td><td>锅炉、过热器、换热器和冷凝器用奥氏体焊接钢管</td></tr>
+                 <tr><td>92</td><td>ASTM A250-2005(R2009)</td><td>锅炉和过热器用电阻焊铁素体合金钢管子</td></tr>
+                 <tr><td>93</td><td>ASTM A252-2010</td><td>焊接钢和无缝钢管桩的标准规范</td></tr>
+                 <tr><td>94</td><td>ASTM A254-1997（R2007）</td><td>铜焊钢管</td></tr>
+                 <tr><td>95</td><td>ASTM A262-2010</td><td>探测奥氏体不锈钢晶间腐蚀敏感度的标准实施规范</td></tr>
+                 <tr><td>96</td><td>ASTM A263-2009</td><td>铬-不锈钢复合钢板</td></tr>
+                 <tr><td>97</td><td>ASTM A264-2011</td><td>铬-镍不锈钢复合钢板</td></tr>
+                 <tr><td>98</td><td>ASTM A265-2009</td><td>镍和镍基合金复合钢板</td></tr>
+                 <tr><td>99</td><td>ASTM A266-2011</td><td>压力容器部件用碳钢锻件</td></tr>
+                 <tr><td>100</td><td>ASTM A268-2010</td><td>一般用途无缝和焊接铁素体和马氏体不锈钢管子</td></tr>
+                 <tr><td>101</td><td>ASTM A269-2010</td><td>通用无缝和焊接奥氏体不锈钢管标准规范</td></tr>
+                 <tr><td>102</td><td>ASTM A270-2010</td><td>卫生用奥氏体不锈钢和无缝焊接钢管</td></tr>
+                 <tr><td>103</td><td>ASTM A271-1996</td><td>炼油设备用奥氏体铬镍钢无缝整流管</td></tr>
+                 <tr><td>104</td><td>ASTM A275-2008</td><td>钢锻件磁粉检验</td></tr>
+                 <tr><td>105</td><td>ASTM A276-2010</td><td>不锈钢棒材和型材标准规范</td></tr>
+                 <tr><td>106</td><td>ASTM A278M-2001(R2011)</td><td>温度达345℃的压力容器部件用灰口铸铁件（米制）</td></tr>
+                 <tr><td>107</td><td>ASTM A283-2003（R2007）</td><td>中、低抗拉强度碳素钢板标准技术条件</td></tr>
+                 <tr><td>108</td><td>ASTM A284-1990</td><td>机械零件和普通结构用低、中抗拉强度碳-硅钢板</td></tr>
+                 <tr><td>109</td><td>ASTM A285-2003（R2007）</td><td>压力容器用中、低抗拉强度碳素钢标准技术条件</td></tr>
+                 <tr><td>110</td><td>ASTM A288-1991（R2008）</td><td>汽轮发动机磁护环用碳素钢和合金钢锻件</td></tr>
+                 <tr><td>111</td><td>ASTM A289-1997（R2008）</td><td>发电机非磁性护环用合金钢锻件</td></tr>
+                 <tr><td>112</td><td>ASTM A290-2005（R2010）</td><td>减速机齿轮钢环用碳素钢和合金钢锻件</td></tr>
+                 <tr><td>113</td><td>ASTM A291-2005（R2010）</td><td>减速机大、小齿轮用碳素钢和合金钢锻件</td></tr>
+                 <tr><td>114</td><td>ASTM A295-2009</td><td>高碳耐磨轴承钢</td></tr>
+                 <tr><td>115</td><td>ASTM A297-2010</td><td>一般用途的鉄铬和鉄铬镍耐热合金钢铸件</td></tr>
+                 <tr><td>116</td><td>ASTM A299-2009</td><td>压力容器用碳锰硅钢板</td></tr>
+                 <tr><td>117</td><td>ASTM A302-2003（R2007）</td><td>压力容器用锰钼和锰钼镍合金钢板</td></tr>
+                 <tr><td>118</td><td>ASTM A304-2011</td><td>符合末端淬透性要求的合金钢棒材</td></tr>
+                 <tr><td>119</td><td>ASTM A307-2010</td><td>抗拉强度6000PSI碳钢螺栓和螺柱标准技术条件</td></tr>
+                 <tr><td>120</td><td>ASTM A308-2010</td><td>大张镀铅锡合金冷轧薄钢板</td></tr>
+                 <tr><td>121</td><td>ASTM A311-2004（R2010）</td><td>要求机械性能的冷拔消除应力碳素钢棒材</td></tr>
+                 <tr><td>122</td><td>ASTM A312-2011</td><td>无缝和焊接奥氏体不锈钢公称管</td></tr>
+                 <tr><td>123</td><td>ASTM A313-2010e1</td><td>铬镍不锈和耐热钢弹簧钢丝</td></tr>
+                 <tr><td>124</td><td>ASTM A314-2008</td><td>锻造用不锈和耐热钢钢坯和钢棒</td></tr>
+                 <tr><td>125</td><td>ASTM A319-1971（R2011）</td><td>高温非承压部件用灰口铸铁件</td></tr>
+                 <tr><td>126</td><td>ASTM A320-2011a</td><td>低温用合金钢栓接材料</td></tr>
+                 <tr><td>127</td><td>ASTM A321-1990（R2001）</td><td>调质处理的碳素钢棒材</td></tr>
+                 <tr><td>128</td><td>ASTM A322-2007</td><td>标准品级合金钢棒材</td></tr>
+                 <tr><td>129</td><td>ASTM A323-2005（R2010）</td><td>硼铁</td></tr>
+                 <tr><td>130</td><td>ASTM A324-2008</td><td>钛铁</td></tr>
+                 <tr><td>131</td><td>ASTM A325-2010</td><td>最小抗拉强度120/105ksi的热处理结构钢螺栓</td></tr>
+                 <tr><td>132</td><td>ASTM A326-1967（R1985）</td><td>电话和电报线路用镀锌高强度钢丝</td></tr>
+                 <tr><td>133</td><td>ASTM A328-2007</td><td>钢板桩</td></tr>
+                 <tr><td>134</td><td>ASTM A331-1995（R2000）</td><td>冷加工合金钢棒材</td></tr>
+                 <tr><td>135</td><td>ASTM A333-2011</td><td>低温设备用无缝和焊接钢管的规范标准</td></tr>
+                 <tr><td>136</td><td>ASTM A334-2004a(R2010)</td><td>低温设备用无缝和焊接碳素和合金钢管的标准规范</td></tr>
+                 <tr><td>137</td><td>ASTM A335-2011</td><td>高温设备用无缝铁素体合金钢管标准规范</td></tr>
+                 <tr><td>138</td><td>ASTM A336-2010a</td><td>高温承压件合金钢锻件标准技术条件</td></tr>
+                 <tr><td>139</td><td>ASTM A338-1984（R2009）</td><td>铁路、船舶和其它重负荷设施在650℉（345℃）温度内使用的可锻铸铁法兰、管道配件和阀门零件</td></tr>
+                 <tr><td>140</td><td>ASTM A342-2004</td><td>测试弱磁材料渗透率的标准</td></tr>
+                 <tr><td>141</td><td>ASTM A345-2009</td><td>磁性用途的电工钢板</td></tr>
+                 <tr><td>142</td><td>ASTM A350-2011</td><td>需切口韧性试验的管道部件用碳钢和低合金钢锻件标准规范</td></tr>
+                 <tr><td>143</td><td>ASTM A351-2010</td><td>承压件用奥氏体铸钢件标准规范</td></tr>
+                 <tr><td>144</td><td>ASTM A352-2006</td><td>低温承压用铁素体和马氏体铸钢件标准规范</td></tr>
+                 <tr><td>145</td><td>ASTM A353-2009</td><td>压力容器用两次正火加回火9%镍合金钢板</td></tr>
+                 <tr><td>146</td><td>ASTM A354-2011</td><td>淬火加回火合金钢锣栓、螺柱及其它外螺纹紧固件</td></tr>
+                 <tr><td>147</td><td>ASTM A355-1989（R2006）</td><td>渗氮合金钢棒材</td></tr>
+                 <tr><td>148</td><td>ASTM A356-2011</td><td>汽轮机用厚壁碳钢、低合金钢和不锈钢铸件标准技术条件</td></tr>
+                 <tr><td>149</td><td>ASTM A358-2008a</td><td>高温作业用电容焊奥氏体铬镍合金钢钢管（中英文对照）</td></tr>
+                 <tr><td>150</td><td>ASTM A361-1994</td><td>屋面与墙面用热浸镀锌薄钢板</td></tr>
+                 <tr><td>151</td><td>ASTM A363-2003（R2009）</td><td>地面架空线用镀锌钢绞线</td></tr>
+                 <tr><td>152</td><td>ASTM A368-1995a(R2009)</td><td>不锈和耐热钢钢绞线</td></tr>
+                 <tr><td>153</td><td>ASTM A369-2011</td><td>高温作业用锻造和镗制的碳素钢和铁素体合金钢钢管（中英文对照）</td></tr>
+                 <tr><td>154</td><td>ASTM A370-2011a</td><td>钢制品力学性能试验方法和定义标准（中英文对照）</td></tr>
+                 <tr><td>155</td><td>ASTM A372-2010</td><td>薄壁压力容器用碳钢和合金钢锻件</td></tr>
+                 <tr><td>156</td><td>ASTM A376-2006</td><td>高温中央电站用无缝奥氏体钢公称管</td></tr>
+                 <tr><td>157</td><td>ASTM A381-1996（R2005）</td><td>高压输送系统用电弧焊钢管</td></tr>
+                 <tr><td>158</td><td>ASTM A383-1987</td><td>出口和一般工业用铁路车辆的不热处理碳钢车轴</td></tr>
+                 <tr><td>159</td><td>ASTM A387-2011</td><td>压力容器用铬-钼合金钢板</td></tr>
+                 <tr><td>160</td><td>ASTM A388-2011</td><td>大型钢锻件超声检验标准操作方法</td></tr>
+                 <tr><td>161</td><td>ASTM A389-2010</td><td>高温承压零件用经特殊热处理的合金锻钢件</td></tr>
+                 <tr><td>162</td><td>ASTM A390-2006（R2011）</td><td>镀锌钢丝制家禽栅栏编织物</td></tr>
+                 <tr><td>163</td><td>ASTM A391-2007</td><td>合金钢链条</td></tr>
+                 <tr><td>164</td><td>ASTM A392-2011a</td><td>镀锌钢丝链环栅栏编织物</td></tr>
+                 <tr><td>165</td><td>ASTM A395-1999（R2009）</td><td>高温用铁素体球墨铸铁承压铸件（米制）</td></tr>
+                 <tr><td>166</td><td>ASTM A401-2010</td><td>铬硅合金钢弹簧钢丝</td></tr>
+                 <tr><td>167</td><td>ASTM A403-2011</td><td>锻制奥氏体不锈钢管配件的标准规范</td></tr>
+                 <tr><td>168</td><td>ASTM A405-1991</td><td>高温作业用经特殊处理的铁素体合金钢无缝钢管</td></tr>
+                 <tr><td>169</td><td>ASTM A407-2007</td><td>冷拔螺旋型弹簧用钢丝</td></tr>
+                 <tr><td>170</td><td>ASTM A409-2009</td><td>在腐蚀介质中或在高温下使用的大直径奥氏体钢焊接钢管</td></tr>
+                 <tr><td>171</td><td>ASTM A411-2008</td><td>镀锌低碳钢铠装钢丝</td></tr>
+                 <tr><td>172</td><td>ASTM A413-2007</td><td>碳素钢链条</td></tr>
+                 <tr><td>173</td><td>ASTM A414-2010</td><td>压力容器用碳素钢薄钢板</td></tr>
+                 <tr><td>174</td><td>ASTM A416-2010</td><td>预应力混凝土用无锌层七股钢丝的钢绞线</td></tr>
+                 <tr><td>175</td><td>ASTM A417-1993（R2004）</td><td>室内装饰弹簧簧件用之字形、方形和波纹型冷拔弹簧钢丝</td></tr>
+                 <tr><td>176</td><td>ASTM A418-2010</td><td>汽轮机和发电机钢转子锻件超声检测方法</td></tr>
+                 <tr><td>177</td><td>ASTM A420-2010a</td><td>低温用锻制碳钢和合金钢管配件</td></tr>
+                 <tr><td>178</td><td>ASTM A421-2010</td><td>预应力混凝土用无锌层消除应力钢丝</td></tr>
+                 <tr><td>179</td><td>ASTM A422-1964（R1985）</td><td>炼油设备用蒸馏管的对接焊</td></tr>
+                 <tr><td>180</td><td>ASTM A423-2009</td><td>低合金钢无缝和电焊钢管</td></tr>
+                 <tr><td>181</td><td>ASTM A424-2009a</td><td>搪瓷用薄钢板</td></tr>
+                 <tr><td>182</td><td>ASTM A426-2011a</td><td>高温作业用离心铸造铁素体合金钢管（中英文对照）</td></tr>
+                 <tr><td>183</td><td>ASTM A427-2010</td><td>冷渣和热轧用合金锻钢轧辊</td></tr>
+                 <tr><td>184</td><td>ASTM A430-1991</td><td>高温作业用锻造镗制奥氏体钢钢管</td></tr>
+                 <tr><td>185</td><td>ASTM A434-2006</td><td>热轧和冷加工调制处理的合金钢棒材</td></tr>
+                 <tr><td>186</td><td>ASTM A435-1990（R2007）</td><td>钢板直射声束超声检测规范</td></tr>
+                 <tr><td>187</td><td>ASTM A436-1984（R2011）</td><td>奥氏体灰口铁铸件</td></tr>
+                 <tr><td>188</td><td>ASTM A437-2011</td><td>高温作业用透平式经特殊热处理的合金钢拴接材料</td></tr>
+                 <tr><td>189</td><td>ASTM A439-1983（R2009）</td><td>奥氏体球墨铸铁铸件</td></tr>
+                 <tr><td>190</td><td>ASTM A442-1990</td><td>压力容器用转变性能较好的碳素钢板</td></tr>
+                 <tr><td>191</td><td>ASTM A444-1989</td><td>地下沟渠和排水管用热浸镀锌钢板</td></tr>
+                 <tr><td>192</td><td>ASTM A446-1993</td><td>结构（机械）级热浸镀锌薄钢板</td></tr>
+                 <tr><td>193</td><td>ASTM A447-2011</td><td>高温用铬镍铁合金铸件（25-12级）</td></tr>
+                 <tr><td>194</td><td>ASTM A450-2010</td><td>碳素钢管、铁素体合金钢管及奥氏体合金钢管一般要求的标准规范</td></tr>
+                 <tr><td>195</td><td>ASTM A451-2006（R2010）</td><td>高温用离心铸造奥氏体钢公称管</td></tr>
+                 <tr><td>196</td><td>ASTM A452-1988</td><td>高温作业用离心铸造奥氏体冷加工钢管</td></tr>
+                 <tr><td>197</td><td>ASTM A453-2011</td><td>高温作业用屈服强度为50至120千磅每平方英寸为【345至827兆帕】的膨胀系数与奥氏体钢相近的拴接材料</td></tr>
+                 <tr><td>198</td><td>ASTM A455-2003（R2007）</td><td>压力容器用高强度锰碳钢板</td></tr>
+                 <tr><td>199</td><td>ASTM A456-2008</td><td>大型曲轴锻件磁粉检测</td></tr>
+                 <tr><td>200</td><td>ASTM A459-2008</td><td>镀锌铠装扁钢带</td></tr>
+                 <tr><td>201</td><td>ASTM A460-2011</td><td>包铜钢绞线</td></tr>
+                 <tr><td>202</td><td>ASTM A463-2010</td><td>1型和2型镀铝冷轧薄钢板</td></tr>
+                 <tr><td>203</td><td>ASTM A466-2007</td><td>非焊接碳素钢链条</td></tr>
+                 <tr><td>204</td><td>ASTM A467-2007</td><td>机械链条和盘圈式链条</td></tr>
+                 <tr><td>205</td><td>ASTM A469-2007</td><td>发电机转子用真空处理锻钢件</td></tr>
+                 <tr><td>206</td><td>ASTM A470-2005（R2010）</td><td>涡轮机转子和轴用真空处理碳素钢和合金钢锻件</td></tr>
+                 <tr><td>207</td><td>ASTM A471-2009</td><td>涡轮盘和涡轮用真空处理合金锻件</td></tr>
+                 <tr><td>208</td><td>ASTM A473-2001（R2009）</td><td>不锈钢及耐热钢锻件</td></tr>
+                 <tr><td>209</td><td>ASTM A474-2003（R2008）</td><td>镀铝钢绞线</td></tr>
+                 <tr><td>210</td><td>ASTM A475-2003（R2009）e1</td><td>镀锌钢绞线</td></tr>
+                 <tr><td>211</td><td>ASTM A476-2000（R2009）</td><td>造纸厂干燥辊用球墨铸铁件</td></tr>
+                 <tr><td>212</td><td>ASTM A478-1997（R2008）</td><td>镍铬不锈钢和耐热钢编织钢丝</td></tr>
+                 <tr><td>213</td><td>ASTM A479-2011</td><td>锅炉和其他压力容器用不锈钢棒材和型材标准技术条件</td></tr>
+                 <tr><td>214</td><td>ASTM A480-2011b</td><td>不锈和耐热钢轧制钢板、薄板及钢带通用要求</td></tr>
+                 <tr><td>215</td><td>ASTM A481-2005（R2010）</td><td>金属铬</td></tr>
+                 <tr><td>216</td><td>ASTM A482-2011</td><td>硅铬铁合金</td></tr>
+                 <tr><td>217</td><td>ASTM A483-2010</td><td>硅锰合金</td></tr>
+                 <tr><td>218</td><td>ASTM A484-2011</td><td>不锈钢棒材、钢坯及锻件通用要求标准技术条件</td></tr>
+                 <tr><td>219</td><td>ASTM A485-2009</td><td>高淬透性减摩轴承钢</td></tr>
+                 <tr><td>220</td><td>ASTM A487-1993(R2007)</td><td>承压用铸钢件</td></tr>
+                 <tr><td>221</td><td>ASTM A488-2010</td><td>钢铸件焊接工艺和人员资格评定的标准实施规程</td></tr>
+                 <tr><td>222</td><td>ASTM A491-2011</td><td>镀铝钢丝链环栅栏编织物</td></tr>
+                 <tr><td>223</td><td>ASTM A492-1995（R2009）</td><td>不锈及耐热钢丝绳用钢丝</td></tr>
+                 <tr><td>224</td><td>ASTM A493-2009</td><td>冷镦和冷锻用不锈和耐热钢线材</td></tr>
+                 <tr><td>225</td><td>ASTM A494-2009e1</td><td>镍和镍合金铸件</td></tr>
+                 <tr><td>226</td><td>ASTM A495-2006（R2010）</td><td>硅钙和硅钙锰合金</td></tr>
+                 <tr><td>227</td><td>ASTM A496-2007</td><td>混凝土配筋用变形钢筋</td></tr>
+                 <tr><td>228</td><td>ASTM A497-2007</td><td>混凝土配筋用焊接变形钢筋网</td></tr>
+                 <tr><td>229</td><td>ASTM A498-2006</td><td>无缝与焊接碳素钢,铁素体钢与奥氏体钢制有整体散热片的换热器钢管</td></tr>
+                 <tr><td>230</td><td>ASTM A499-1989（R2008）</td><td>由T形道轨轧制成的碳素钢条材和型材</td></tr>
+                 <tr><td>231</td><td>ASTM A500-2010a</td><td>圆形与异型冷成型焊接与无缝碳素钢结构管标准规范</td></tr>
+                 <tr><td>232</td><td>ASTM A501-2007</td><td>结构用碳素钢热成形焊接钢管和无缝钢管</td></tr>
+                 <tr><td>233</td><td>ASTM A503-2001（R2011）</td><td>大型锻造曲轴超声检测规范</td></tr>
+                 <tr><td>234</td><td>ASTM A504-2008</td><td>锻压碳钢车轮</td></tr>
+                 <tr><td>235</td><td>ASTM A505-2000（R2005）</td><td>热轧和冷轧合金钢薄板的一般要求</td></tr>
+                 <tr><td>236</td><td>ASTM A506-2005</td><td>普通级和结构级热轧和冷轧合金钢薄板和钢带</td></tr>
+                 <tr><td>237</td><td>ASTM A507-2010</td><td>深冲级热轧和冷轧合金钢薄板和钢带</td></tr>
+                 <tr><td>238</td><td>ASTM A508-2005b（R2010）</td><td>压力容器用经真空处理的淬火加回火碳钢和合金钢锻件</td></tr>
+                 <tr><td>239</td><td>ASTM A510-2011</td><td>碳素钢线材和粗圆钢丝的一般要求(米制)</td></tr>
+                 <tr><td>240</td><td>ASTM A511-2011</td><td>机械工程用不锈钢无缝钢管</td></tr>
+                 <tr><td>241</td><td>ASTM A512-2006</td><td>冷拉对缝焊碳素钢机械管规格标准</td></tr>
+                 <tr><td>242</td><td>ASTM A513-2008a</td><td>电阻焊碳钢及合金钢机械用管材</td></tr>
+                 <tr><td>243</td><td>ASTM A514-2005（R2009）</td><td>适宜焊接的、淬火并回火的高屈服强度合金钢板</td></tr>
+                 <tr><td>244</td><td>ASTM A515-2010</td><td>中温及高温压力容器用碳素钢板的标准规范</td></tr>
+                 <tr><td>245</td><td>ASTM A516-2010</td><td>中、低温压力容器用碳钢板</td></tr>
+                 <tr><td>246</td><td>ASTM A517-2010</td><td>压力容器用淬火加回火高强度合金钢板</td></tr>
+                 <tr><td>247</td><td>ASTM A518-1999（R2008）</td><td>耐腐蚀高硅铸铁件(米制)</td></tr>
+                 <tr><td>248</td><td>ASTM A519-2006</td><td>机械工程用碳素钢和铝合金钢无缝钢管(中英对照)</td></tr>
+                 <tr><td>249</td><td>ASTM A520-1997</td><td>符合国际标准化组织(ISO)推荐标准《锅炉建造》的高温作业用碳素钢无缝和电阻焊钢管的补充要求</td></tr>
+                 <tr><td>250</td><td>ASTM A521-2006（R2011）</td><td>一般工业用闭合模压钢锻件</td></tr>
+                 <tr><td>251</td><td>ASTM A522-2011</td><td>低温作业用含镍8％和9％的合金钢锻造或轧制的法兰、管配件、阀门和部件</td></tr>
+                 <tr><td>252</td><td>ASTM A523-1996（R2005）</td><td>高压管式电缆电路用光端无缝和电阻焊接钢管</td></tr>
+                 <tr><td>253</td><td>ASTM A524-1996(2005)</td><td>在常温和较低温度下使用的碳素钢无缝钢管</td></tr>
+                 <tr><td>254</td><td>ASTM A525-1991a</td><td>热浸镀锌薄钢板的一般要求(米制)</td></tr>
+                 <tr><td>255</td><td>ASTM A526-1990</td><td>普通级热浸镀锌薄钢板</td></tr>
+                 <tr><td>256</td><td>ASTM A527-1990</td><td>卷边成型级热浸镀锌薄钢板</td></tr>
+                 <tr><td>257</td><td>ASTM A528-1990</td><td>深冲级热浸镀锌薄钢板</td></tr>
+                 <tr><td>258</td><td>ASTM A529-2005（R2009）</td><td>最大厚度为1/2英寸(13毫米)、最低屈服点为42千磅/英寸2(290MPa)的结构钢</td></tr>
+                 <tr><td>259</td><td>ASTM A530-2004a(R2010)</td><td>特种碳素钢和合金钢管一般要求的标准规范</td></tr>
+                 <tr><td>260</td><td>ASTM A531-1991（R2006）</td><td>汽轮发电机用用钢制护环超声检测方法</td></tr>
+                 <tr><td>261</td><td>ASTM A532-2010</td><td>耐磨铸铁</td></tr>
+                 <tr><td>262</td><td>ASTM A533-2009e1</td><td>压力容器用淬火加回火锰钼和锰钼镍合金钢板</td></tr>
+                 <tr><td>263</td><td>ASTM A534-2009</td><td>耐磨轴承用渗碳钢</td></tr>
+                 <tr><td>264</td><td>ASTM A535-1985（R1992）</td><td>特殊质量级滚珠和滚柱轴承钢</td></tr>
+                 <tr><td>265</td><td>ASTM A536-1984 (R2009)</td><td>球墨铸件铸件</td></tr>
+                 <tr><td>266</td><td>ASTM A537-2008</td><td>压力容器用经热处理的碳锰硅钢板</td></tr>
+                 <tr><td>267</td><td>ASTM A539-1999</td><td>气体和燃油管线用电阻焊成盘钢管</td></tr>
+                 <tr><td>268</td><td>ASTM A540-2011</td><td>特殊用途合金钢螺栓连接材料</td></tr>
+                 <tr><td>269</td><td>ASTM A541-2005（R2010）</td><td>压力容器部件用淬火加回火碳钢和合金钢锻件</td></tr>
+                 <tr><td>270</td><td>ASTM A542-2009</td><td>压力容器用淬火加回火的铬钼和铬钼钒合金钢板</td></tr>
+                 <tr><td>271</td><td>ASTM A543-2009</td><td>压力容器用淬火加回火镍铬钼合金钢板</td></tr>
+                 <tr><td>272</td><td>ASTM A550-2006（R2010）</td><td>铌铁</td></tr>
+                 <tr><td>273</td><td>ASTM A551-2008</td><td>钢轮箍</td></tr>
+                 <tr><td>274</td><td>ASTM A553-2010</td><td>压力容器用淬火加回火8％和9％镍合金钢板</td></tr>
+                 <tr><td>275</td><td>ASTM A554-2011</td><td>机械工程用不锈钢焊接钢管</td></tr>
+                 <tr><td>276</td><td>ASTM A555-2005（R2009）</td><td>不锈和耐热钢丝和线材的一般要求</td></tr>
+                 <tr><td>277</td><td>ASTM A556-1996（R2005）</td><td>供水加热器用碳素钢冷拔无缝钢管</td></tr>
+                 <tr><td>278</td><td>ASTM A557-1990a</td><td>供水加热器用碳素钢电阻焊钢管</td></tr>
+                 <tr><td>279</td><td>ASTM A560-2011</td><td>铬镍合金铸件</td></tr>
+                 <tr><td>280</td><td>ASTM A562-2010</td><td>压力容器用有玻璃或扩散金属覆盖层的锰钛碳素钢板</td></tr>
+                 <tr><td>281</td><td>ASTM A563-2007a</td><td>碳素钢和合金钢螺母(米制)</td></tr>
+                 <tr><td>282</td><td>ASTM A564-2010</td><td>热轧和冷加工时效硬化不锈钢及耐热钢棒材及型材</td></tr>
+                 <tr><td>283</td><td>ASTM A565-2010</td><td>高温用马氏体不锈钢棒材、锻材及锻坯</td></tr>
+                 <tr><td>284</td><td>ASTM A568-2011b</td><td>碳素钢和高强度低合金钢热轧和冷轧薄板通用要求</td></tr>
+                 <tr><td>285</td><td>ASTM A569-1998</td><td>普通级碳素钢(C≤0.15％)热轧薄板和钢带</td></tr>
+                 <tr><td>286</td><td>ASTM A570-1998</td><td>结构级热轧碳素钢薄板和钢带</td></tr>
+                 <tr><td>287</td><td>ASTM A571-2001（R2011）</td><td>低温承压部件用奥氏体球墨铸铁铸件</td></tr>
+                 <tr><td>288</td><td>ASTM A572-2007</td><td>高强度低合金铌-钒结构钢</td></tr>
+                 <tr><td>289</td><td>ASTM A573-2005（R2009）</td><td>改进韧性的碳素结构钢板</td></tr>
+                 <tr><td>290</td><td>ASTM A575-1996（R2007）</td><td>普通质量M-级碳素钢棒材</td></tr>
+                 <tr><td>291</td><td>ASTM A576-1990b（R2006）</td><td>特殊质量级碳素钢热加工钢棒</td></tr>
+                 <tr><td>292</td><td>ASTM A577-1990(R2007）</td><td>钢板超声斜射波检验</td></tr>
+                 <tr><td>293</td><td>ASTM A578-2007</td><td>特殊用途的普通钢板和复合钢板直射波超声检验标准规范</td></tr>
+                 <tr><td>294</td><td>ASTM A579-2004a（R2009）</td><td>超高强度合金钢锻件</td></tr>
+                 <tr><td>295</td><td>ASTM A580-2008</td><td>不锈和耐热钢钢丝</td></tr>
+                 <tr><td>296</td><td>ASTM A581-1995b(R2009)</td><td>易切削不锈和耐热钢钢丝和线材</td></tr>
+                 <tr><td>297</td><td>ASTM A582-2005</td><td>热轧或冷加工易削不锈与耐热钢棒材</td></tr>
+                 <tr><td>298</td><td>ASTM A583-1993（R1999）</td><td>铁路用铸钢车轮</td></tr>
+                 <tr><td>299</td><td>ASTM A584-1997</td><td>镀铝编织钢丝栅栏编织物</td></tr>
+                 <tr><td>300</td><td>ASTM A585-1997</td><td>镀铝刺钢丝</td></tr>
+                 <tr><td>301</td><td>ASTM A586-2004a(R2009)e1</td><td>结构用平行捻与螺旋捻镀锌钢绞线</td></tr>
+                 <tr><td>302</td><td>ASTM A587-1996(R2005)</td><td>化学工业用低碳钢电焊钢管</td></tr>
+                 <tr><td>303</td><td>ASTM A588-2010</td><td>厚度小于和等于4英寸(100mm)、最小屈服点50千磅/英寸2(345MPa)的高强度低合金结构钢</td></tr>
+                 <tr><td>304</td><td>ASTM A589-2006</td><td>打水井用碳素钢无缝钢管和焊接钢管</td></tr>
+                 <tr><td>305</td><td>ASTM A591-1998</td><td>薄镀层用途的电镀锌薄钢板</td></tr>
+                 <tr><td>306</td><td>ASTM A592-2010</td><td>压力容器有淬火和回火高强度低合金钢锻制配件和部件</td></tr>
+                 <tr><td>307</td><td>ASTM A595-2011</td><td>结构用低碳钢锥形钢管</td></tr>
+                 <tr><td>308</td><td>ASTM A597-1987（R2010）</td><td>铸造工具钢</td></tr>
+                 <tr><td>309</td><td>ASTM A599-2007</td><td>冷轧电镀锡薄钢板</td></tr>
+                 <tr><td>310</td><td>ASTM A600-1992a（R2010）</td><td>高速工具钢</td></tr>
+                 <tr><td>311</td><td>ASTM A601-2010</td><td>电解金属锰</td></tr>
+                 <tr><td>312</td><td>ASTM A602-1994（R2009）</td><td>汽车用可锻铸铁铸件</td></tr>
+                 <tr><td>313</td><td>ASTM A603-1998（R2009)e1</td><td>结构用镀锌钢丝绳</td></tr>
+                 <tr><td>314</td><td>ASTM A606-2009a</td><td>高耐大气腐蚀的高强度低合金钢热轧和冷轧薄钢板和钢带</td></tr>
+                 <tr><td>315</td><td>ASTM A607-1998</td><td>含铌或/和含钒的高强度低合金钢热轧和冷轧薄钢板和钢带</td></tr>
+                 <tr><td>316</td><td>ASTM A608-2006</td><td>高温承压用铁－铬－镍高合金离心铸造管</td></tr>
+                 <tr><td>317</td><td>ASTM A609-1991（R2007）</td><td>碳钢、低合金钢和马氏体不锈钢铸件超声波检验</td></tr>
+                 <tr><td>318</td><td>ASTM A611-1997</td><td>结构级碳素钢冷轧薄板</td></tr>
+                 <tr><td>319</td><td>ASTM A612-2003（R2007）</td><td>中温和低温压力容器用高强度碳素钢板</td></tr>
+                 <tr><td>320</td><td>ASTM A615-2009b</td><td>混凝土配筋用异形钢筋和无节钢胚棒标准规范</td></tr>
+                 <tr><td>321</td><td>ASTM A616-1996</td><td>混凝土配筋用钢轨钢变形和光面钢筋</td></tr>
+                 <tr><td>322</td><td>ASTM A617-1996a</td><td>混凝土配筋用车轴钢变形和光面钢筋</td></tr>
+                 <tr><td>323</td><td>ASTM A618-2004（R2010）</td><td>结构用高强度低合金钢热成形无缝钢管和焊接钢管</td></tr>
+                 <tr><td>324</td><td>ASTM A619-1997</td><td>深冲级碳素钢冷轧薄板</td></tr>
+                 <tr><td>325</td><td>ASTM A620-1997</td><td>特殊镇静深冲碳素钢冷轧薄板</td></tr>
+                 <tr><td>326</td><td>ASTM A621-1997</td><td>深冲级碳素钢热轧薄钢板和钢带</td></tr>
+                 <tr><td>327</td><td>ASTM A622-1997</td><td>特殊镇静深冲级碳素钢热轧薄钢板和钢带</td></tr>
+                 <tr><td>328</td><td>ASTM A623-2011</td><td>镀锡轧制产品的一般要求</td></tr>
+                 <tr><td>329</td><td>ASTM A624-2003（R2008）e1</td><td>一次冷轧的电镀锡板(米制)</td></tr>
+                 <tr><td>330</td><td>ASTM A625-2008</td><td>一次轧制的黑钢板(米制)</td></tr>
+                 <tr><td>331</td><td>ASTM A626-2003（R2008）e1</td><td>二次冷轧的电镀锡板(米制)</td></tr>
+                 <tr><td>332</td><td>ASTM A631-1985</td><td>电气铁路用铸钢车轮</td></tr>
+                 <tr><td>333</td><td>ASTM A632-2004（R2009）</td><td>一般用途的奥氏体不锈钢小口径无缝和焊接钢管</td></tr>
+                 <tr><td>334</td><td>ASTM A633-2001（R2011）</td><td>正火的高强度低合金结构钢</td></tr>
+                 <tr><td>335</td><td>ASTM A635-2009b</td><td>热轧碳素钢厚板卷和厚带卷</td></tr>
+                 <tr><td>336</td><td>ASTM A636-2008</td><td>氧化镍烧结矿</td></tr>
+                 <tr><td>337</td><td>ASTM A638-2010</td><td>高温用沉淀硬化铁基超级合金条材、锻件和锻坯</td></tr>
+                 <tr><td>338</td><td>ASTM A640-1997（R2009）e1</td><td>8字型电缆悬缆支承用镀锌钢绞丝</td></tr>
+                 <tr><td>339</td><td>ASTM A641-2009a</td><td>镀锌碳素钢钢丝(米制)</td></tr>
+                 <tr><td>340</td><td>ASTM A642-1990</td><td>特殊镇静钢深冲级热浸镀锌薄钢板</td></tr>
+                 <tr><td>341</td><td>ASTM A645-2010</td><td>压力容器用特殊热处理5％镍合金钢板</td></tr>
+                 <tr><td>342</td><td>ASTM A646-2006（R2011）</td><td>飞机和宇航锻件用优质合金钢初轧坯和方坯</td></tr>
+                 <tr><td>343</td><td>ASTM A648-2011</td><td>预应力混凝土管道用冷拔钢丝</td></tr>
+                 <tr><td>344</td><td>ASTM A649-2010</td><td>瓦楞纸板机用锻钢辊</td></tr>
+                 <tr><td>345</td><td>ASTM A650-2003（R2008）</td><td>镀锡轧制品用二次冷轧黑钢板</td></tr>
+                 <tr><td>346</td><td>ASTM A656-2011</td><td>改进可成型性的热轧高强度低合金结构钢板</td></tr>
+                 <tr><td>347</td><td>ASTM A657-2003（R2008）e1</td><td>镀锡轧制品用一次和二次冷轧的电镀铬黑钢板</td></tr>
+                 <tr><td>348</td><td>ASTM A659-2010</td><td>普通级最大含碳量0.16％至0.25％的碳素钢热轧薄钢板和钢带</td></tr>
+                 <tr><td>349</td><td>ASTM A660-2011</td><td>高温作业用碳素钢离心浇铸钢管(中英对照)</td></tr>
+                 <tr><td>350</td><td>ASTM A662-2003(R2007)</td><td>中温和低温压力容器用碳锰钢板</td></tr>
+                 <tr><td>351</td><td>ASTM A663-1989(R2006)</td><td>要求机械性能的普通质量碳素钢条材</td></tr>
+                 <tr><td>352</td><td>ASTM A666-2010</td><td>奥氏体不锈钢薄板、钢带、中厚板和扁钢</td></tr>
+                 <tr><td>353</td><td>ASTM A667-1987(R2008)</td><td>离心铸造的双金属(灰口和白口铸铁)圆筒</td></tr>
+                 <tr><td>354</td><td>ASTM A668-2004(R2009)</td><td>一般工业用碳素钢和合金钢锻件</td></tr>
+                 <tr><td>355</td><td>ASTM A671-2010</td><td>常温和较低温度用电熔焊接钢管(中英对照)</td></tr>
+                 <tr><td>356</td><td>ASTM A672-2009</td><td>中温高压作业用电熔焊钢管(中英对照)</td></tr>
+                 <tr><td>357</td><td>ASTM A675-2003e1(R2009)</td><td>要求力学性能特殊质量热加工碳钢棒材</td></tr>
+                 <tr><td>358</td><td>ASTM A677M-2007</td><td>成品型无取向电工钢板</td></tr>
+                 <tr><td>359</td><td>ASTM A678-2005（R2009）</td><td>结构用淬火并回火碳素钢和低合金高强度钢板</td></tr>
+                 <tr><td>360</td><td>ASTM A679-2006（R2012）</td><td>高抗拉强度冷拔钢丝</td></tr>
+                 <tr><td>361</td><td>ASTM A681-2008</td><td>合金工具钢</td></tr>
+                 <tr><td>362</td><td>ASTM A682M-2005</td><td>冷轧弹簧级高碳钢钢带的一般要求(米制)</td></tr>
+                 <tr><td>363</td><td>ASTM A683M-2005（R2010）</td><td>半成品型无取向电工钢板</td></tr>
+                 <tr><td>364</td><td>ASTM A684-2010a</td><td>高碳钢冷轧钢带</td></tr>
+                 <tr><td>365</td><td>ASTM A686-1992（R2010）</td><td>碳素工具钢</td></tr>
+                 <tr><td>366</td><td>ASTM A688-2011</td><td>供水加热器用奥氏体不锈钢焊接钢管</td></tr>
+                 <tr><td>367</td><td>ASTM A689-1997（R2008）e1</td><td>弹簧用碳素钢和合金钢条材</td></tr>
+                 <tr><td>368</td><td>ASTM A690-2007</td><td>海洋用高强度低合金钢H型钢桩和钢板桩</td></tr>
+                 <tr><td>369</td><td>ASTM A691-2009</td><td>高压高温作业用碳素钢和合金钢电熔焊钢管(中英对照)</td></tr>
+                 <tr><td>370</td><td>ASTM A692-1990a</td><td>锅炉和过热器用中等强度碳钼合金钢无缝钢管</td></tr>
+                 <tr><td>371</td><td>ASTM A693-2006</td><td>沉淀硬化不锈和耐热钢厚板、薄板和钢带</td></tr>
+                 <tr><td>372</td><td>ASTM A694-2008</td><td>高压输送作业用钢管法兰、配件、阀门和部件用的碳素钢和合金钢锻件</td></tr>
+                 <tr><td>373</td><td>ASTM A695-1990b（R1995）e1</td><td>液压动力用特殊质量热加工碳素钢棒材</td></tr>
+                 <tr><td>374</td><td>ASTM A696-1990a(R2006)</td><td>压力管道部件用热加工或冷精整特殊质量要求碳钢棒材</td></tr>
+                 <tr><td>375</td><td>ASTM A701-2010</td><td>锰硅铁合金</td></tr>
+                 <tr><td>376</td><td>ASTM A702-1989(R2006)</td><td>热加工钢栅栏桩及其组件</td></tr>
+                 <tr><td>377</td><td>ASTM A703-2011</td><td>标准技术条件-承压件钢铸件通用要求</td></tr>
+                 <tr><td>378</td><td>ASTM A705-1995(R2009)</td><td>时效硬化不锈和耐热钢锻件</td></tr>
+                 <tr><td>379</td><td>ASTM A706-2009b</td><td>混凝土配筋用低合金钢变形钢筋</td></tr>
+                 <tr><td>380</td><td>ASTM A707-2010</td><td>低温作业用碳素钢和合金钢锻造法兰</td></tr>
+                 <tr><td>381</td><td>ASTM A709-2011</td><td>桥梁用结构钢</td></tr>
+                 <tr><td>382</td><td>ASTM A710-2002(R2007)</td><td>低碳时效硬化镍铜铬钼铌和镍铜铌合金钢</td></tr>
+                 <tr><td>383</td><td>ASTM A711-2007</td><td>钢锻坯</td></tr>
+                 <tr><td>384</td><td>ASTM A713-2004(R2010)</td><td>经热处理的工件有高碳钢弹簧钢丝</td></tr>
+                 <tr><td>385</td><td>ASTM A714-1999(R2009)e1</td><td>高强度低合金钢焊接和无缝管道钢管</td></tr>
+                 <tr><td>386</td><td>ASTM A715-1998</td><td>成型性改善的热轧高强度低合金钢薄钢板和钢带以及冷轧高强度低合金薄钢板</td></tr>
+                 <tr><td>387</td><td>ASTM A716-2008</td><td>球墨铸铁涵管</td></tr>
+                 <tr><td>388</td><td>ASTM A722-2007</td><td>预应力混凝土用无涂层高强度钢筋</td></tr>
+                 <tr><td>389</td><td>ASTM A723-2010</td><td>压力部件用高强度合金钢锻件</td></tr>
+                 <tr><td>390</td><td>ASTM A724-2009</td><td>焊接多层压力容器用淬火加回火碳钢板</td></tr>
+                 <tr><td>391</td><td>ASTM A726-2005(R2010)</td><td>半成品型冷轧磁性叠片钢板</td></tr>
+                 <tr><td>392</td><td>ASTM A727-2011</td><td>管道部件用具有内在缺口韧性的碳钢锻件</td></tr>
+                 <tr><td>393</td><td>ASTM A729-2009(R2011)e1</td><td>公共交通和电气铁路运输用热处理合金钢车轴</td></tr>
+                 <tr><td>394</td><td>ASTM A730-1993(R1999)</td><td>铁路用碳素钢和合金钢锻件</td></tr>
+                 <tr><td>395</td><td>ASTM A731-1991</td><td>铁素体和马氏体不锈钢无缝和焊接钢管</td></tr>
+                 <tr><td>396</td><td>ASTM A732-2009</td><td>一般用途的碳素钢和低合金钢熔模铸件以及高温高强度钴合</td></tr>
+                 <tr><td>397</td><td>ASTM A733-2003（R2009）e1</td><td>碳素钢和奥氏体不锈钢焊接和无缝钢管螺纹接头</td></tr>
+                 <tr><td>398</td><td>ASTM A734-1987a(R2007)</td><td>压力容器用淬火回火合金钢和高强度低合金钢钢板</td></tr>
+                 <tr><td>399</td><td>ASTM A735-2003(R2007)</td><td>中温和低温压力容器用低碳锰钼铌合金钢板</td></tr>
+                 <tr><td>400</td><td>ASTM A736-2003(R2007)</td><td>压力容器用低碳时效硬化镍铜铬钼铌和镍铜锰钼铌合金钢板</td></tr>
+                 <tr><td>401</td><td>ASTM A737-2009</td><td>压力容器用高强度低合金钢板</td></tr>
+                 <tr><td>402</td><td>ASTM A738-2007</td><td>中、低温压力容器用热处理的碳锰硅钢板</td></tr>
+                 <tr><td>403</td><td>ASTM A739-1990a(R2006)</td><td>高温部件、承压部件或高温承压部件用热加工合金钢棒材</td></tr>
+                 <tr><td>404</td><td>ASTM A740-1998(R2008)</td><td>金属编织物(编织或焊接的热镀锌钢丝编织物)</td></tr>
+                 <tr><td>405</td><td>ASTM A741-2011</td><td>高速公路护栏用镀锌钢丝绳与配件</td></tr>
+                 <tr><td>406</td><td>ASTM A742-2003(R2008)</td><td>波纹管用镀金属并预涂聚合物的薄钢板</td></tr>
+                 <tr><td>407</td><td>ASTM A743-2006(R2010)</td><td>一般用途的铁－铬、铁－铬－镍耐腐蚀铸件</td></tr>
+                 <tr><td>408</td><td>ASTM A744-2010(R2011)e1</td><td>恶劣工作条件用铁－铬－镍耐腐蚀铸件</td></tr>
+                 <tr><td>409</td><td>ASTM A745-1994（R2009）</td><td>奥氏体钢锻件超声检验的标准操作方法</td></tr>
+                 <tr><td>410</td><td>ASTM A746-2009</td><td>球墨铸铁自流排水管</td></tr>
+                 <tr><td>411</td><td>ASTM A747-2007</td><td>沉淀硬化不锈钢铸件</td></tr>
+                 <tr><td>412</td><td>ASTM A748-1987（R2008）</td><td>压力容器用静态浇铸冷硬白口－灰口铸铁双金属辊</td></tr>
+                 <tr><td>413</td><td>ASTM A749-2008</td><td>碳钢和高强度低合金钢热轧钢带通用要求</td></tr>
+                 <tr><td>414</td><td>ASTM A751-2011</td><td>钢制品化学分析方法、实验操作和术语</td></tr>
+                 <tr><td>415</td><td>ASTM A752-2004(R2010)</td><td>合金钢盘条和粗圆钢丝的一般要求</td></tr>
+                 <tr><td>416</td><td>ASTM A753-2008</td><td>镍－铁软磁合金标准</td></tr>
+                 <tr><td>417</td><td>ASTM A755-2011</td><td>外暴露建筑制品用金属热镀覆和整卷预涂敷的薄钢板</td></tr>
+                 <tr><td>418</td><td>ASTM A756-2009</td><td>耐磨轴承用不锈钢</td></tr>
+                 <tr><td>419</td><td>ASTM A757-2010</td><td>低温承压和其它用途的铁素体和马氏体钢铸件</td></tr>
+                 <tr><td>420</td><td>ASTM A758-2010</td><td>缺口韧性较好的直缝焊锻轧的碳素钢管道配件</td></tr>
+                 <tr><td>421</td><td>ASTM A759-2010</td><td>起重机用的碳钢道轨</td></tr>
+                 <tr><td>422</td><td>ASTM A760-2010</td><td>下水道与排水管用金属镀层波纹钢管</td></tr>
+                 <tr><td>423</td><td>ASTM A761-2004(R2009)</td><td>现场拴接管道、管拱和拱用的镀锌波纹结构钢板</td></tr>
+                 <tr><td>424</td><td>ASTM A762-2008</td><td>下水道与排水管用聚合物预涂覆波纹钢管</td></tr>
+                 <tr><td>425</td><td>ASTM A764-2007</td><td>机械弹簧用先镀后拔和成品镀锌的碳素钢丝</td></tr>
+                 <tr><td>426</td><td>ASTM A765-2007</td><td>有强制性韧性要求的压力容器部件用碳钢和低合金钢锻件</td></tr>
+                 <tr><td>427</td><td>ASTM A767-2009</td><td>混凝土配筋用镀锌钢筋</td></tr>
+                 <tr><td>428</td><td>ASTM A768-2005(R2010)</td><td>涡轮机转子和轴用真空处理的12％铬合金钢锻件</td></tr>
+                 <tr><td>429</td><td>ASTM A769-2005(R2010)</td><td>电阻焊结构型钢</td></tr>
+                 <tr><td>430</td><td>ASTM A770-2003(R2007)</td><td>特殊用途钢板板厚方向拉伸试验</td></tr>
+                 <tr><td>431</td><td>ASTM A771-1995(R2001)</td><td>增殖反应堆堆芯部件用的奥氏体不锈钢钢管</td></tr>
+                 <tr><td>432</td><td>ASTM A774-2009</td><td>低温中温用一般耐腐蚀的焊接锻轧奥氏体不锈钢管配件</td></tr>
+                 <tr><td>433</td><td>ASTM A775-2007b</td><td>涂环氧树脂的钢筋</td></tr>
+                 <tr><td>434</td><td>ASTM A777-1991</td><td>捆扎用镀锌圆钢丝</td></tr>
+                 <tr><td>435</td><td>ASTM A778-2001(R2009)e1</td><td>不经退火的奥氏体不锈钢焊接钢管</td></tr>
+                 <tr><td>436</td><td>ASTM A779-2010</td><td>预应力混凝土用七根钢丝紧密绕制的无涂层消应力钢绞线</td></tr>
+                 <tr><td>437</td><td>ASTM A781-2012</td><td>铸件、钢和合金的标准规范及通用工业的一般性要求</td></tr>
+                 <tr><td>438</td><td>ASTM A782-2006</td><td>压力容器用淬火和回火的锰铬钼硅锆合金钢板</td></tr>
+                 <tr><td>439</td><td>ASTM A786-2005(R2009)</td><td>轧制钢地面板</td></tr>
+                 <tr><td>440</td><td>ASTM A787-2009</td><td>机械工程用碳素钢金属镀层电阻焊钢管</td></tr>
+                 <tr><td>441</td><td>ASTM A788-2011</td><td>钢锻件通用要求</td></tr>
+                 <tr><td>442</td><td>ASTM A789-2010a</td><td>一般用途无缝和焊接铁素体/奥氏体不锈钢管子</td></tr>
+                 <tr><td>443</td><td>ASTM A790-2011</td><td>无缝及焊接的铁素体/奥氏体不锈钢公称管</td></tr>
+                 <tr><td>444</td><td>ASTM A791-1994</td><td>不经退火的铁素体不锈钢焊接钢管</td></tr>
+                 <tr><td>445</td><td>ASTM A792-2010</td><td>热浸镀铝锌合金的薄钢板的一般要求</td></tr>
+                 <tr><td>446</td><td>ASTM A793-1996(R2009)</td><td>地板用轧制不锈钢钢板</td></tr>
+                 <tr><td>447</td><td>ASTM A794-2009</td><td>普通级冷轧薄钢板(含碳量最大0.16％至最大0.25％)</td></tr>
+                 <tr><td>448</td><td>ASTM A795-2008</td><td>防火用不锈钢无镀层和热浸镀锌焊接钢管</td></tr>
+                 <tr><td>449</td><td>ASTM A801-2009</td><td>铁－钴高磁饱和合金</td></tr>
+                 <tr><td>450</td><td>ASTM A802-1995(R2011)e1</td><td>视觉检测铸钢表面验收标准规程</td></tr>
+                 <tr><td>451</td><td>ASTM A803-2011</td><td>供水加热器用铁素体不锈钢焊接钢管</td></tr>
+                 <tr><td>452</td><td>ASTM A805-2009</td><td>冷轧碳素钢扁丝</td></tr>
+                 <tr><td>453</td><td>ASTM A806-1993</td><td>污水管和排水管用热浸镀铝锌合金薄钢板</td></tr>
+                 <tr><td>454</td><td>ASTM A808-2000a</td><td>提高缺口韧性的结构级高强度低合金碳锰铌钒钢</td></tr>
+                 <tr><td>455</td><td>ASTM A809-2008</td><td>热镀铝碳素钢钢丝</td></tr>
+                 <tr><td>456</td><td>ASTM A810-2001(R2009)e1</td><td>热浸镀锌钢丝制管用丝网</td></tr>
+                 <tr><td>457</td><td>ASTM A811-2003(R2008)</td><td>用粉末冶金法制造的软磁铁部件</td></tr>
+                 <tr><td>458</td><td>ASTM A812-1996</td><td>焊接层状压力容器用高强度低合金钢热轧薄钢板</td></tr>
+                 <tr><td>459</td><td>ASTM A813-2009</td><td>奥氏体不锈钢单面或双面焊接钢管(中英对照)</td></tr>
+                 <tr><td>460</td><td>ASTM A814-2008</td><td>冷加工奥氏体不锈钢焊接钢管(中英对照)</td></tr>
+                 <tr><td>461</td><td>ASTM A815-2010a</td><td>可锻铁素体、铁素体/奥氏体和马氏体不锈钢管道管配件</td></tr>
+                 <tr><td>462</td><td>ASTM A816-1991</td><td>热浸镀锌高强度低合金钢薄钢板</td></tr>
+                 <tr><td>463</td><td>ASTM A817-2007</td><td>链环栅栏编织物用金属镀层钢丝</td></tr>
+                 <tr><td>464</td><td>ASTM A818-2006(R2010)</td><td>镀铜碳素钢丝</td></tr>
+                 <tr><td>465</td><td>ASTM A819-1990</td><td>雨水和污水管用2型镀铝薄钢板</td></tr>
+                 <tr><td>466</td><td>ASTM A820-2011</td><td>加强混凝土用钢纤维</td></tr>
+                 <tr><td>467</td><td>ASTM A821-2010</td><td>预应力混凝土罐用的再拉硬拔钢丝</td></tr>
+                 <tr><td>468</td><td>ASTM A822-2004(R2010)</td><td>液压系统用碳素钢冷拔无缝钢管</td></tr>
+                 <tr><td>469</td><td>ASTM A823-1999(R2008)</td><td>金属模静态铸造灰口铁铸件</td></tr>
+                 <tr><td>470</td><td>ASTM A824-2001(R2007)</td><td>链环栅栏用金属镀层波浪形张力钢丝</td></tr>
+                 <tr><td>471</td><td>ASTM A826-1995(R2001)</td><td>增殖反应堆堆芯部件用奥氏体和铁素体不锈钢导管</td></tr>
+                 <tr><td>472</td><td>ASTM A827-2011</td><td>锻造用和类似用途碳素钢板</td></tr>
+                 <tr><td>473</td><td>ASTM A829-2011</td><td>结构级合金钢板</td></tr>
+                 <tr><td>474</td><td>ASTM A830-2011</td><td>按化学成分要求供货的结构级碳素钢板</td></tr>
+                 <tr><td>475</td><td>ASTM A831-1995(R2000)</td><td>堆芯部件用不锈与耐热钢棒材、钢坯及锻材</td></tr>
+                 <tr><td>476</td><td>ASTM A832-2010</td><td>压力容器用铬-钼-钒合金钢板</td></tr>
+                 <tr><td>477</td><td>ASTM A834-1995(R2011)</td><td>一般工业用铸铁件通用要求</td></tr>
+                 <tr><td>478</td><td>ASTM A835-2010</td><td>铁合金和合金添加料的块度</td></tr>
+                 <tr><td>479</td><td>ASTM A836-2002(R2007)</td><td>玻璃衬里管道和压力容器用的钛稳定碳素钢锻件</td></tr>
+                 <tr><td>480</td><td>ASTM A837-2006(R2011)</td><td>渗碳用合金钢锻件</td></tr>
+                 <tr><td>481</td><td>ASTM A838-2002(R2007)</td><td>继电器用易切削铁素体不锈软磁合金</td></tr>
+                 <tr><td>482</td><td>ASTM A839-2002(R2008)</td><td>采用粉末冶金技术制造的磷铁</td></tr>
+                 <tr><td>483</td><td>ASTM A840M-2006</td><td>成品磁性叠片钢</td></tr>
+                 <tr><td>484</td><td>ASTM A841-2003a(R2007)</td><td>用热机械控制工艺(TMCP)生产的压力容器用钢板</td></tr>
+                 <tr><td>485</td><td>ASTM A842-2011a</td><td>致密石墨铁铸件</td></tr>
+                 <tr><td>486</td><td>ASTM A844-2009</td><td>直接淬火法生产的压力容器用9％镍合金钢板</td></tr>
+                 <tr><td>487</td><td>ASTM A845-1985(R2000)</td><td>钢脱氧和添加合金用钛废料</td></tr>
+                 <tr><td>488</td><td>ASTM A846-1985(R2000)</td><td>钢脱氧和添加合金用铝废料</td></tr>
+                 <tr><td>489</td><td>ASTM A847-2011</td><td>耐大气腐蚀性较好的低合金高强度钢冷成形焊接和无缝结构钢管</td></tr>
+                 <tr><td>490</td><td>ASTM A848-2001(R2011)</td><td>低碳磁性铁</td></tr>
+                 <tr><td>491</td><td>ASTM A851-1996</td><td>冷凝器用奥氏体钢不经退火的高频感应焊接钢管</td></tr>
+                 <tr><td>492</td><td>ASTM A852-2003(R2007)</td><td>厚度小于和等于4英寸(100mm)、最小屈服点70千磅/英寸2(485MPa)淬火并回火低合金结构钢板</td></tr>
+                 <tr><td>493</td><td>ASTM A853-2004(R2010)</td><td>一般用途的碳素钢丝</td></tr>
+                 <tr><td>494</td><td>ASTM A854-2008</td><td>镀锌光面高抗拉强度栅栏和网格钢丝</td></tr>
+                 <tr><td>495</td><td>ASTM A855-2003(R2009)</td><td>锌－5％铝－混合稀土合金镀层钢绞线</td></tr>
+                 <tr><td>496</td><td>ASTM A856-2003(R2009)</td><td>锌－5％铝－混合稀土合金镀层碳素钢丝</td></tr>
+                 <tr><td>497</td><td>ASTM A857-2007</td><td>轻型冷成型钢板桩</td></tr>
+                 <tr><td>498</td><td>ASTM A858-2010a</td><td>在低温和腐蚀条件下使用的经热处理的碳素钢管配件</td></tr>
+                 <tr><td>499</td><td>ASTM A859-2004(R2009)</td><td>压力容器部件用低碳时效硬化镍铜铬钼钴合金钢锻件</td></tr>
+                 <tr><td>500</td><td>ASTM A860-2010</td><td>低合金高强度锻轧钢对焊管配件</td></tr>
+                 <tr><td>501</td><td>ASTM A861-2004(R2008)</td><td>高硅铸铁管和管件</td></tr>
+                 <tr><td>502</td><td>ASTM A864-1990</td><td>预应力混凝土轨枕用变形钢丝</td></tr>
+                 <tr><td>503</td><td>ASTM A865-2006</td><td>钢管连接用的无镀层或镀锌焊接或无缝螺纹管接头</td></tr>
+                 <tr><td>504</td><td>ASTM A866-2009</td><td>中碳耐磨轴承钢</td></tr>
+                 <tr><td>505</td><td>ASTM A867-2003(R2008)</td><td>铁－硅继电器钢</td></tr>
+                 <tr><td>506</td><td>ASTM A871-2003(R2007)</td><td>耐大气腐蚀的高强度低合金结构钢板</td></tr>
+                 <tr><td>507</td><td>ASTM A872-2007a</td><td>在腐蚀环境中使用的铁素体/奥氏体不锈钢离心铸造钢管</td></tr>
+                 <tr><td>508</td><td>ASTM A873-1987a</td><td>压力容器用铬钼合金钢薄板和钢带</td></tr>
+                 <tr><td>509</td><td>ASTM A874M-1998(R2009)</td><td>低温用铁素体球墨铁铸件［米制］</td></tr>
+                 <tr><td>510</td><td>ASTM A875-2010</td><td>锌－5％铝合金热浸镀覆薄钢板</td></tr>
+                 <tr><td>511</td><td>ASTM A876M-2009</td><td>成品型晶粒取向硅－铁电工钢板</td></tr>
+                 <tr><td>512</td><td>ASTM A877-2010</td><td>阀门弹簧级铬硅合金钢丝</td></tr>
+                 <tr><td>513</td><td>ASTM A878-2005(R2011)</td><td>阀门弹簧级调质铬钒合金钢丝</td></tr>
+                 <tr><td>514</td><td>ASTM A879-2006</td><td>每面均有镀层重量符号要求的电镀锌薄钢板</td></tr>
+                 <tr><td>515</td><td>ASTM A881-2010</td><td>预应力混凝土轨枕用变形、消应力和低松驰钢丝</td></tr>
+                 <tr><td>516</td><td>ASTM A882-2004a(R2010)</td><td>环氧树脂涂层预应力七根钢丝绞线</td></tr>
+                 <tr><td>517</td><td>ASTM A884-2006</td><td>混凝土配筋用环氧树脂涂层钢丝玫焊接钢丝网</td></tr>
+                 <tr><td>518</td><td>ASTM A885-1996(R2002)</td><td>污水管、涵洞和地下排水波纹管用锌和阿拉米纤维复合涂层钢板</td></tr>
+                 <tr><td>519</td><td>ASTM A886-2010</td><td>预应力混凝土用刻痕的消除应力七根钢丝绞线</td></tr>
+                 <tr><td>520</td><td>ASTM A887-1989(R2009)</td><td>核能用镀硼不锈钢中厚板、薄板和钢带</td></tr>
+                 <tr><td>521</td><td>ASTM A888-2011</td><td>生活污水、雨水排放、废水和通气管用无承插铸铁下水道管及管件</td></tr>
+                 <tr><td>522</td><td>ASTM A890-2010</td><td>一般用途的铁－铬－镍－钼－耐腐蚀双相(奥氏体/铁素体)钢铸件</td></tr>
+                 <tr><td>523</td><td>ASTM A891-2010</td><td>涡轮转子盘及涡轮用弥散硬化铁基超合金</td></tr>
+                 <tr><td>524</td><td>ASTM A895M-1989(R2009)</td><td>易切削不锈钢中厚板、薄板和钢带</td></tr>
+                 <tr><td>525</td><td>ASTM A897M-2006</td><td>等温淬火球墨铁铸件(米制)</td></tr>
+                 <tr><td>526</td><td>ASTM A899-1991(R2007)</td><td>环氧树脂涂层钢丝</td></tr>
+                 <tr><td>527</td><td>ASTM A901-2003(R2008)</td><td>半成品型非晶磁芯合金</td></tr>
+                 <tr><td>528</td><td>ASTM A904-2009</td><td>50镍-50铁粉末冶金(P/M)软磁合金</td></tr>
+                 <tr><td>529</td><td>ASTM A905-2004(R2010)</td><td>压力容器绕线用钢丝</td></tr>
+                 <tr><td>530</td><td>ASTM A906-2002(R2010)</td><td>起吊用合金钢链钩</td></tr>
+                 <tr><td>531</td><td>ASTM A907-1996</td><td>结构级热轧碳素钢厚板卷和厚带卷</td></tr>
+                 <tr><td>532</td><td>ASTM A941-2010a</td><td>与钢、不锈钢、相关合金和铁合金有关的术语</td></tr>
+                 <tr><td>533</td><td>ASTM A960-2010</td><td>锻轧钢管道用管配件的共同要求</td></tr>
+                 <tr><td>534</td><td>ASTM A961-2011</td><td>管道用钢法兰，锻造管配件及阀门零件通用要求</td></tr>
+                 <tr><td>535</td><td>ASTM A962-2011a</td><td>在低温到蠕变温度范围任意温度使用的钢制紧固件或紧固件材料或两者的通用要求</td></tr>
+                 <tr><td>536</td><td>ASTM A967-2005(R2010)e2</td><td>不锈钢部件化学钝化处理标准</td></tr>
+                 <tr><td>537</td><td>ASTM A965-2010</td><td>高温承压件用奥氏体钢锻件标准规范</td></tr>
+                 <tr><td>538</td><td>ASTM A985-2011a</td><td>承压件熔模铸造钢铸件通用要求</td></tr>
+                 <tr><td>539</td><td>ASTM A995-2009</td><td>承压元件用奥氏体-铁素体(双相)不锈钢铸件</td></tr>
+                 <tr><td>540</td><td>ASTM A999-2011</td><td>合金钢和不锈钢公称管通用要求</td></tr>
+                 <tr><td>541</td><td>ASTM A1008-2011</td><td>高强度低合金碳素结构钢和改良成形性高强度低合金钢冷轧薄板</td></tr>
+                 <tr><td>542</td><td>ASTM A1010-2001e1(R2009)</td><td>高强度马氏体不锈钢钢板、薄板和钢带</td></tr>
+                 <tr><td>543</td><td>ASTM A1011-2010</td><td>碳素结构钢、低合金高强度钢、改良成型性高强度低合金钢和超高强度钢热轧薄钢板及钢带1</td></tr>
+                 <tr><td>544</td><td>ASTM A1016-2011a</td><td>铁素体合金钢和奥氏体合金钢管子通用要求</td></tr>
+                 <tr><td>545</td><td>ASTM A1017-2011</td><td>压力容器用铬-钼-钨合金钢钢板</td></tr>
+                 <tr><td>546</td><td>ASTM B1-2001(R2007)</td><td>拉制硬态铜线</td></tr>
+                 <tr><td>547</td><td>ASTM B2-2008</td><td>拉制半硬态铜线</td></tr>
+                 <tr><td>548</td><td>ASTM B3-2001(R2007)</td><td>软态或退火铜线</td></tr>
+                 <tr><td>549</td><td>ASTM B5-2011</td><td>电解精炼韧铜型锭</td></tr>
+                 <tr><td>550</td><td>ASTM B6-2009</td><td>锌金属</td></tr>
+                 <tr><td>551</td><td>ASTM B8-2011</td><td>硬态、半硬态或软态同心绞合铜导线</td></tr>
+                 <tr><td>552</td><td>ASTM B9-1990(R2008)</td><td>青铜电车架空线</td></tr>
+                 <tr><td>553</td><td>ASTM B16-2010</td><td>螺纹切削机用易车削黄铜棒、条和型材标准规范</td></tr>
+                 <tr><td>554</td><td>ASTM B19-2010</td><td>弹壳用黄铜薄板、带、厚板、条和圆坯</td></tr>
+                 <tr><td>555</td><td>ASTM B21M-2006</td><td>海军黄铜棒材、条材和型材(米制)</td></tr>
+                 <tr><td>556</td><td>ASTM B22-2009（R2012）e2</td><td>桥梁和转台有青铜铸件</td></tr>
+                 <tr><td>557</td><td>ASTM B23-2000(R2010)</td><td>巴比轴承合金</td></tr>
+                 <tr><td>558</td><td>ASTM B26-2011</td><td>铝合金砂铸件标准规范</td></tr>
+                 <tr><td>559</td><td>ASTM B29-2003(R2009)</td><td>精炼铅</td></tr>
+                 <tr><td>560</td><td>ASTM B30-2011</td><td>铜基合金锭</td></tr>
+                 <tr><td>561</td><td>ASTM B32-2008</td><td>钎焊料金属</td></tr>
+                 <tr><td>562</td><td>ASTM B33-2010</td><td>电气用软态或退火镀锡铜线</td></tr>
+                 <tr><td>563</td><td>ASTM B36-2008a</td><td>黄铜厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>564</td><td>ASTM B37-2008</td><td>钢铁生产用铝</td></tr>
+                 <tr><td>565</td><td>ASTM B39-1979(R2008)</td><td>镍</td></tr>
+                 <tr><td>566</td><td>ASTM B42-2010</td><td>标准尺寸无缝铜公称管</td></tr>
+                 <tr><td>567</td><td>ASTM B43-2009</td><td>标准尺寸无缝锡锌黄铜公称管</td></tr>
+                 <tr><td>568</td><td>ASTM B47-1995a(R2007)</td><td>铜电车架空线</td></tr>
+                 <tr><td>569</td><td>ASTM B48-2000(R2011)</td><td>电导体用矩形和方形软态裸铜线</td></tr>
+                 <tr><td>570</td><td>ASTM B49-2010</td><td>电气用再拉铜盘条</td></tr>
+                 <tr><td>571</td><td>ASTM B61-2008</td><td>蒸汽红黄铜或阀青铜铸件</td></tr>
+                 <tr><td>572</td><td>ASTM B62-2009</td><td>青铜或高铜黄铜铸件标准规范</td></tr>
+                 <tr><td>573</td><td>ASTM B66-2006(R2009)e1</td><td>机车磨损件用青铜铸件毛坯</td></tr>
+                 <tr><td>574</td><td>ASTM B67-2005(R2011)</td><td>车辆及煤水车用镶轴瓦滑动轴承</td></tr>
+                 <tr><td>575</td><td>ASTM B68M-2011</td><td>光亮退火无缝铜管(米制)</td></tr>
+                 <tr><td>576</td><td>ASTM B69-2011</td><td>轧制锌材</td></tr>
+                 <tr><td>577</td><td>ASTM B75M-2011</td><td>无缝铜管(米制)</td></tr>
+                 <tr><td>578</td><td>ASTM B80-2009</td><td>镁合金砂型铸件</td></tr>
+                 <tr><td>579</td><td>ASTM B85-2010</td><td>铝合金压铸件</td></tr>
+                 <tr><td>580</td><td>ASTM B88M-2009</td><td>无缝铜水管(米制)</td></tr>
+                 <tr><td>581</td><td>ASTM B90-2007</td><td>镁合金薄板和厚板</td></tr>
+                 <tr><td>582</td><td>ASTM B91-2007</td><td>镁合金锻件</td></tr>
+                 <tr><td>583</td><td>ASTM B92-2011</td><td>重熔用镁锭及镁棒</td></tr>
+                 <tr><td>584</td><td>ASTM B93-2009</td><td>砂型铸件、永久型铸件及压铸件用镁合金锭</td></tr>
+                 <tr><td>585</td><td>ASTM B94-2007</td><td>镁合金压铸件</td></tr>
+                 <tr><td>586</td><td>ASTM B96-2011</td><td>一般用途及压力容器用的铜硅合金厚板、薄板、带材和轧条</td></tr>
+                 <tr><td>587</td><td>ASTM B98M-2008</td><td>铜硅合金棒材、条材和型材(米制)</td></tr>
+                 <tr><td>588</td><td>ASTM B99M-2011</td><td>一般用途的铜硅合金线材(米制)</td></tr>
+                 <tr><td>589</td><td>ASTM B100-2008</td><td>桥梁和其他结构用途加工铜合金支承及伸缩厚板和薄板</td></tr>
+                 <tr><td>590</td><td>ASTM B101-2007</td><td>镀铅铜薄板</td></tr>
+                 <tr><td>591</td><td>ASTM B103-2010</td><td>磷青铜中厚板、薄板、带及轧制条材</td></tr>
+                 <tr><td>592</td><td>ASTM B105-2005</td><td>电导体用拉制硬态铜合金线</td></tr>
+                 <tr><td>593</td><td>ASTM B107-2007</td><td>镁合金挤压异形棒、圆棒、型材、管材和线材</td></tr>
+                 <tr><td>594</td><td>ASTM B108-2011</td><td>永久型铝合金铸件</td></tr>
+                 <tr><td>595</td><td>ASTM B111M-2011</td><td>铜及铜合金无缝冷凝管和管口密套件(米制)</td></tr>
+                 <tr><td>596</td><td>ASTM B115-2010</td><td>电解阴极铜</td></tr>
+                 <tr><td>597</td><td>ASTM B116-1995(R2007)</td><td>工业运输用9字形带深槽铜电车架空线和8字形铜电车架空线</td></tr>
+                 <tr><td>598</td><td>ASTM B117-2011</td><td>盐雾试验仪的标准操作规程</td></tr>
+                 <tr><td>599</td><td>ASTM B121-2011</td><td>加铅黄铜板、薄板、带及轧制棒</td></tr>
+                 <tr><td>600</td><td>ASTM B122-2011</td><td>铜镍锡合金、铜镍锌合金(镍银)和铜镍合金厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>601</td><td>ASTM B124M-2011b</td><td>铜及铜合金锻制棒、条和型材(米制)</td></tr>
+                 <tr><td>602</td><td>ASTM B127-2005(R2009)</td><td>镍-铜合金(UNS N04400)板材、薄板和带材</td></tr>
+                 <tr><td>603</td><td>ASTM B129-2007</td><td>黄铜弹壳深冲件</td></tr>
+                 <tr><td>604</td><td>ASTM B130-2008</td><td>深冲子弹壳用工业青铜带材</td></tr>
+                 <tr><td>605</td><td>ASTM B131-2007</td><td>铜合金弹壳深冲件</td></tr>
+                 <tr><td>606</td><td>ASTM B133M-1993a</td><td>铜棒材、条材和型材</td></tr>
+                 <tr><td>607</td><td>ASTM B134-2008</td><td>黄铜线</td></tr>
+                 <tr><td>608</td><td>ASTM B135-2010</td><td>无缝黄铜管子</td></tr>
+                 <tr><td>609</td><td>ASTM B137-1995(R2009)</td><td>铝阳极氧化镀层重量测量方法</td></tr>
+                 <tr><td>610</td><td>ASTM B138M-2011</td><td>锰青铜棒、条和型材(米制)</td></tr>
+                 <tr><td>611</td><td>ASTM B139-2007</td><td>磷青铜棒材、条材和型材</td></tr>
+                 <tr><td>612</td><td>ASTM B140M-2007</td><td>铜锌铅(含铅红铜和小五金青铜)棒材、条材和型材(米制)</td></tr>
+                 <tr><td>613</td><td>ASTM B148-1997(R2009)</td><td>铝青铜砂型铸件</td></tr>
+                 <tr><td>614</td><td>ASTM B150M-2008</td><td>铝青铜棒材、条材和型材</td></tr>
+                 <tr><td>615</td><td>ASTM B151M-2005(R2011)</td><td>铜镍锌合金(镍银)和铜镍合金棒材与条材(米制)</td></tr>
+                 <tr><td>616</td><td>ASTM B152M-2009</td><td>铜薄板、带、中厚板和轧制条材(米制)</td></tr>
+                 <tr><td>617</td><td>ASTM B159M-2011</td><td>磷青铜线(米制)</td></tr>
+                 <tr><td>618</td><td>ASTM B160-2005(R2011)e1</td><td>镍圆棒和异形棒</td></tr>
+                 <tr><td>619</td><td>ASTM B161-2005(R2009)</td><td>镍无缝管</td></tr>
+                 <tr><td>620</td><td>ASTM B162-1999(R2009)</td><td>镍板材、薄板和带材</td></tr>
+                 <tr><td>621</td><td>ASTM B163-2011</td><td>冷凝器和热交换器用镍和镍合金无缝非标准尺寸管材</td></tr>
+                 <tr><td>622</td><td>ASTM B164-2003(R2008)</td><td>镍铜合金圆棒、异形棒和线材</td></tr>
+                 <tr><td>623</td><td>ASTM B165-2005(R2009)</td><td>镍铜合金(UNS N04400)无缝管</td></tr>
+                 <tr><td>624</td><td>ASTM B166-2011</td><td>镍－铬－铁合金(UNS N06600、N06601和N06690)以及镍－铬－钴－钼合金(UNS N06617)圆棒、异形棒和线材</td></tr>
+                 <tr><td>625</td><td>ASTM B167-2011</td><td>镍－铬－铁合金(UNS N06600、N06601和N06690)无缝管</td></tr>
+                 <tr><td>626</td><td>ASTM B168-2011</td><td>镍－铬－铁合金(UNS N06600、N06601和N06690)及镍－铬－钴－钼合金(UNS N06617)中厚板、薄板和带材</td></tr>
+                 <tr><td>627</td><td>ASTM B169M-2010</td><td>铝青铜中厚板、薄板、带材和轧制条材(米制)</td></tr>
+                 <tr><td>628</td><td>ASTM B170-1999(R2011)e1</td><td>无氧电解铜－精炼型锭</td></tr>
+                 <tr><td>629</td><td>ASTM B171M-2011</td><td>压力容器、冷凝器和热交换器用的铜合金厚板和薄板(米制)</td></tr>
+                 <tr><td>630</td><td>ASTM B172-2010</td><td>电导体用由分股绞合索构成的绳索绞合铜导线</td></tr>
+                 <tr><td>631</td><td>ASTM B173-2010</td><td>电导体用由分股同心绞合线构成的绳索绞合铜导线</td></tr>
+                 <tr><td>632</td><td>ASTM B174-2010</td><td>电导体用多股绞合铜导线</td></tr>
+                 <tr><td>633</td><td>ASTM B176-2008</td><td>铜合金压铸件</td></tr>
+                 <tr><td>634</td><td>ASTM B177-2011</td><td>工程用钢表面镀铬</td></tr>
+                 <tr><td>635</td><td>ASTM B179-2011</td><td>砂型铸件、永久型铸件及压铸件用的铝合金锭</td></tr>
+                 <tr><td>636</td><td>ASTM B187-2011</td><td>母线用铜条材、棒材和型材</td></tr>
+                 <tr><td>637</td><td>ASTM B188-2010</td><td>母线用无缝钢管</td></tr>
+                 <tr><td>638</td><td>ASTM B189-2005(R2010)</td><td>电气用镀铅和镀铅合金软态铜线</td></tr>
+                 <tr><td>639</td><td>ASTM B194-2008</td><td>铜铍合金中厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>640</td><td>ASTM B196M-2007</td><td>铜铍合金棒材和条材(米制)</td></tr>
+                 <tr><td>641</td><td>ASTM B197-2007</td><td>铜铍合金线</td></tr>
+                 <tr><td>642</td><td>ASTM B199-2007</td><td>镁合金永久型铸件</td></tr>
+                 <tr><td>643</td><td>ASTM B206M-2007</td><td>铜镍锌合金(镍银)线和铜镍合金线(米制)</td></tr>
+                 <tr><td>644</td><td>ASTM B209-2010</td><td>铝和铝合金片和铝合金板标准</td></tr>
+                 <tr><td>645</td><td>ASTM B210-2005</td><td>铝和铝合金拉制无缝管子</td></tr>
+                 <tr><td>646</td><td>ASTM B211M-2003</td><td>铝和铝合金异形棒、圆棒和线材(米制)</td></tr>
+                 <tr><td>647</td><td>ASTM B216-2010</td><td>生产加工产品用的火法精炼韧铜及铜合金－精炼型锭</td></tr>
+                 <tr><td>648</td><td>ASTM B217-1963</td><td>高温承压零件用马氏体不锈钢和合金钢铸件</td></tr>
+                 <tr><td>649</td><td>ASTM B221M-2008</td><td>铝和铝合金挤制圆棒、异形棒、线材、型材和管材(米制)</td></tr>
+                 <tr><td>650</td><td>ASTM B224-2010</td><td>铜的标准分类</td></tr>
+                 <tr><td>651</td><td>ASTM B226-2011</td><td>有芯圆环形同心绞合铜导线</td></tr>
+                 <tr><td>652</td><td>ASTM B227-2010</td><td>拉制硬态包铜钢线</td></tr>
+                 <tr><td>653</td><td>ASTM B228-2011a</td><td>同心绞合包铜钢导线</td></tr>
+                 <tr><td>654</td><td>ASTM B229-2004</td><td>铜和包铜钢复合同心绞线</td></tr>
+                 <tr><td>655</td><td>ASTM B230M-2007</td><td>电气用1350-H19铝线(米制)</td></tr>
+                 <tr><td>656</td><td>ASTM B231-2011</td><td>同心绞合1350铝导线</td></tr>
+                 <tr><td>657</td><td>ASTM B232M-2011</td><td>同心绞合镀层钢芯铝导线(ACSR)(米制)</td></tr>
+                 <tr><td>658</td><td>ASTM B233-1997(R2007)</td><td>电气用1350铝拉丝坯盘条</td></tr>
+                 <tr><td>659</td><td>ASTM B234M-2010</td><td>冷凝器与热交换器用铝合金拉制无缝管(米制)</td></tr>
+                 <tr><td>660</td><td>ASTM B236M-2007</td><td>电气用铝棒(母线)</td></tr>
+                 <tr><td>661</td><td>ASTM B241-2010</td><td>铝和铝合金无缝公称管和无缝挤压管子</td></tr>
+                 <tr><td>662</td><td>ASTM B244-2009</td><td>用涡流法检测铝材的阳极氧化涂层厚度及在其它非磁性基体金属绝缘涂层厚度的方法</td></tr>
+                 <tr><td>663</td><td>ASTM B247M-2009</td><td>铝和铝合金模锻件、手工锻件和轧制环形锻件(米制)</td></tr>
+                 <tr><td>664</td><td>ASTM B248M-2007</td><td>铜和铜合金加工厚板、薄板、带材和轧制条材的一般要求(米制)</td></tr>
+                 <tr><td>665</td><td>ASTM B249-2011</td><td>铜和铜合金加工棒材、条材和型材的一般要求</td></tr>
+                 <tr><td>666</td><td>ASTM B250M-2007</td><td>加工铜合金线材的一般要求(米制)</td></tr>
+                 <tr><td>667</td><td>ASTM B251M-2010</td><td>加工铜和铜合金无缝管的一般要求(米制)</td></tr>
+                 <tr><td>668</td><td>ASTM B254-1992 (R2009)</td><td>不锈钢处理及电镀的规程</td></tr>
+                 <tr><td>669</td><td>ASTM B253-2011</td><td>电镀用铝合金的制备</td></tr>
+                 <tr><td>670</td><td>ASTM B265-2011</td><td>钛和钛合金带材、薄板和中厚板材</td></tr>
+                 <tr><td>671</td><td>ASTM B267-2007</td><td>绕线电阻器用丝材</td></tr>
+                 <tr><td>672</td><td>ASTM B271-2011</td><td>铜基合金离心浇注铸件</td></tr>
+                 <tr><td>673</td><td>ASTM B272-2007</td><td>带轧制或拉制边的扁平铜产品(扁线和带材)</td></tr>
+                 <tr><td>674</td><td>ASTM B280-2008</td><td>空调及制冷设备用无缝铜管</td></tr>
+                 <tr><td>675</td><td>ASTM B283-2011a</td><td>铜及铜合金热压模锻件</td></tr>
+                 <tr><td>676</td><td>ASTM B286-2007</td><td>电子设备连接线用铜导线</td></tr>
+                 <tr><td>677</td><td>ASTM B291-1991</td><td>铜锌锰合金(锰黄铜)薄板和带材</td></tr>
+                 <tr><td>678</td><td>ASTM B298-2007</td><td>镀银软态或退火铜线</td></tr>
+                 <tr><td>679</td><td>ASTM B299-2008</td><td>海绵钛</td></tr>
+                 <tr><td>680</td><td>ASTM B301M-2008</td><td>易切削黄铜棒材和条材(米制)</td></tr>
+                 <tr><td>681</td><td>ASTM B302-2007</td><td>无螺纹铜管</td></tr>
+                 <tr><td>682</td><td>ASTM B306-2009</td><td>铜排水管(DWV)</td></tr>
+                 <tr><td>683</td><td>ASTM B308-2010</td><td>6061－T6铝合金标准结构型材</td></tr>
+                 <tr><td>684</td><td>ASTM B313-2009</td><td>铝及铝合金焊接圆管</td></tr>
+                 <tr><td>685</td><td>ASTM B314-1990</td><td>通讯电缆用1350铝线</td></tr>
+                 <tr><td>686</td><td>ASTM B315-2006</td><td>无缝铜合金公称管和管子</td></tr>
+                 <tr><td>687</td><td>ASTM B316-2010</td><td>铝及铝合金铆钉和冷镦用线材与圆棒(米制)</td></tr>
+                 <tr><td>688</td><td>ASTM B317-2007</td><td>导电(母线)用铝合金挤制条材、棒材、管材和结构型材</td></tr>
+                 <tr><td>689</td><td>ASTM B322-1999 (R2009)</td><td>电镀前的金属清洗的标准方法</td></tr>
+                 <tr><td>690</td><td>ASTM B324-2001（R2007）</td><td>电气用矩形和方形铝线</td></tr>
+                 <tr><td>691</td><td>ASTM B327-2009a(R2011)e1</td><td>压铸锌合金用铝中间合金</td></tr>
+                 <tr><td>692</td><td>ASTM B333-2003(R2008)</td><td>镍－钼合金中厚板、薄板和带材</td></tr>
+                 <tr><td>693</td><td>ASTM B335-2003(R2008)</td><td>镍－钼合金圆棒</td></tr>
+                 <tr><td>694</td><td>ASTM B338-2010</td><td>冷凝器和热交换器用无缝和焊接的钛和钛合金管子</td></tr>
+                 <tr><td>695</td><td>ASTM B339-2000(R2010)</td><td>锡锭</td></tr>
+                 <tr><td>696</td><td>ASTM B341M-1993</td><td>钢芯铝绞线(ACSR/AZ)用镀铝钢芯线(米制)</td></tr>
+                 <tr><td>697</td><td>ASTM B343-1992a（R2009）</td><td>镍电镀用镍的制备</td></tr>
+                 <tr><td>698</td><td>ASTM B345M-2011</td><td>煤气和石油输送与管网分配系统用铝和铝合金无缝管和无缝挤压管(米制)</td></tr>
+                 <tr><td>699</td><td>ASTM B348-2011</td><td>钛和钛合金棒料和坯料</td></tr>
+                 <tr><td>700</td><td>ASTM B350-2011</td><td>核工来用锆和锆合金锭</td></tr>
+                 <tr><td>701</td><td>ASTM B351-2008(R2009)e1</td><td>核工业用热轧和冷加工锆和锆合金棒材和线材</td></tr>
+                 <tr><td>702</td><td>ASTM B352-2011</td><td>核工业用锆和锆合金薄板、带材和中厚板材</td></tr>
+                 <tr><td>703</td><td>ASTM B353-2007</td><td>核设施用形变锆和锆合金无缝管和焊接管</td></tr>
+                 <tr><td>704</td><td>ASTM B355-2011</td><td>镀镍软态或退火铜线</td></tr>
+                 <tr><td>705</td><td>ASTM B359M-2002(R2006)</td><td>冷凝器及热交换器用铜与铜合金无缝翅片管(米制)</td></tr>
+                 <tr><td>706</td><td>ASTM B360-2009</td><td>限流用拉制硬态铜毛细管</td></tr>
+                 <tr><td>707</td><td>ASTM B361-2008</td><td>工厂制造的形变铝和铝合金焊接配件</td></tr>
+                 <tr><td>708</td><td>ASTM B363-2006a</td><td>无缝和焊接的非合金钛和钛合金焊接管配件</td></tr>
+                 <tr><td>709</td><td>ASTM B364-1996(R2009)</td><td>钽和钽合金锭</td></tr>
+                 <tr><td>710</td><td>ASTM B365-1998(R2004)</td><td>钽和钽合金棒材和线材</td></tr>
+                 <tr><td>711</td><td>ASTM B366-2010a</td><td>工厂制造锻轧镍和镍合金管配件</td></tr>
+                 <tr><td>712</td><td>ASTM B367-2009</td><td>钛和钛合金铸件</td></tr>
+                 <tr><td>713</td><td>ASTM B370-2011</td><td>建筑结构用铜薄板和带材</td></tr>
+                 <tr><td>714</td><td>ASTM B371-2008</td><td>铜锌硅合金棒材</td></tr>
+                 <tr><td>715</td><td>ASTM B372-2011</td><td>铜和铜合金无缝矩形波导管</td></tr>
+                 <tr><td>716</td><td>ASTM B373-2000(R2006)</td><td>电容器用铝箔</td></tr>
+                 <tr><td>717</td><td>ASTM B379-2011</td><td>磷铜－精炼型锭</td></tr>
+                 <tr><td>718</td><td>ASTM B380-1997(R2008)e1</td><td>装饰性电镀层的腐蚀膏试验法</td></tr>
+                 <tr><td>719</td><td>ASTM B381-2010（R2011）e1</td><td>钛和钛合金锻件规格</td></tr>
+                 <tr><td>720</td><td>ASTM B386-2003(R2011)</td><td>钼和钼合金中厚板、薄板、带材和箔材</td></tr>
+                 <tr><td>721</td><td>ASTM B368-2009</td><td>用醋酸-铜盐喷雾法进行加速腐蚀试验（CASS试验）的标准试验方法</td></tr>
+                 <tr><td>722</td><td>ASTM B387-2010</td><td>钼和钼合金棒材和线材</td></tr>
+                 <tr><td>723</td><td>ASTM B388-2006</td><td>双金属片用薄板和带材</td></tr>
+                 <tr><td>724</td><td>ASTM B391-2009(R2010)e1</td><td>铌和铌合金锭</td></tr>
+                 <tr><td>725</td><td>ASTM B392-2009(R2010)e1</td><td>铌和铌合金扁材、棒材和线材</td></tr>
+                 <tr><td>726</td><td>ASTM B393-2009(R2010)e1</td><td>铌和铌合金带材、薄板和中厚板</td></tr>
+                 <tr><td>727</td><td>ASTM B394-2009(R2010)e1</td><td>铌和铌合金无缝和焊接管</td></tr>
+                 <tr><td>728</td><td>ASTM B395-2008</td><td>U型弯头无缝铜和铜合金热交换器和冷凝器管子</td></tr>
+                 <tr><td>729</td><td>ASTM B396-2000</td><td>电气用5005-H19铝合金线</td></tr>
+                 <tr><td>730</td><td>ASTM B397-1985(R1999)</td><td>5005-H19铝合金同心绞合导线</td></tr>
+                 <tr><td>731</td><td>ASTM B398M-2002（R2007）</td><td>电气用6201-T81铝合金线(米制)</td></tr>
+                 <tr><td>732</td><td>ASTM B399M-2004（R2010）</td><td>6201-T81铝合金同心绞合导线［米制］</td></tr>
+                 <tr><td>733</td><td>ASTM B400-2008</td><td>1350铝紧密型同心绞合圆导线</td></tr>
+                 <tr><td>734</td><td>ASTM B401-2004（R2010）</td><td>紧密型钢芯同心绞合圆形铝导线(ACSR/COMP)</td></tr>
+                 <tr><td>735</td><td>ASTM B403-2007</td><td>镁合金熔模铸件</td></tr>
+                 <tr><td>736</td><td>ASTM B404M-2002</td><td>冷凝器和热交换器用铝或铝合金无缝翅片管(米制)</td></tr>
+                 <tr><td>737</td><td>ASTM B407-2008a</td><td>镍铁铬合金无缝管</td></tr>
+                 <tr><td>738</td><td>ASTM B408-2006(R2011)</td><td>镍铁铬合金圆棒和异形棒</td></tr>
+                 <tr><td>739</td><td>ASTM B409-2006(R2011)</td><td>镍铁铬合金中厚板、薄板和带材</td></tr>
+                 <tr><td>740</td><td>ASTM B411-2008</td><td>铜镍硅合金棒材和条材</td></tr>
+                 <tr><td>741</td><td>ASTM B412-1995</td><td>铜镍硅合金线材</td></tr>
+                 <tr><td>742</td><td>ASTM B413-1997a(R2008)</td><td>精炼银</td></tr>
+                 <tr><td>743</td><td>ASTM B415-1998(R2007)</td><td>冷拉包钢铝包丝</td></tr>
+                 <tr><td>744</td><td>ASTM B416-1998(R2007)</td><td>同心绞合包铝钢导线</td></tr>
+                 <tr><td>745</td><td>ASTM B422-2010</td><td>铜铝硅钴合金、铜镍硅镁合金和铜镍铝镁合金薄板与带材</td></tr>
+                 <tr><td>746</td><td>ASTM B423-2011</td><td>镍-铁-铬-钼-铜合金(UNS N08825和UNS N08221)无缝公称管和管子</td></tr>
+                 <tr><td>747</td><td>ASTM B424-2011</td><td>镍-铁-铬-钼-铜合金(UNS N08825和UNS N08221)板材、薄板和带材</td></tr>
+                 <tr><td>748</td><td>ASTM B425-2011</td><td>镍铁铬钼铜合金(UNS N08825和UNS N08221)圆棒和异形棒</td></tr>
+                 <tr><td>749</td><td>ASTM B427-2009</td><td>青铜合金齿轮铸件</td></tr>
+                 <tr><td>750</td><td>ASTM B429-2010(R2012)e1</td><td>铝合金挤制结构管</td></tr>
+                 <tr><td>751</td><td>ASTM B432-2009a</td><td>包覆铜和铜合金中厚钢板</td></tr>
+                 <tr><td>752</td><td>ASTM B434-2006(R2011)</td><td>镍钼铬铁合金(UNS N10003)中厚板、薄板和带材</td></tr>
+                 <tr><td>753</td><td>ASTM B435-2006(R2011)</td><td>UNS N06002,UNS N06230，UNS N012160和UNS R30556板材、薄板和带材</td></tr>
+                 <tr><td>754</td><td>ASTM B443-2000(R2009)</td><td>(UNS N06625)和镍-铬-钼-硅合金(UNS N06219)板材、薄板和带材</td></tr>
+                 <tr><td>755</td><td>ASTM B440-2011</td><td>镉</td></tr>
+                 <tr><td>756</td><td>ASTM B441-2004(R2010)</td><td>铜钴铍合金(UNS号C17500)和铜镍铍合金(UNS号C17510)棒材和条材</td></tr>
+                 <tr><td>757</td><td>ASTM B442-1980(R1987)</td><td>化学法精炼的紫铜型锭</td></tr>
+                 <tr><td>758</td><td>ASTM B444-2006（R2011）</td><td>镍铬钼铌合金(UNS N06625)无缝管</td></tr>
+                 <tr><td>759</td><td>ASTM B445-1987</td><td>镍铬铁铌钼钨合金(UNS N06102)无缝管</td></tr>
+                 <tr><td>760</td><td>ASTM B446-1993（R2010）e1</td><td>镍铬钼铌合金(UNS N06625)圆棒和异形棒</td></tr>
+                 <tr><td>761</td><td>ASTM B447-2007</td><td>焊接铜管</td></tr>
+                 <tr><td>762</td><td>ASTM B449-1993(R2010)e1</td><td>铝的铬酸盐处理标准规范</td></tr>
+                 <tr><td>763</td><td>ASTM B451-1993</td><td>印刷电路和载波带用铜箔、带和薄板</td></tr>
+                 <tr><td>764</td><td>ASTM B452-2009</td><td>电子工业用包铜钢丝</td></tr>
+                 <tr><td>765</td><td>ASTM B453M-2011</td><td>铜锌铅合金(含铅黄铜)棒材(米制)</td></tr>
+                 <tr><td>766</td><td>ASTM B455-2010</td><td>铜锌铅合金(含铅黄铜)挤压型材</td></tr>
+                 <tr><td>767</td><td>ASTM B462-2010（R2011）e1</td><td>高温耐腐蚀用锻制或轧制的UNS NO6030、UNS NO6022、UNSNO6200、UNS NO8020、UNS NO8024、UNS NO8026、UNSNO8367、UNS NO10276、UNS N10665、UNS N10675和UNSR20033合金管法兰、锻制管件、阀门和零件标准规范</td></tr>
+                 <tr><td>768</td><td>ASTM B463-2010</td><td>UNS N08020,UNS N08026和UNS N08024合金板材、薄板和带材</td></tr>
+                 <tr><td>769</td><td>ASTM B464-2010</td><td>合金UNS N08020、UNS N08024和UNS N08026标准尺寸焊接管(一般用途)</td></tr>
+                 <tr><td>770</td><td>ASTM B465-2011</td><td>铜铁合金中厚板、薄板、带和轧制棒</td></tr>
+                 <tr><td>771</td><td>ASTM B466-2009</td><td>无缝铜-镍合金公称管和管子</td></tr>
+                 <tr><td>772</td><td>ASTM B467-2009</td><td>铜镍合金焊接管</td></tr>
+                 <tr><td>773</td><td>ASTM B468-2010</td><td>合金UNS N08020、N08024和N08026非标准尺寸焊接管(锅炉、热交换器和冷凝器用)</td></tr>
+                 <tr><td>774</td><td>ASTM B469-1994</td><td>承压用铜合金无缝管</td></tr>
+                 <tr><td>775</td><td>ASTM B470-2002(R2007)</td><td>电子设备连接线用焊合铜导线</td></tr>
+                 <tr><td>776</td><td>ASTM B471-1993</td><td>UNS N08020、UNS N08026和UNS N08024镍合金圆形弹簧线材</td></tr>
+                 <tr><td>777</td><td>ASTM B472-2010</td><td>供再锻造用的UNS N08020、UNS N08026、UNS N08024、UNSN08926和UNS N08367镍合金坯料及条材</td></tr>
+                 <tr><td>778</td><td>ASTM B473-2007</td><td>UNS N08020、UNS N08026和UNS N08024镍合金条材及线材</td></tr>
+                 <tr><td>779</td><td>ASTM B474-2003（R2009）</td><td>镍合金UNS N08020、N08026和N08024电熔焊管</td></tr>
+                 <tr><td>780</td><td>ASTM B475-2007</td><td>UNS N08020、UNS N08026和UNS N08024镍合金圆形编织用丝</td></tr>
+                 <tr><td>781</td><td>ASTM B476-2001（R2006）</td><td>贵金属电触头材料一般要求</td></tr>
+                 <tr><td>782</td><td>ASTM B477-1997（R2008）</td><td>金银镍电触头合金</td></tr>
+                 <tr><td>783</td><td>ASTM B479-2006</td><td>软质包装隔离用退火铝和铝合金箔</td></tr>
+                 <tr><td>784</td><td>ASTM B483M-1992a</td><td>一般用途的铝和铝合金拉制管(米制)</td></tr>
+                 <tr><td>785</td><td>ASTM B488-2011</td><td>工程用金电镀层</td></tr>
+                 <tr><td>786</td><td>ASTM B491-2006</td><td>一般用途的铝和铝合金挤制圆管(米制)</td></tr>
+                 <tr><td>787</td><td>ASTM B493-2008(R2010)e1</td><td>锆和锆合金锻件</td></tr>
+                 <tr><td>788</td><td>ASTM B495-2010</td><td>锆和锆合金锭</td></tr>
+                 <tr><td>789</td><td>ASTM B496-2004(R2010)e1</td><td>紧密型同心绞合圆形铜导线</td></tr>
+                 <tr><td>790</td><td>ASTM B498M-2008</td><td>钢芯铝绞线(ACSR)用镀锌钢芯线(米制)</td></tr>
+                 <tr><td>791</td><td>ASTM B500-2010</td><td>钢芯铝绞线(ACSR)用镀锌、镀锌－5％铝－混合稀土合金和镀铝捻股钢芯</td></tr>
+                 <tr><td>792</td><td>ASTM B501-2010</td><td>电子工业用镀银包铜钢丝</td></tr>
+                 <tr><td>793</td><td>ASTM B502-2010</td><td>包铝钢芯铝导线用包铝钢芯线</td></tr>
+                 <tr><td>794</td><td>ASTM B505-2011</td><td>铜基合金连续铸件</td></tr>
+                 <tr><td>795</td><td>ASTM B506-2009</td><td>建筑结构用包铜不锈钢薄板和带材</td></tr>
+                 <tr><td>796</td><td>ASTM B508-2008</td><td>挠性金属软管用铜合金带材</td></tr>
+                 <tr><td>797</td><td>ASTM B509-1977(R1983)</td><td>对核用镍合金板的补充要求</td></tr>
+                 <tr><td>798</td><td>ASTM B510-1977(R1983)</td><td>核用镍合金棒和条的补充要求规范</td></tr>
+                 <tr><td>799</td><td>ASTM B511-2001(R2009)</td><td>镍铁铬硅合金条材及型材</td></tr>
+                 <tr><td>800</td><td>ASTM B512-2004(R2009)</td><td>镍铬硅合金(UNS N08830)坯料和条材</td></tr>
+                 <tr><td>801</td><td>ASTM B513-1979(R1985)</td><td>核用镍合金无缝管附加要求技术条件</td></tr>
+                 <tr><td>802</td><td>ASTM B514-2005(R2009)</td><td>镍铁铬合金焊管</td></tr>
+                 <tr><td>803</td><td>ASTM B515-1995(R2009)</td><td>合金UNS N08800和UNS N08810焊接管材</td></tr>
+                 <tr><td>804</td><td>ASTM B516-2003(R2009)</td><td>镍铬铁合金(UNS N06600)非标准尺寸焊接管材</td></tr>
+                 <tr><td>805</td><td>ASTM B517-2005(R2009)</td><td>镍铬铁合金(UNS N06600)标准尺寸焊管</td></tr>
+                 <tr><td>806</td><td>ASTM B518-1987</td><td>镍铬铁铌钼钨合金(UNS N06102)圆棒及异形棒</td></tr>
+                 <tr><td>807</td><td>ASTM B519-1992</td><td>镍铬铁铌钼钨合金(UNS N06102)中厚板、薄板和带材</td></tr>
+                 <tr><td>808</td><td>ASTM B520-1993(R2007)</td><td>电子用镀锡包铜钢丝</td></tr>
+                 <tr><td>809</td><td>ASTM B521-1998(R2004)</td><td>钽和钽合金无缝与焊接管</td></tr>
+                 <tr><td>810</td><td>ASTM B522-2001(R2006)</td><td>金银铂电触头合金</td></tr>
+                 <tr><td>811</td><td>ASTM B523-2007</td><td>无缝和焊接的锆和锆合金管子</td></tr>
+                 <tr><td>812</td><td>ASTM B524M-1999(R2011)</td><td>铝合金芯线同心绞合铝导线(ACAR，1350/6201)［米制］</td></tr>
+                 <tr><td>813</td><td>ASTM B531-1990(R1998)e1</td><td>电气用5005铝合金拉拔坯盘条</td></tr>
+                 <tr><td>814</td><td>ASTM B534-2007</td><td>铜钴铍合金和铜镍铍合金中厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>815</td><td>ASTM B535-2006（R2011）</td><td>镍铁铬硅合金(UNS N08330和UNS N08332)无缝管</td></tr>
+                 <tr><td>816</td><td>ASTM B536-2007</td><td>镍铁铬硅合金(UNS N08330和UNS N08332)中厚板、薄板和带材</td></tr>
+                 <tr><td>817</td><td>ASTM B540-1997（R2010）e1</td><td>钯电触头合金</td></tr>
+                 <tr><td>818</td><td>ASTM B541-2001(R2006)</td><td>金电触头合金</td></tr>
+                 <tr><td>819</td><td>ASTM B543M-2007e1</td><td>热交换器用铜和铜合金焊接管(米制)</td></tr>
+                 <tr><td>820</td><td>ASTM B546-2004(R2009)</td><td>镍铁铬硅合金(UNS N08330和UNS N08332)电熔焊管</td></tr>
+                 <tr><td>821</td><td>ASTM B547-2010</td><td>成形后电弧焊接的铝和铝合金圆管</td></tr>
+                 <tr><td>822</td><td>ASTM B548-2003(R2009)</td><td>压力容器用铝合金板材超声检查标准方法</td></tr>
+                 <tr><td>823</td><td>ASTM B549-2010</td><td>包铝钢芯同心绞合铝导线</td></tr>
+                 <tr><td>824</td><td>ASTM B550-2007</td><td>锆和锆合金棒材和线材</td></tr>
+                 <tr><td>825</td><td>ASTM B551-2007</td><td>锆和锆合金带材、薄板和中厚板</td></tr>
+                 <tr><td>826</td><td>ASTM B552-2008</td><td>海水淡化工厂无缝和焊接铜镍管</td></tr>
+                 <tr><td>827</td><td>ASTM B559-1993（R2007）</td><td>电子工业用镀镍包铜钢丝</td></tr>
+                 <tr><td>828</td><td>ASTM B561-1994（R2005）</td><td>精炼铂</td></tr>
+                 <tr><td>829</td><td>ASTM B562-1995（R2005）</td><td>精炼金</td></tr>
+                 <tr><td>830</td><td>ASTM B563-2001（R2011）</td><td>钯银铜电触头合金</td></tr>
+                 <tr><td>831</td><td>ASTM B564-2011</td><td>镍合金锻件</td></tr>
+                 <tr><td>832</td><td>ASTM B566-2004a(R2011)</td><td>包铜铝线</td></tr>
+                 <tr><td>833</td><td>ASTM B567-1998a(R2009)</td><td>β背散射法测定涂层厚度方法</td></tr>
+                 <tr><td>834</td><td>ASTM B569-2009</td><td>热交换器管道用UNS号C26000黄铜窄薄带材</td></tr>
+                 <tr><td>835</td><td>ASTM B570-2006(R2010)</td><td>铜铍合金锻件和挤压件</td></tr>
+                 <tr><td>836</td><td>ASTM B571-1997E1(R2008)</td><td>金属涂装的合格附着力实验标准惯例</td></tr>
+                 <tr><td>837</td><td>ASTM B572-2006（R2011）</td><td>合金UNS N06002、UNS N06230和UNS R30556圆棒</td></tr>
+                 <tr><td>838</td><td>ASTM B573-2006（R2011）</td><td>镍钼铬铁合金(UNS N10003)圆棒</td></tr>
+                 <tr><td>839</td><td>ASTM B574-2010</td><td>低碳镍钼铬和低碳镍铬钼合金圆棒</td></tr>
+                 <tr><td>840</td><td>ASTM B575-2010</td><td>低碳镍-钼-铬、低碳镍-铬-钼、低碳镍-铬-钼-铜、低碳镍-铬-钼-钽和低碳镍-铬-钼-钨合金板材、薄板和带材</td></tr>
+                 <tr><td>841</td><td>ASTM B581-2002（R2008）</td><td>镍铬铁钼铜合金圆棒</td></tr>
+                 <tr><td>842</td><td>ASTM B582-2007</td><td>镍铬铁钼铜合金中厚板、薄板和带材</td></tr>
+                 <tr><td>843</td><td>ASTM B584-2011</td><td>一般用途的铜合金砂型铸件</td></tr>
+                 <tr><td>844</td><td>ASTM B587-2008</td><td>焊接黄铜管</td></tr>
+                 <tr><td>845</td><td>ASTM B589-1994（R2005）</td><td>精炼钯</td></tr>
+                 <tr><td>846</td><td>ASTM B591-2009</td><td>铜锌锡合金中厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>847</td><td>ASTM B592-2011</td><td>铜锌铝钴(或镍)合金中厚板、薄板、带材和轧制条材</td></tr>
+                 <tr><td>848</td><td>ASTM B594-2009</td><td>航空用铝合金制品超声检测方法</td></tr>
+                 <tr><td>849</td><td>ASTM B596-1989（R2006）</td><td>金铜合金电触头材料</td></tr>
+                 <tr><td>850</td><td>ASTM B599-1992e1(R2009)</td><td>稳定化镍铁铬钼铌合金(UNS N08700)中厚板、薄板和带材</td></tr>
+                 <tr><td>851</td><td>ASTM B601-2009</td><td>加工和铸造铜及铜合金状态代号施行方法</td></tr>
+                 <tr><td>852</td><td>ASTM B603-2007</td><td>拉拔或轧制的电加热元件用铁铬铝合金</td></tr>
+                 <tr><td>853</td><td>ASTM B606-2008</td><td>钢芯铝和铝合金导线用高强度镀锌钢芯线</td></tr>
+                 <tr><td>854</td><td>ASTM B608-2011</td><td>铜合金焊接管</td></tr>
+                 <tr><td>855</td><td>ASTM B609M-1999（R2010）</td><td>电气用退火状态和中间状态的1350铝圆线(米制)</td></tr>
+                 <tr><td>856</td><td>ASTM B616-1996（R2006）</td><td>精炼铑</td></tr>
+                 <tr><td>857</td><td>ASTM B617-1998（R2010）</td><td>电触头银币合金</td></tr>
+                 <tr><td>858</td><td>ASTM B618-2011a</td><td>铝合金熔模铸件</td></tr>
+                 <tr><td>859</td><td>ASTM B619-2010e1</td><td>镍和镍钴合金标准尺寸焊管</td></tr>
+                 <tr><td>860</td><td>ASTM B620-2003(R2008)</td><td>镍铁铬钼合金(UNS N08320)中厚板、薄板和带材</td></tr>
+                 <tr><td>861</td><td>ASTM B621-2002(R2011)</td><td>镍铁铬钼合金(UNS N08320)圆棒</td></tr>
+                 <tr><td>862</td><td>ASTM B622-2010</td><td>镍和镍钴合金无缝管</td></tr>
+                 <tr><td>863</td><td>ASTM B623-1993</td><td>火法精炼高电导率韧铜－精炼型锭</td></tr>
+                 <tr><td>864</td><td>ASTM B624-2007</td><td>电子工业用高强度和高电导率铜合金线</td></tr>
+                 <tr><td>865</td><td>ASTM B625-2005(R2011)</td><td>合金UNS N08904、UNS N08925、UNS N08031、UNS N08932和UNS N08926中厚板、薄板和带材</td></tr>
+                 <tr><td>866</td><td>ASTM B626-2010e1</td><td>镍和镍钴合金非标准尺寸焊接管材</td></tr>
+                 <tr><td>867</td><td>ASTM B628-1998(R2010)</td><td>银铜共晶电触头合金</td></tr>
+                 <tr><td>868</td><td>ASTM B631-1993(R2010)</td><td>银钨电触头材料</td></tr>
+                 <tr><td>869</td><td>ASTM B632M-2008</td><td>轧制铝合金踏板(米制)</td></tr>
+                 <tr><td>870</td><td>ASTM B633-2011</td><td>钢和铁电积沉淀镀锌的标准</td></tr>
+                 <tr><td>871</td><td>ASTM B637-2006(R2011)</td><td>高温用沉淀硬化镍合金棒材、锻件和锻坯</td></tr>
+                 <tr><td>872</td><td>ASTM B638-1992</td><td>太阳热吸收器用铜及铜合金镶板</td></tr>
+                 <tr><td>873</td><td>ASTM B639-2002(R2008)</td><td>高温用弥散硬化含钴合金(UNS R30155和UNS R30816)条材、圆棒、锻件和锻坯</td></tr>
+                 <tr><td>874</td><td>ASTM B640-2007</td><td>空调和制冷设备用铜和铜合金焊管</td></tr>
+                 <tr><td>875</td><td>ASTM B641-1993</td><td>无缝和焊接铜配管(D类)</td></tr>
+                 <tr><td>876</td><td>ASTM B642-1988(R1989)e1</td><td>铜合金UNS号C21000焊接水管</td></tr>
+                 <tr><td>877</td><td>ASTM B643-2000（R2005）</td><td>铜铍合金无缝管</td></tr>
+                 <tr><td>878</td><td>ASTM B644-2011</td><td>铜合金添加剂</td></tr>
+                 <tr><td>879</td><td>ASTM B647-2010</td><td>铝合金韦氏硬度试验方法</td></tr>
+                 <tr><td>880</td><td>ASTM B649-2006（R2011）</td><td>Ni-Fe-Cr-Mo-Cu低碳合金(UNS N08904)和Ni-Fe-Cr-Mo-Cu－N低碳合金(UNS N08925、UNS N08031和UNS N08926)异形棒及线材</td></tr>
+                 <tr><td>881</td><td>ASTM B652-2010</td><td>铌铪合金锭</td></tr>
+                 <tr><td>882</td><td>ASTM B654-2010</td><td>铌铪合金箔材、薄板、带材和中厚板</td></tr>
+                 <tr><td>883</td><td>ASTM B655-2010</td><td>铌铪合金条材、棒材和线材</td></tr>
+                 <tr><td>884</td><td>ASTM B658-2011</td><td>无缝和焊接的锆和锆合金公称管</td></tr>
+                 <tr><td>885</td><td>ASTM B662-1994（R2006）</td><td>银钼电触头材料</td></tr>
+                 <tr><td>886</td><td>ASTM B663-1994（R2006）</td><td>银－碳化钨电触头材料</td></tr>
+                 <tr><td>887</td><td>ASTM B664-1990（R2006）</td><td>80％银－20％石墨滑动接触材料</td></tr>
+                 <tr><td>888</td><td>ASTM B668-2005（R2010）</td><td>合金UNS N08028无缝非标准尺寸管材</td></tr>
+                 <tr><td>889</td><td>ASTM B669-1997</td><td>铸造和压铸件用锌－铝合金型锭</td></tr>
+                 <tr><td>890</td><td>ASTM B670-2007</td><td>高温用沉淀硬化镍合金(UNS N07718)中厚板、薄板和带材</td></tr>
+                 <tr><td>891</td><td>ASTM B671-1981(R2010)</td><td>精炼铱</td></tr>
+                 <tr><td>892</td><td>ASTM B672-2002（R2007）</td><td>镍铁铬钼铌稳定化合金(UNS N08700)异形棒和线材</td></tr>
+                 <tr><td>893</td><td>ASTM B673-2005（R2011）</td><td>合金UNS N08904、N08925和UNS N08926标准尺寸焊管</td></tr>
+                 <tr><td>894</td><td>ASTM B674-2005（R2011）</td><td>合金UNS N08904、UNS N08925和UNS N08926非标准尺寸焊接管材</td></tr>
+                 <tr><td>895</td><td>ASTM B675-2002（R2007）</td><td>合金UNS N08366和UNS N08367标准尺寸焊管</td></tr>
+                 <tr><td>896</td><td>ASTM B676-2003（R2009）</td><td>合金UNS N08366和UNS N08367非标准尺寸焊接管材</td></tr>
+                 <tr><td>897</td><td>ASTM B677-2005（R2010）</td><td>UNS N08904,UNS N088925和UNS N08926无缝公称管和管子</td></tr>
+                 <tr><td>898</td><td>ASTM B679-1998（R2009）</td><td>工程用钯电镀层</td></tr>
+                 <tr><td>899</td><td>ASTM B682-2001（R2009）</td><td>电导线的标准米制规格</td></tr>
+                 <tr><td>900</td><td>ASTM B683-2001(R2006)</td><td>纯钯电触头材料</td></tr>
+                 <tr><td>901</td><td>ASTM B684-1997(R2008)</td><td>铂铱电触头材料</td></tr>
+                 <tr><td>902</td><td>ASTM B685-2001(R2006)</td><td>钯铜电触头材料</td></tr>
+                 <tr><td>903</td><td>ASTM B686-2011</td><td>高强度铝合金铸件</td></tr>
+                 <tr><td>904</td><td>ASTM B687-1999(R2011)</td><td>黄铜、铜和镀铬管焊纹接头</td></tr>
+                 <tr><td>905</td><td>ASTM B688-1996(R2009)</td><td>铬镍钼铁(UNS N08366和UNS N08367)中厚板、薄板和带材</td></tr>
+                 <tr><td>906</td><td>ASTM B690-2002(R2007)</td><td>铁-镍-铬-钼合金(UNS N08366和UNS N08367)无缝公称管和管子</td></tr>
+                 <tr><td>907</td><td>ASTM B691-2002（R2007）</td><td>铁镍铬钼合金(UNS N08366和UNS N08367)棒材、条材和线材</td></tr>
+                 <tr><td>908</td><td>ASTM B692-1990（R2006）</td><td>75％银－25％石墨滑动接触材料</td></tr>
+                 <tr><td>909</td><td>ASTM B693-1991（R2006）</td><td>银镍电触头材料</td></tr>
+                 <tr><td>910</td><td>ASTM B694-2010</td><td>电缆屏蔽用铜、铜合金和包铜不锈钢薄板和带材</td></tr>
+                 <tr><td>911</td><td>ASTM B698-2010</td><td>铜及铜合金无缝与焊接卫生管道与管材</td></tr>
+                 <tr><td>912</td><td>ASTM B701-2006</td><td>钢芯同心绞合自减振铝导线(ACSR/SD)</td></tr>
+                 <tr><td>913</td><td>ASTM B702-1993（R2010）</td><td>铜钨电触头材料</td></tr>
+                 <tr><td>914</td><td>ASTM B704-2003（R2009）</td><td>合金UNS N06625和UNS N08825非标准尺寸焊管</td></tr>
+                 <tr><td>915</td><td>ASTM B705-2005（R2009）</td><td>镍合金(UNS N06625和N08825)标准尺寸焊管</td></tr>
+                 <tr><td>916</td><td>ASTM B706-2000（R2011）</td><td>铜合金(UNS号C69100)无缝管</td></tr>
+                 <tr><td>917</td><td>ASTM B707M-1988（R1989）e1</td><td>无缝铜水管(特殊用途)(米制)</td></tr>
+                 <tr><td>918</td><td>ASTM B708-2005</td><td>钽和钽合金中厚板、薄板和带材</td></tr>
+                 <tr><td>919</td><td>ASTM B709-2004(R2009)</td><td>铁镍铬钼合金(UNS N08028)中厚板、薄板和带材</td></tr>
+                 <tr><td>920</td><td>ASTM B710-2004(R2009)</td><td>镍铁铬硅合金标准尺寸焊管</td></tr>
+                 <tr><td>921</td><td>ASTM B711-2005</td><td>钢芯同心绞合铝合金导线(AACSR)(6201)</td></tr>
+                 <tr><td>922</td><td>ASTM B716M-1993</td><td>焊接铜水管(米制)</td></tr>
+                 <tr><td>923</td><td>ASTM B717-1996(R2006)</td><td>精炼钌</td></tr>
+                 <tr><td>924</td><td>ASTM B718-2000(R2011)</td><td>镍铬钼钴钨铁硅合金(UNS N06333)中厚板、薄板和带材</td></tr>
+                 <tr><td>925</td><td>ASTM B719-2000(R2009)</td><td>镍铬钼钴钨铁硅合金(UNS N06333)棒材</td></tr>
+                 <tr><td>926</td><td>ASTM B720-1993</td><td>UNS N08310合金非标准尺寸无缝管</td></tr>
+                 <tr><td>927</td><td>ASTM B722-2006(R2011)</td><td>镍铬钼钴钨铁硅合金(UNS N06333)无缝管</td></tr>
+                 <tr><td>928</td><td>ASTM B723-2000(R2009)</td><td>镍铬钼钴钨铁硅合金(UNS N06333)标准尺寸焊管</td></tr>
+                 <tr><td>929</td><td>ASTM B725-2005(R2009)</td><td>镍(UNS N02200/UNS N02201)镍铜合金(UNS N04400)标准尺寸焊管</td></tr>
+                 <tr><td>930</td><td>ASTM B726-2002(R2011)</td><td>镍铬钼钴钨铁硅合金(UNS N06333)非标准尺寸焊管</td></tr>
+                 <tr><td>931</td><td>ASTM B729-2005(R2009)</td><td>镍合金UNS N08020、N08026和N08024无缝管</td></tr>
+                 <tr><td>932</td><td>ASTM B730-2008</td><td>镍(UNS N02200/UNS N02201)镍铜合金(UNS N04400)非标准尺寸焊管</td></tr>
+                 <tr><td>933</td><td>ASTM B731-1996(R2006)</td><td>60％钯－40％银电触头材料</td></tr>
+                 <tr><td>934</td><td>ASTM B736-2000(R2009)</td><td>电缆用铝、铝合金和包铝钢屏蔽带材</td></tr>
+                 <tr><td>935</td><td>ASTM B738-2003(R2008)</td><td>电导体用细铜线多股绞合和绳索多股绞合铜导线</td></tr>
+                 <tr><td>936</td><td>ASTM B739-2003(R2008)</td><td>镍铁铬硅合金非标准尺寸焊管</td></tr>
+                 <tr><td>937</td><td>ASTM B740-2009</td><td>铜镍锡亚稳合金带材</td></tr>
+                 <tr><td>938</td><td>ASTM B742-1990(R2006)</td><td>纯银电触头加工材</td></tr>
+                 <tr><td>939</td><td>ASTM B743-2006</td><td>无缝铜盘管</td></tr>
+                 <tr><td>940</td><td>ASTM B744-2005(R2011)</td><td>波纹铝管用铝合金薄板</td></tr>
+                 <tr><td>941</td><td>ASTM B745-1997(R2005)</td><td>下水道与排水管用波纹铝管</td></tr>
+                 <tr><td>942</td><td>ASTM B746-2002(R2007)</td><td>现场拴接管道、管拱和拱用的铝合金波纹结构板</td></tr>
+                 <tr><td>943</td><td>ASTM B747-2011</td><td>铜锆合金薄板和带材</td></tr>
+                 <tr><td>944</td><td>ASTM B751-2008</td><td>镍和镍合金无缝和焊接管子的通用要求</td></tr>
+                 <tr><td>945</td><td>ASTM B753-2007</td><td>双金属片组元用合金</td></tr>
+                 <tr><td>946</td><td>ASTM B755-2000(R2011)</td><td>镍铬钼钨合金(UNS N06110)中厚板、薄板和带材</td></tr>
+                 <tr><td>947</td><td>ASTM B756-2000(R2011)</td><td>镍铬钼钨合金(UNS N06110)棒材和条材</td></tr>
+                 <tr><td>948</td><td>ASTM B757-2000(R2011)</td><td>镍铬钼钨合金(UNS N06110)标准尺寸焊管</td></tr>
+                 <tr><td>949</td><td>ASTM B758-2000(R2011)</td><td>镍铬钼钨合金(UNS N06110)非标准尺寸焊管</td></tr>
+                 <tr><td>950</td><td>ASTM B759-2000(R2011)</td><td>镍铬钼钨合金(UNS N06110)无缝管</td></tr>
+                 <tr><td>951</td><td>ASTM B760-2007</td><td>钨中厚板、薄板和箔材</td></tr>
+                 <tr><td>952</td><td>ASTM B763-2008a</td><td>阀门用铜合金砂型铸件</td></tr>
+                 <tr><td>953</td><td>ASTM B768-2011</td><td>铜钴铍合金带材和薄板</td></tr>
+                 <tr><td>954</td><td>ASTM B770-2010</td><td>一般用途的铜铍合金砂型铸件</td></tr>
+                 <tr><td>955</td><td>ASTM B774-2000(R2010)</td><td>低熔点合金</td></tr>
+                 <tr><td>956</td><td>ASTM B775-2008</td><td>镍和镍合金无缝和焊接公称管的通用要求</td></tr>
+                 <tr><td>957</td><td>ASTM B776-2007</td><td>铪和铪合金带、薄板及中厚板</td></tr>
+                 <tr><td>958</td><td>ASTM B777-2007</td><td>高密度钨基金属</td></tr>
+                 <tr><td>959</td><td>ASTM B778-2002(R2007)</td><td>型线紧密同心绞合铝导线(AAC/TW)</td></tr>
+                 <tr><td>960</td><td>ASTM B779-2003(R2009)</td><td>钢芯型线紧密同心绞合铝导线(ACSR/TW)</td></tr>
+                 <tr><td>961</td><td>ASTM B780-1998(R2010)</td><td>75％－24.5％铜－0.5％镍电触头合金</td></tr>
+                 <tr><td>962</td><td>ASTM B784-2001(R2006)</td><td>绝缘电缆用改进型同心绞合铜导线</td></tr>
+                 <tr><td>963</td><td>ASTM B785-1993</td><td>绝缘电缆用改进型紧密圆形同心绞合铜导线</td></tr>
+                 <tr><td>964</td><td>ASTM B786-2008</td><td>后继绝缘用19线外层搭配单向绞合1350铝导线</td></tr>
+                 <tr><td>965</td><td>ASTM B787-2004(R2009)</td><td>后继绝缘用19线外层搭配单向绞合铜导线</td></tr>
+                 <tr><td>966</td><td>ASTM B800-2005(R2011)</td><td>电气用退火和中间状态的8000系列铝合金线</td></tr>
+                 <tr><td>967</td><td>ASTM B801-2007</td><td>后继加包皮或绝缘用的8000系列铝合金同心绞合导线</td></tr>
+                 <tr><td>968</td><td>ASTM B802-2010</td><td>钢芯铝绞线(ACSR)用锌－5％铝－混合稀土合金镀层钢芯钢丝</td></tr>
+                 <tr><td>969</td><td>ASTM B803-2008</td><td>钢芯铝和铝合金绞合导线用高强度锌－5％铝－混合稀土合金镀层钢芯钢丝</td></tr>
+                 <tr><td>970</td><td>ASTM B804-2002(R2007)</td><td>UNS N08367合金标准尺寸焊管</td></tr>
+                 <tr><td>971</td><td>ASTM B805-2006(R2011)</td><td>UNS N07716和UNS N07725沉淀硬化镍合金条材和线材</td></tr>
+                 <tr><td>972</td><td>ASTM B806-2008a</td><td>一般用途的铜合金金属型铸件</td></tr>
+                 <tr><td>973</td><td>ASTM B811-2002(R2007)</td><td>核反应堆燃料包壳用形变锆合金无缝管</td></tr>
+                 <tr><td>974</td><td>ASTM B813-2010</td><td>铜和铜合金管材用的液态焊剂及焊膏</td></tr>
+                 <tr><td>975</td><td>ASTM B814-2006(R2011)</td><td>镍铬铁钼钨合金(UNS N06920)中厚板、薄板和带材</td></tr>
+                 <tr><td>976</td><td>ASTM B815-2002(R2011)</td><td>钴－铬－镍－钼－钨合金(UNS R31233)棒材</td></tr>
+                 <tr><td>977</td><td>ASTM B818-2003(R2008)</td><td>钴-铬-镍-钼-钨合金(UNS R31233)板材、薄板和带材</td></tr>
+                 <tr><td>978</td><td>ASTM B819-2000(R2011)</td><td>医用气体装置用无缝铜管</td></tr>
+                 <tr><td>979</td><td>ASTM B824-2011</td><td>铜合金铸件一般要求</td></tr>
+                 <tr><td>980</td><td>ASTM B858M-2006</td><td>用氨蒸气试验测定铜合金应力腐蚀裂纹敏感性的试验方法</td></tr>
+                 <tr><td>981</td><td>ASTM B861-2010</td><td>无缝钛和钛合金公称管</td></tr>
+                 <tr><td>982</td><td>ASTM B1149-1987b</td><td>红外热成象无损检测术语定义</td></tr>
+                 <tr><td>983</td><td>ASTM C16-2003(R2009)e1</td><td>耐火砖高温荷重试验方法</td></tr>
+                 <tr><td>984</td><td>ASTM C20-2000(R2010)</td><td>烧成耐火砖显气孔率、吸水率、假比重和体积密度试验方法——水煮沸法</td></tr>
+                 <tr><td>985</td><td>ASTM C24-2009</td><td>耐火材料耐火度试验方法</td></tr>
+                 <tr><td>986</td><td>ASTM C27-1998(R2008)</td><td>粘土和高铝耐火砖的分类</td></tr>
+                 <tr><td>987</td><td>ASTM C33-2011a</td><td>混凝土骨料的标准规范</td></tr>
+                 <tr><td>988</td><td>ASTM C38-1989</td><td>耐火砖镶板法崩裂性试验方法</td></tr>
+                 <tr><td>989</td><td>ASTM C49-1957（R1974）</td><td>制造硅砖用生石灰和石灰乳技术条件</td></tr>
+                 <tr><td>990</td><td>ASTM C63-1961（R1976）</td><td>带有活动炉盖的煅造炉和退火炉用耐火粘土砖技术条件</td></tr>
+                 <tr><td>991</td><td>ASTM C64-1972（R1977）</td><td>煅烧炉和锅炉用耐火材料技术条件</td></tr>
+                 <tr><td>992</td><td>ASTM C71-2008</td><td>耐火材料名词术语标准定义</td></tr>
+                 <tr><td>993</td><td>ASTM C92-1995(R2010)</td><td>耐火材料筛分析和含水量试验方法</td></tr>
+                 <tr><td>994</td><td>ASTM C93-1984</td><td>隔热耐火砖常温耐压强度和抗折强度试验方法</td></tr>
+                 <tr><td>995</td><td>ASTM C105-1947（R1976）</td><td>砌筑粘土砖用耐火粘土粉料技术条件</td></tr>
+                 <tr><td>996</td><td>ASTM C107-1989</td><td>高级粘土砖镶板法崩裂性试验方法</td></tr>
+                 <tr><td>997</td><td>ASTM C108-1946（R2009）</td><td>热传导用符号</td></tr>
+                 <tr><td>998</td><td>ASTM C113-2002(R2008)</td><td>耐火砖重烧变化试验方法</td></tr>
+                 <tr><td>999</td><td>ASTM C122-1989</td><td>特级粘土砖镶板法崩裂性试验方法</td></tr>
+                 <tr><td>1000</td><td>ASTM C133-1997(R2008)</td><td>耐火制品常温耐压强度和抗折强度试验方法</td></tr>
+                 <tr><td>1001</td><td>ASTM C134-1995(R2010)</td><td>耐火砖和隔热耐火砖尺寸和体积密度试验方法</td></tr>
+                 <tr><td>1002</td><td>ASTM C135-1996(R2009)e1</td><td>耐火材料真比重试验方法—水浸法</td></tr>
+                 <tr><td>1003</td><td>ASTM C154-1972（R1977）</td><td>耐火制品扭曲或与平面偏差试验方法</td></tr>
+                 <tr><td>1004</td><td>ASTM C155-1997(R2007)</td><td>隔热耐火砖的分类</td></tr>
+                 <tr><td>1005</td><td>ASTM C179-2011</td><td>粘土质可塑料烘干与烧后收缩试验方法</td></tr>
+                 <tr><td>1006</td><td>ASTM C180-1972（R1977）</td><td>粘土质可塑料镶板法崩裂性试验方法</td></tr>
+                 <tr><td>1007</td><td>ASTM C181-2011</td><td>粘土质和高铝质可塑料可塑性指数试验方法</td></tr>
+                 <tr><td>1008</td><td>ASTM C182-1988(R2009)</td><td>隔热耐火砖热传导率试验方法</td></tr>
+                 <tr><td>1009</td><td>ASTM C198-2009</td><td>耐火泥常温搭接强度试验方法</td></tr>
+                 <tr><td>1010</td><td>ASTM C199-1984(R2011)</td><td>耐火泥耐火度试验方法</td></tr>
+                 <tr><td>1011</td><td>ASTM C201-1993(R2009)</td><td>耐火材料热传导率试验方法</td></tr>
+                 <tr><td>1012</td><td>ASTM C202-1993(R2009)e1</td><td>耐火砖热传导率试验方法</td></tr>
+                 <tr><td>1013</td><td>ASTM C210-1995(R2007)e1</td><td>隔热耐火砖重烧变化试验方法</td></tr>
+                 <tr><td>1014</td><td>ASTM C268-1970（R1976）</td><td>烧注耐火材料抗折强度试验方法</td></tr>
+                 <tr><td>1015</td><td>ASTM C269-1970（R1976）</td><td>烧注耐火材料烧后永久线变化试验方法</td></tr>
+                 <tr><td>1016</td><td>ASTM C279-2010</td><td>耐化学腐蚀砌块的技术条件</td></tr>
+                 <tr><td>1017</td><td>ASTM C288-1987(R2009)</td><td>耐火材料在一氧化碳气氛中崩解试验方法</td></tr>
+                 <tr><td>1018</td><td>ASTM C316-1970（R1984）e1</td><td>一道筛和两道筛耐火粉料的分类</td></tr>
+                 <tr><td>1019</td><td>ASTM C357-2007(R2009)e1</td><td>颗粒耐火材料体积密度试验方法</td></tr>
+                 <tr><td>1020</td><td>ASTM C401-1991(R2005)</td><td>烧注耐火材料的分类</td></tr>
+                 <tr><td>1021</td><td>ASTM C416-1997(R2007)</td><td>硅砖的分类</td></tr>
+                 <tr><td>1022</td><td>ASTM C417-2005(R2010)e1</td><td>不烧整体耐火材料热传导率试验方法</td></tr>
+                 <tr><td>1023</td><td>ASTM C434-1961（R1976）</td><td>中性或氧化性气氛操作的工业窑炉炉衬用隔热耐火砖技术条</td></tr>
+                 <tr><td>1024</td><td>ASTM C435-1993(R1999)</td><td>铸钢用耐火材料的分类</td></tr>
+                 <tr><td>1025</td><td>ASTM C436-1983</td><td>碳质耐火制品重烧变化试验方法</td></tr>
+                 <tr><td>1026</td><td>ASTM C439-1961（R1984）e1</td><td>硅砖耐热崩裂性试验方法</td></tr>
+                 <tr><td>1027</td><td>ASTM C454-2010</td><td>碳质耐火材料受碱崩解推荐实施方法</td></tr>
+                 <tr><td>1028</td><td>ASTM C455-2007</td><td>铬砖、铬镁砖、镁铬砖和镁砖的分类</td></tr>
+                 <tr><td>1029</td><td>ASTM C456-1993(R2008)</td><td>碱性砖抗水化性试验方法</td></tr>
+                 <tr><td>1030</td><td>ASTM C467-2011</td><td>莫来石耐火材料的分类</td></tr>
+                 <tr><td>1031</td><td>ASTM C468-1970（R1976）</td><td>白云石砂的分类</td></tr>
+                 <tr><td>1032</td><td>ASTM C491-1985</td><td>空气凝固的可塑耐火材料抗折强度试验方法</td></tr>
+                 <tr><td>1033</td><td>ASTM C492-1992(R2008)</td><td>死烧白云石砂水化试验方法</td></tr>
+                 <tr><td>1034</td><td>ASTM C493-1998</td><td>颗粒耐火材料体积密度和气孔率试验方法-水银置换法</td></tr>
+                 <tr><td>1035</td><td>ASTM C544-2003(R2008)</td><td>镁砂或方镁石颗粒水化试验方法</td></tr>
+                 <tr><td>1036</td><td>ASTM C545-1997(R2007)</td><td>锆英石耐火材料的分类</td></tr>
+                 <tr><td>1037</td><td>ASTM C546-1967（R1977）</td><td>耐火砖长时间高温荷重试验方法</td></tr>
+                 <tr><td>1038</td><td>ASTM C558-1969</td><td>核石墨晶格间距测定方法</td></tr>
+                 <tr><td>1039</td><td>ASTM C559-1990(R2010)</td><td>碳和石墨制品体积密试试验方法-物理测量法</td></tr>
+                 <tr><td>1040</td><td>ASTM C560-1988(R2010)e1</td><td>石墨化学分析方法</td></tr>
+                 <tr><td>1041</td><td>ASTM C561-1991(R2010)e1</td><td>石墨中灰分试验方法</td></tr>
+                 <tr><td>1042</td><td>ASTM C562-1991(R2010)e1</td><td>石墨水分试验方法</td></tr>
+                 <tr><td>1043</td><td>ASTM C565-1993(R2010)e1</td><td>炭和石墨机械材料抗拉试验方法</td></tr>
+                 <tr><td>1044</td><td>ASTM C571-1981(R1990)</td><td>碳质和碳质陶瓷耐火材料化学分析方法</td></tr>
+                 <tr><td>1045</td><td>ASTM C572-1981(R1990)</td><td>含铬耐火材料和铬矿化学分析方法</td></tr>
+                 <tr><td>1046</td><td>ASTM C573-1981(R1990)</td><td>粘土质和高铝质耐火材料化学分析方法</td></tr>
+                 <tr><td>1047</td><td>ASTM C574-1984(R1988)</td><td>镁质和白云石质耐火材料化学分析方法</td></tr>
+                 <tr><td>1048</td><td>ASTM C575-1981(R1990)</td><td>硅质耐火材料化学分析方法</td></tr>
+                 <tr><td>1049</td><td>ASTM C576-1981(R1990)</td><td>锆英石耐火材料化学分析方法</td></tr>
+                 <tr><td>1050</td><td>ASTM C577-2007(R2009)e2</td><td>耐火材料透气度试验方法</td></tr>
+                 <tr><td>1051</td><td>ASTM C583-2010</td><td>耐火材料高温抗折强度试验方法</td></tr>
+                 <tr><td>1052</td><td>ASTM C604-2002(R2009)e1</td><td>耐火材料真比重试验方法-气体比较比重计法</td></tr>
+                 <tr><td>1053</td><td>ASTM C605-1992</td><td>粘土质水口砖和袖砖重烧变化试验方法</td></tr>
+                 <tr><td>1054</td><td>ASTM C606-1983</td><td>耐火泥高温搭接强度试验方法</td></tr>
+                 <tr><td>1055</td><td>ASTM C607-1988(R2010)e1</td><td>含沥青制品焦化后抗折强度试验方法</td></tr>
+                 <tr><td>1056</td><td>ASTM C611-1998(R2010)e1</td><td>灰和石墨制品常温比电阻试验方法</td></tr>
+                 <tr><td>1057</td><td>ASTM C613-2003(R2008)</td><td>炭和石墨预浸渍制品树脂含量试验方法-溶剂萃取法</td></tr>
+                 <tr><td>1058</td><td>ASTM C620-1992</td><td>含沥青碱性耐火砖抗水化性试验方法</td></tr>
+                 <tr><td>1059</td><td>ASTM C621-2009</td><td>耐火材料抗下班液侵蚀静态试验方法</td></tr>
+                 <tr><td>1060</td><td>ASTM C622-1984</td><td>耐火材料抗下班液侵蚀模拟使用试验方法</td></tr>
+                 <tr><td>1061</td><td>ASTM C625-1995(R2010)</td><td>报告石墨辐照结果的推荐实施方法</td></tr>
+                 <tr><td>1062</td><td>ASTM C626-1978</td><td>核石墨热中子吸收截面的估算方法</td></tr>
+                 <tr><td>1063</td><td>ASTM C651-2011</td><td>炭和石墨制品常温抗弯强度试验方法—四点载荷法</td></tr>
+                 <tr><td>1064</td><td>ASTM C662-1970（R2010）</td><td>不透石墨管及其螺纹技术条件</td></tr>
+                 <tr><td>1065</td><td>ASTM C673-1997(R2008)</td><td>钻土质和高铝质可塑料和捣打料的分类</td></tr>
+                 <tr><td>1066</td><td>ASTM C695-1991(R2010)</td><td>石墨耐压强度试验方法</td></tr>
+                 <tr><td>1067</td><td>ASTM C704-2009e1</td><td>耐火材料常温耐磨性试验方法</td></tr>
+                 <tr><td>1068</td><td>ASTM C705-1992</td><td>氧化锆质耐火材料化学分析方法</td></tr>
+                 <tr><td>1069</td><td>ASTM C709-2009</td><td>炭和石墨制品名词定义</td></tr>
+                 <tr><td>1070</td><td>ASTM C714-2005(R2010)</td><td>炭和石墨热扩散率试验方法—热脉冲法</td></tr>
+                 <tr><td>1071</td><td>ASTM C747-1993(R2010)e1</td><td>炭和石墨材料弹性模量和基频试验方法—声频共振法</td></tr>
+                 <tr><td>1072</td><td>ASTM C748-1998(R2010)e1</td><td>细颗粒石墨材料洛氏硬度试验方法</td></tr>
+                 <tr><td>1073</td><td>ASTM C749-2008(R2010)e1</td><td>炭和石墨拉伸应力—应变试验方法</td></tr>
+                 <tr><td>1074</td><td>ASTM C767-1993(R2009)</td><td>碳质耐火材料热传导率试验方法</td></tr>
+                 <tr><td>1075</td><td>ASTM C768-1999</td><td>耐火砖抗渣性试验方法—高温滴渣法</td></tr>
+                 <tr><td>1076</td><td>ASTM C769-2009</td><td>供获得近似杨氏模量用值的加工的炭和石墨材料中声速的试验方法</td></tr>
+                 <tr><td>1077</td><td>ASTM C781-2008</td><td>测试高温气冷核反应堆用石墨和硼化石墨元件推荐实施方法</td></tr>
+                 <tr><td>1078</td><td>ASTM C783-1985(R2010)e1</td><td>石墨电极取芯样推荐实施方法</td></tr>
+                 <tr><td>1079</td><td>ASTM C808-1975（R2010）e1</td><td>炭和石墨轴承及密封材料磨损试验结果报告编写推荐准则</td></tr>
+                 <tr><td>1080</td><td>ASTM C816-1985（R2010）e1</td><td>石墨硫含量试验方法—燃烧一碘滴定法</td></tr>
+                 <tr><td>1081</td><td>ASTM C819-1977</td><td>炭和石墨比表面试验方法</td></tr>
+                 <tr><td>1082</td><td>ASTM C830-2000(R2011)</td><td>烧成砖显气孔率、吸液率、假比重和体积密度试验方法—真空法</td></tr>
+                 <tr><td>1083</td><td>ASTM C831-1998(R2008)</td><td>含沥青制品焦化后残存碳、表面残存碳和表面碳收得率试验方法</td></tr>
+                 <tr><td>1084</td><td>ASTM C832-2000(R2010)</td><td>耐火材料荷重热膨胀测量方法</td></tr>
+                 <tr><td>1085</td><td>ASTM C838-1996(R2010)</td><td>加工的炭和石墨制品体积密度的试验方法</td></tr>
+                 <tr><td>1086</td><td>ASTM C860-2010</td><td>耐火混凝土稠度测定的推荐实施方法</td></tr>
+                 <tr><td>1087</td><td>ASTM C861-1993(R2010)</td><td>耐火制品的标准系列公制尺寸</td></tr>
+                 <tr><td>1088</td><td>ASTM C862-2002(R2008)</td><td>耐火混凝土试样制备推荐实施方法—烧注法</td></tr>
+                 <tr><td>1089</td><td>ASTM C863-2000(R2010)</td><td>评价碳化硅耐火材料高温抗氧化性的推荐实施方法</td></tr>
+                 <tr><td>1090</td><td>ASTM C865-2002(R2007)</td><td>耐火混凝土试样焙烧推荐实施方法</td></tr>
+                 <tr><td>1091</td><td>ASTM C874-2011a</td><td>耐火材料抗渣性推荐实施方法—回转渣法</td></tr>
+                 <tr><td>1092</td><td>ASTM C885-1987(R2007)</td><td>耐火制品扬氏模量试验方法—声频共振法</td></tr>
+                 <tr><td>1093</td><td>ASTM C886-1998(R2010)</td><td>细颗粒炭和石墨材料肖氏硬度试验方法</td></tr>
+                 <tr><td>1094</td><td>ASTM C899-1979(R2007)</td><td>利用公制计量单位报告耐火材料性质的实施方法</td></tr>
+                 <tr><td>1095</td><td>ASTM C903-2010</td><td>耐火混凝土试样制备实施方法—冷喷法</td></tr>
+                 <tr><td>1096</td><td>ASTM C909-1993(R2010)</td><td>耐火制品的定型系列尺寸</td></tr>
+                 <tr><td>1097</td><td>ASTM C914-2009</td><td>固体耐火材料体积和体积密度试验方法—蜡浸法</td></tr>
+                 <tr><td>1098</td><td>ASTM D149-2009</td><td>固体电绝缘材料在商用电源频率下的介电击穿电压和介电强度的标准试验方法</td></tr>
+                 <tr><td>1099</td><td>ASTM D129-2011</td><td>石油产品含硫量的标准试验方法(一般密封弹法)</td></tr>
+                 <tr><td>1100</td><td>ASTM D256-2010</td><td>测定塑料抗悬臂梁摆锤冲击性的标准试验方法</td></tr>
+                 <tr><td>1101</td><td>ASTM D395-2003(R2008)</td><td>橡胶性能的标准试验方法—压缩永久变形</td></tr>
+                 <tr><td>1102</td><td>ASTM D412-2006a(R2008)e2</td><td>硫化橡胶和热塑性弹性体拉伸试验方法</td></tr>
+                 <tr><td>1103</td><td>ASTM D445-2011a</td><td>透明和不透明液体运动粘度标准试验方法</td></tr>
+                 <tr><td>1104</td><td>ASTM D471-2010</td><td>橡胶性能的标准试验方法-液体影响</td></tr>
+                 <tr><td>1105</td><td>ASTM D516-2011</td><td>水中硫酸根离子的标准试验方法</td></tr>
+                 <tr><td>1106</td><td>ASTM D624-2000(R2012)</td><td>常规硫化橡胶和热塑合成橡胶撕裂强度的标准测试方法</td></tr>
+                 <tr><td>1107</td><td>ASTM D638-2010</td><td>塑料拉伸性能标准测试方法</td></tr>
+                 <tr><td>1108</td><td>ASTM D792-2008</td><td>用对新位的移及法使测用定过塑的料石密油度产和品比含重氯(相量关的密标度准)试的验标方准法试(验密方封法弹</td></tr>
+                 <tr><td>1109</td><td>ASTM D808-2011</td><td>对新的及使用过的石油产品含氯量的标准试验方法(密封弹法)</td></tr>
+                 <tr><td>1110</td><td>ASTM D882-2010</td><td>塑料片材拉伸性能的标准试验方法</td></tr>
+                 <tr><td>1111</td><td>ASTM D999-2008</td><td>货运集装箱振动测试的标准测试方法</td></tr>
+                 <tr><td>1112</td><td>ASTM D1186-2001</td><td>铁基非磁性涂层干性薄膜厚度无损测量的标准试验方法</td></tr>
+                 <tr><td>1113</td><td>ASTM D1367-1996(R2006)e1</td><td>石墨润滑性能试验方法</td></tr>
+                 <tr><td>1114</td><td>ASTM D1552-2008</td><td>石油产品中硫的标准试验方法(高温法)</td></tr>
+                 <tr><td>1115</td><td>ASTM D1553-1983</td><td>润滑剂用石墨化学分析方法</td></tr>
+                 <tr><td>1116</td><td>ASTM D2048-2010</td><td>用震荡圆盘硫变仪（ODC）测定橡胶硫化性能</td></tr>
+                 <tr><td>1117</td><td>ASTM D2149-1997(R2004)</td><td>STANDARD TEST METHOD FOR PERMITTIVITY (DIELECTRICCONSTANT) AND DISSIPATION FACTOR OF SOLIDDIELECTRICS AT FREQUENCIES TO 10 MHZ ANDTEMPERATURES TO 500 DEGREES C</td></tr>
+                 <tr><td>1118</td><td>ASTM D2240-2005(R2010)</td><td>硬度计硬度的标准试验方法</td></tr>
+                 <tr><td>1119</td><td>ASTM D2247-2011</td><td>在100%相对湿度下测试涂料耐水性的标准方法</td></tr>
+                 <tr><td>1120</td><td>ASTM D2290-2008</td><td>用分离盘法测定塑料或增强塑料管表面环形抗拉强度的标准试验方法¹</td></tr>
+                 <tr><td>1121</td><td>ASTM D2442-1975(R2007)</td><td>电气和电子设备用矾土陶瓷</td></tr>
+                 <tr><td>1122</td><td>ASTM D2563-2008</td><td>玻璃增强层压塑料制品中目视缺陷分类方法</td></tr>
+                 <tr><td>1123</td><td>ASTM D2794-1993(R2010)</td><td>有机涂层抗快速形变(冲击)作用的标准试验方法</td></tr>
+                 <tr><td>1124</td><td>ASTM D2906-1997(R2002)</td><td>关于纺织品方面精密度和准确度的陈述实施方法</td></tr>
+                 <tr><td>1125</td><td>ASTM D3330-2004(R2010)</td><td>压敏胶带剥离强度测试标准</td></tr>
+                 <tr><td>1126</td><td>ASTM D3359-2009(R2010)e2</td><td>胶带试验用测定粘合性的标准试验方法</td></tr>
+                 <tr><td>1127</td><td>ASTM D3363-2005(R2011)e1</td><td>铅笔试验法测定涂膜硬度的标准试验方法</td></tr>
+                 <tr><td>1128</td><td>ASTM D4060-2010</td><td>用泰伯尔磨蚀机测定有机涂层耐磨性的标准试验方法</td></tr>
+                 <tr><td>1129</td><td>ASTM D4674-2002A(R2010)</td><td>暴露在室内办公室环境下的塑料颜色稳定性加速试验的标准实施规范</td></tr>
+                 <tr><td>1130</td><td>ASTM D4752-2010</td><td>用溶剂擦试法测定硅酸乙酯(无机)富锌底漆耐甲乙酮的标准试验方法</td></tr>
+                 <tr><td>1131</td><td>ASTM D4828-1994E1(R2008)</td><td>有机覆层实际可洗性的标准试验方法</td></tr>
+                 <tr><td>1132</td><td>ASTM E6-2009be1</td><td>关于力学性能试验方法的标准术语</td></tr>
+                 <tr><td>1133</td><td>ASTM E8M-2011</td><td>金属材料拉伸试验的标准测试方法</td></tr>
+                 <tr><td>1134</td><td>ASTM E10-2010</td><td>金属材料布氏硬度的标准试验方法(中英对照)</td></tr>
+                 <tr><td>1135</td><td>ASTM E12-1970</td><td>关于固体、液体和气体的密度和比重的名词定义</td></tr>
+                 <tr><td>1136</td><td>ASTM E18-2008b</td><td>金属材料洛氏硬度和洛氏表面硬度的标准测试方法(中英对</td></tr>
+                 <tr><td>1137</td><td>ASTM E21-2009</td><td>金属材料高温拉伸试验方法标准</td></tr>
+                 <tr><td>1138</td><td>ASTM E23-2007</td><td>金属材料缺口试样标准冲击试验方法</td></tr>
+                 <tr><td>1139</td><td>ASTM E29-2008</td><td>使用有效数字确定试验数据与规范符合性作法</td></tr>
+                 <tr><td>1140</td><td>ASTM E41-1992（R2010）</td><td>有关气相环境试验名词定义</td></tr>
+                 <tr><td>1141</td><td>ASTM E45-2011</td><td>钢中夹杂物含量的评定方法</td></tr>
+                 <tr><td>1142</td><td>ASTM E94-2004（R2010）</td><td>放射性检查的标准指南</td></tr>
+                 <tr><td>1143</td><td>ASTM E96-2010</td><td>片状材料透水汽率试验方法</td></tr>
+                 <tr><td>1144</td><td>ASTM E112-2010</td><td>金属平均晶粒度测定方法</td></tr>
+                 <tr><td>1145</td><td>ASTM E114-2010</td><td>接触式直射声束超声脉冲回波检测方法</td></tr>
+                 <tr><td>1146</td><td>ASTM E125-1963 (R2008)</td><td>铁铸件的磁粉检验用标准参考照片</td></tr>
+                 <tr><td>1147</td><td>ASTM E127-2010</td><td>铝合金超声标准参考试块制作和检测的方法</td></tr>
+                 <tr><td>1148</td><td>ASTM E142-1992</td><td>射线透照检测质量控制方法</td></tr>
+                 <tr><td>1149</td><td>ASTM E155-2010</td><td>铝、镁铸件检验用标准参考射线底片</td></tr>
+                 <tr><td>1150</td><td>ASTM E164-2008</td><td>焊件的超声接触检验的标准操作规程</td></tr>
+                 <tr><td>1151</td><td>ASTM E165-2009</td><td>渗透检测操作方法(中英对照)</td></tr>
+                 <tr><td>1152</td><td>ASTM E171-2011</td><td>调理和试验材料用标准气氛技术条件</td></tr>
+                 <tr><td>1153</td><td>ASTM E177-2010</td><td>适用于材料性能测量方面的精密度和准确度术语用法的推荐实施方法</td></tr>
+                 <tr><td>1154</td><td>ASTM E186-2010</td><td>厚壁［2～41/2英寸(51～114mm)]钢铸件的参考射线底片</td></tr>
+                 <tr><td>1155</td><td>ASTM E192-2004（R2010）e1</td><td>航天设备蜡模钢铸件的参考放射线照相</td></tr>
+                 <tr><td>1156</td><td>ASTM E208-2006</td><td>用导向落锤试验测定铁素体钢无塑性转变温度的标准试验方</td></tr>
+                 <tr><td>1157</td><td>ASTM E213-2009</td><td>金属管超声检验方法</td></tr>
+                 <tr><td>1158</td><td>ASTM E214-2001</td><td>液浸式纵波脉冲反射法实施方法</td></tr>
+                 <tr><td>1159</td><td>ASTM E215-2011</td><td>铝合金无缝管材电磁检测设备标定实施方法</td></tr>
+                 <tr><td>1160</td><td>ASTM E220-2007a</td><td>热电偶的校正方法—比较法</td></tr>
+                 <tr><td>1161</td><td>ASTM E228-2011</td><td>用透明石英膨胀仪测定刚性固体线膨胀试验方法</td></tr>
+                 <tr><td>1162</td><td>ASTM E242-2001(R2010)</td><td>参数改变时射线照相图象显示的参考射线底片</td></tr>
+                 <tr><td>1163</td><td>ASTM E243-2009</td><td>铜与铜合金管电磁涡流)检测的标准操作方法</td></tr>
+                 <tr><td>1164</td><td>ASTM E268-1989</td><td>电磁检测术语</td></tr>
+                 <tr><td>1165</td><td>ASTM E269-1984a</td><td>磁粉检测术语</td></tr>
+                 <tr><td>1166</td><td>ASTM E270-1990a</td><td>渗透检测术语</td></tr>
+                 <tr><td>1167</td><td>ASTM E272-2010</td><td>高强度铜基铸件和镍铜合金铸件的参考射线底片</td></tr>
+                 <tr><td>1168</td><td>ASTM E273-2010</td><td>焊接公称管和管子制品超声波检验用标准实用规程</td></tr>
+                 <tr><td>1169</td><td>ASTM E280-2010</td><td>厚壁［41/2～12英寸(114～305mm)]铸钢件的参考射线底片</td></tr>
+                 <tr><td>1170</td><td>ASTM E290-2009</td><td>金属材料延展性的半导向弯曲试验方法</td></tr>
+                 <tr><td>1171</td><td>ASTM E309-2011</td><td>钢材管制品的磁饱和涡流检测实施方法</td></tr>
+                 <tr><td>1172</td><td>ASTM E310-2010</td><td>锡青铜铸件的参考射线底片</td></tr>
+                 <tr><td>1173</td><td>ASTM E317-2011</td><td>不采用电子测量仪器评价脉冲回波式超声检测系统工作性能的方法</td></tr>
+                 <tr><td>1174</td><td>ASTM E337-2002(R2007)</td><td>干、温球温度计测定相对湿度试验方法</td></tr>
+                 <tr><td>1175</td><td>ASTM E376-2011</td><td>应用磁场或涡流(电磁)检测法测定涂层厚度的实施方法</td></tr>
+                 <tr><td>1176</td><td>ASTM E380-1993</td><td>公制标准（节选）</td></tr>
+                 <tr><td>1177</td><td>ASTM E381-2001(R2006)</td><td>棒材、坯段、大方坯和锻件的宏观浸蚀实验标准</td></tr>
+                 <tr><td>1178</td><td>ASTM E384-2011</td><td>材料显微硬度测试方法</td></tr>
+                 <tr><td>1179</td><td>ASTM E385-2011</td><td>使用14兆电子伏特的中子活化和直接计数技术测定含氧量的试验方法</td></tr>
+                 <tr><td>1180</td><td>ASTM E390-2011</td><td>钢熔化焊缝的参考射线底片</td></tr>
+                 <tr><td>1181</td><td>ASTM E407-2007(R2011)e1</td><td>金属和合金微蚀的标准操作规程</td></tr>
+                 <tr><td>1182</td><td>ASTM E415-2008</td><td>碳素钢和低合金钢原子发射真空光谱分析方法</td></tr>
+                 <tr><td>1183</td><td>ASTM E425-1990a</td><td>检漏术语定义</td></tr>
+                 <tr><td>1184</td><td>ASTM E426-1998(R2007)</td><td>无缝及焊接管产品、沃斯田不锈钢及类似合金的电磁（涡电流）检测操作规程</td></tr>
+                 <tr><td>1185</td><td>ASTM E427-1995(R2006)</td><td>卤素检漏仪(碱离子二极管)检漏方法</td></tr>
+                 <tr><td>1186</td><td>ASTM E428-2008</td><td>超声检测用钢质参考试块的制作与质量控制方法</td></tr>
+                 <tr><td>1187</td><td>ASTM E431-1996(R2011)</td><td>半导体及其相关器件射线底片的评片指南</td></tr>
+                 <tr><td>1188</td><td>ASTM E432-1991(R2011)</td><td>选择检漏方法的指导性标准</td></tr>
+                 <tr><td>1189</td><td>ASTM E433-1971(R2008)</td><td>渗透检测用标准参考底片</td></tr>
+                 <tr><td>1190</td><td>ASTM E436-2003(R2008)</td><td>铁素体钢落锤撕裂试验试验方法</td></tr>
+                 <tr><td>1191</td><td>ASTM E446-2010</td><td>2 英寸[51 毫米]厚度以下钢铸件基准射线照片标准规范1</td></tr>
+                 <tr><td>1192</td><td>ASTM E466-2007</td><td>金属材料上进行的恒定振幅轴向疲劳试验</td></tr>
+                 <tr><td>1193</td><td>ASTM E454-2011</td><td>工业孔板和筛板(方孔系列)</td></tr>
+                 <tr><td>1194</td><td>ASTM E479-1991(R2006)</td><td>制订检漏规范的指导性标准</td></tr>
+                 <tr><td>1195</td><td>ASTM E493-2011</td><td>应用质谱检漏仪从里向外方式检漏方法</td></tr>
+                 <tr><td>1196</td><td>ASTM E494-2010</td><td>测定材料中超声速度的方法</td></tr>
+                 <tr><td>1197</td><td>ASTM E498-2011</td><td>应用质谱检漏仪或残留气体分析仪以示踪探头检漏的方法</td></tr>
+                 <tr><td>1198</td><td>ASTM E499-2011</td><td>探头式质谱检漏仪检测泄漏方法</td></tr>
+                 <tr><td>1199</td><td>ASTM E500-1989</td><td>超声检测术语</td></tr>
+                 <tr><td>1200</td><td>ASTM E505-2001(R2011)</td><td>检测压模铝铸件和镁铸件的参考射线底片</td></tr>
+                 <tr><td>1201</td><td>ASTM E515-2011</td><td>应用起泡技术的检漏方法</td></tr>
+                 <tr><td>1202</td><td>ASTM E543-2009</td><td>无损检测机构资格认可的实施标准</td></tr>
+                 <tr><td>1203</td><td>ASTM E545-2005(R2010)</td><td>确定准直热中子射线照相检测图象质量的方法</td></tr>
+                 <tr><td>1204</td><td>ASTM E562-2011</td><td>用系统人工点计数法测定体积分数的试验方法</td></tr>
+                 <tr><td>1205</td><td>ASTM E566-2009</td><td>黑色金属电磁(涡流)分选操作方法</td></tr>
+                 <tr><td>1206</td><td>ASTM E569-2007</td><td>受控激励时结构声发射监测的操作方法</td></tr>
+                 <tr><td>1207</td><td>ASTM E570-2009</td><td>铁磁性钢管的漏磁检测标准方法</td></tr>
+                 <tr><td>1208</td><td>ASTM E571-1998(R2007)e1</td><td>镍和镍合金管材制品的电磁(涡流)检测方法</td></tr>
+                 <tr><td>1209</td><td>ASTM E586-1990a</td><td>工业放射学术语</td></tr>
+                 <tr><td>1210</td><td>ASTM E587-2010</td><td>超声斜射波束接法检测方法</td></tr>
+                 <tr><td>1211</td><td>ASTM E592-1999(R2009)e1</td><td>厚钢板(1/4～2英寸)X射线透照和(1～6英寸)射线透照可达到的等效象质计灵敏度的导则</td></tr>
+                 <tr><td>1212</td><td>ASTM E610-1998a</td><td>声发射术语定义</td></tr>
+                 <tr><td>1213</td><td>ASTM E650-1997(R2007)</td><td>固定压电声发射探头的标准导则</td></tr>
+                 <tr><td>1214</td><td>ASTM E659-1986（R1988）</td><td>测量金属和无机涂层厚度的指导性标准</td></tr>
+                 <tr><td>1215</td><td>ASTM E664-2010</td><td>水浸法对超声纵波视在衰减测量的实施方法</td></tr>
+                 <tr><td>1216</td><td>ASTM E674-2011</td><td>工业孔板和筛板(圆孔系列)</td></tr>
+                 <tr><td>1217</td><td>ASTM E689-2010</td><td>球墨铸铁射线检测的参考底片</td></tr>
+                 <tr><td>1218</td><td>ASTM E690-2010</td><td>非磁性热交换器管在役电磁(涡流)检测的实施方法</td></tr>
+                 <tr><td>1219</td><td>ASTM E703-2009</td><td>有色金属电磁(涡流)分选操作方法</td></tr>
+                 <tr><td>1220</td><td>ASTM E709-2008</td><td>磁粉试验的推荐试验方法（中英对照）</td></tr>
+                 <tr><td>1221</td><td>ASTM E746-2007</td><td>测定工业射线胶片相对图象质量的方法</td></tr>
+                 <tr><td>1222</td><td>ASTM E747-2004(R2010)</td><td>射线照相用线型像质指示器的设计、制造和材料分类的标准操作方法</td></tr>
+                 <tr><td>1223</td><td>ASTM E748-2002(R2008)</td><td>材料的热中子射线透照方法</td></tr>
+                 <tr><td>1224</td><td>ASTM E749-2007</td><td>连续焊接过程中声发射监测方法</td></tr>
+                 <tr><td>1225</td><td>ASTM E750-2010</td><td>声发射检测仪器工作特性测量方法</td></tr>
+                 <tr><td>1226</td><td>ASTM E751-2007</td><td>电阻点焊时声发射监测的操作方法</td></tr>
+                 <tr><td>1227</td><td>ASTM E797-2010</td><td>手工超声脉冲回波接触法测厚标准操作方法</td></tr>
+                 <tr><td>1228</td><td>ASTM E802-1995(R2010)</td><td>壁厚小于或等于41/2英寸(114mm)灰铁铸件的参考射线底片</td></tr>
+                 <tr><td>1229</td><td>ASTM E803-1991(R2008)</td><td>确定中子透照射线束L/D比的方法</td></tr>
+                 <tr><td>1230</td><td>ASTM E804-1988</td><td>用平底孔尺寸外推法校准超声检测系统方法</td></tr>
+                 <tr><td>1231</td><td>ASTM E976-2010</td><td>确定声发射探头响应重复性的标准导则</td></tr>
+                 <tr><td>1232</td><td>ASTM E999-2010</td><td>工业射线照相胶片处理质量控制标准指南</td></tr>
+                 <tr><td>1233</td><td>ASTM E1000-1998(R2009)</td><td>射线实时成象标准</td></tr>
+                 <tr><td>1234</td><td>ASTM E1001-2011</td><td>采用水浸式纵波超声脉冲回波法检测与评定非连续性方法</td></tr>
+                 <tr><td>1235</td><td>ASTM E1002-2011</td><td>超声检漏方法</td></tr>
+                 <tr><td>1236</td><td>ASTM E1004-2009</td><td>电导率电磁(涡流)测量的测试方法</td></tr>
+                 <tr><td>1237</td><td>ASTM E1023-1984(R2007)</td><td>焊接件的射线透照检测方法</td></tr>
+                 <tr><td>1238</td><td>ASTM E1025-2011</td><td>射线照相用孔型像质指示器(IQI)的设计、制造与材料分组的标准操作方法</td></tr>
+                 <tr><td>1239</td><td>ASTM E1030-2005(R2011)</td><td>金属铸件射线检验的标准试验方法</td></tr>
+                 <tr><td>1240</td><td>ASTM E1032-2006</td><td>焊接件的射线透照检测方法</td></tr>
+                 <tr><td>1241</td><td>ASTM E1033-2009</td><td>居里温度以上对F型连续焊接(CW)铁磁性管材和管道的电磁(涡流)检测实施方法</td></tr>
+                 <tr><td>1242</td><td>ASTM E1066-1995(R2006)</td><td>氨比色法检漏的标准方法</td></tr>
+                 <tr><td>1243</td><td>ASTM E1067-2011</td><td>玻璃纤维增强塑料(FRP)贮罐容器声发射检测方法</td></tr>
+                 <tr><td>1244</td><td>ASTM E1106-2007</td><td>声发射探头初次校正方法</td></tr>
+                 <tr><td>1245</td><td>ASTM E1114-2009(R2011)e1</td><td>确定铱-192工业射线照相源的焦点尺寸的标准测试方法</td></tr>
+                 <tr><td>1246</td><td>ASTM E1118-2011</td><td>增强热固性树脂管(RTRP)声发射检测的操作方法</td></tr>
+                 <tr><td>1247</td><td>ASTM E1139-2007</td><td>金属压力壳体声发射连续监测操作方法</td></tr>
+                 <tr><td>1248</td><td>ASTM E1165-2004(R2010)</td><td>用针孔成像法测量工业用X射线管的焦点尺寸的标准测试方法</td></tr>
+                 <tr><td>1249</td><td>ASTM E1208-2010</td><td>采用亲脂性后乳化工艺的荧光渗透检测的试验方法</td></tr>
+                 <tr><td>1250</td><td>ASTM E1209-2010</td><td>采用可水洗工艺的荧光渗透检测的试验方法</td></tr>
+                 <tr><td>1251</td><td>ASTM E1210-2010</td><td>采用亲水性后乳化工艺的荧光渗透检测的试验方法</td></tr>
+                 <tr><td>1252</td><td>ASTM E1211-2007</td><td>用表面-固定声发射探头的泄漏探测和定位的标准操作方法</td></tr>
+                 <tr><td>1253</td><td>ASTM E1219-2010</td><td>采用可溶性去除工艺的荧光渗透检测方法</td></tr>
+                 <tr><td>1254</td><td>ASTM E1220-2010</td><td>采用可溶性去除工艺的目视渗透检测方法</td></tr>
+                 <tr><td>1255</td><td>ASTM E1255-2009</td><td>射线透视检验的标准操作方法</td></tr>
+                 <tr><td>1256</td><td>ASTM E1316-2011b</td><td>无损检测的标准术语</td></tr>
+                 <tr><td>1257</td><td>ASTM E1416-2009</td><td>焊件射线检验的标准测试方法</td></tr>
+                 <tr><td>1258</td><td>ASTM E1419-2009</td><td>无缝充气的压力容器声发射检测的标准检测方法</td></tr>
+                 <tr><td>1259</td><td>ASTM E1444-2011</td><td>磁粉检测标准规程</td></tr>
+                 <tr><td>1260</td><td>ASTM E1593-2006</td><td>减少感官上接受的室内空气臭味程度的空气清新器产品效果评定标准规范</td></tr>
+                 <tr><td>1261</td><td>ASTM E1647-2009</td><td>射线透视检验法测定对比灵敏度的标准操作方法</td></tr>
+                 <tr><td>1262</td><td>ASTM E2096-2010</td><td>现场铁磁性换热器管材远场检测（RFT）标准操作方法</td></tr>
+                 <tr><td>1263</td><td>ASTM E2261-2007</td><td>焊制缝药检测生用物交制流药场生测产量系技统术和的设标备准的操规作范方法设计</td></tr>
+                 <tr><td>1264</td><td>ASTM E2500-2007</td><td>制药和生物制药制造系统和设备的技术要求、设计和验证标准指南</td></tr>
+                 <tr><td>1265</td><td>ASTM F1-2003</td><td>电子管用包镍和镀镍钢带</td></tr>
+                 <tr><td>1266</td><td>ASTM F3-2002a</td><td>电子管用镍带</td></tr>
+                 <tr><td>1267</td><td>ASTM F4-1966(R2005)</td><td>电子管用碳化镍带和镀锌化镍可包镍钢带</td></tr>
+                 <tr><td>1268</td><td>ASTM F7-1995(R2011)</td><td>氧化铝粉</td></tr>
+                 <tr><td>1269</td><td>ASTM F15-2004(R2009)</td><td>铁－镍－钴封接合金</td></tr>
+                 <tr><td>1270</td><td>ASTM F29-1997(R2009)</td><td>玻璃－金属封接用杜美丝</td></tr>
+                 <tr><td>1271</td><td>ASTM F30-1996(R2009)</td><td>铁－镍封接合金</td></tr>
+                 <tr><td>1272</td><td>ASTM F31-2005(R2010)</td><td>42%镍-6％铬－铁封接合金</td></tr>
+                 <tr><td>1273</td><td>ASTM F36-1999 (R2009)</td><td>测定垫片材料压缩率及回弹率的标准试验方法</td></tr>
+                 <tr><td>1274</td><td>ASTM F37-2006</td><td>垫片材料密封性的标准试验方法</td></tr>
+                 <tr><td>1275</td><td>ASTM F38-2000(R2006)</td><td>垫片材料的蠕变松弛的标准试验方法</td></tr>
+                 <tr><td>1276</td><td>ASTM F68-2010</td><td>电子器件用无氧铜加工材</td></tr>
+                 <tr><td>1277</td><td>ASTM F72-2006</td><td>半导体引线键合用金丝</td></tr>
+                 <tr><td>1278</td><td>ASTM F73-1996(R2009)</td><td>电子器件和灯泡用钨铼合金丝</td></tr>
+                 <tr><td>1279</td><td>ASTM F75-2007</td><td>外科植入用钴铬钼镍铸造合金</td></tr>
+                 <tr><td>1280</td><td>ASTM F90-2009</td><td>外科植入用钴铬钨镍形变合金</td></tr>
+                 <tr><td>1281</td><td>ASTM F96-1977(R2010)</td><td>电子级铜镍形变合金</td></tr>
+                 <tr><td>1282</td><td>ASTM F106-2012</td><td>电子器件用钎焊充填金属</td></tr>
+                 <tr><td>1283</td><td>ASTM F109-2012</td><td>与陶瓷表面缺陷相关的标准术语</td></tr>
+                 <tr><td>1284</td><td>ASTM F112-2000(R2006)e1</td><td>包复垫片密封性能的标准试验方法</td></tr>
+                 <tr><td>1285</td><td>ASTM F138-2008</td><td>外科植入用不锈钢钢条与钢丝(特殊级)</td></tr>
+                 <tr><td>1286</td><td>ASTM F139-2008</td><td>外科植入用不锈钢薄板和钢带(特殊级)</td></tr>
+                 <tr><td>1287</td><td>ASTM F146-2004</td><td>垫片材料耐液体标准试验方法</td></tr>
+                 <tr><td>1288</td><td>ASTM F256-2005(R2010)</td><td>含18％或28％铬的铬－铁封接合金</td></tr>
+                 <tr><td>1289</td><td>ASTM F288-1996(R2009)</td><td>电子器件和灯泡用钨丝</td></tr>
+                 <tr><td>1290</td><td>ASTM F289-1996(R2009)</td><td>电子工业用钼丝和钼棒</td></tr>
+                 <tr><td>1291</td><td>ASTM F336-2002(R2009)</td><td>用于腐蚀工况的非金属包覆垫片的设计与结构用标准方法</td></tr>
+                 <tr><td>1292</td><td>ASTM F363-1999(R2011)</td><td>垫片腐蚀试验的标准方法</td></tr>
+                 <tr><td>1293</td><td>ASTM F375-1989(R2010)</td><td>集成电路引线框架材料</td></tr>
+                 <tr><td>1294</td><td>ASTM F487-1988(R2006)</td><td>半导体引线键合用铝－1％硅合金细丝</td></tr>
+                 <tr><td>1295</td><td>ASTM F560-2008</td><td>外科植入用纯钽</td></tr>
+                 <tr><td>1296</td><td>ASTM F562-2007</td><td>外科植入用钴镍铬钼形变合金</td></tr>
+                 <tr><td>1297</td><td>ASTM F563-2000</td><td>外科植入用钴镍铬钼钨铁形变合金</td></tr>
+                 <tr><td>1298</td><td>ASTM F568M-2007</td><td>碳钢和合金钢米制外螺纹紧固件</td></tr>
+                 <tr><td>1299</td><td>ASTM F573-1989</td><td>住宅用镀锌钢丝链环栅栏编织物</td></tr>
+                 <tr><td>1300</td><td>ASTM F586-1979(R1989)</td><td>测定垫片汇漏（泄漏率与应力y和系数m的关系）的标准试验方法</td></tr>
+                 <tr><td>1301</td><td>ASTM F621-2008</td><td>外科植入物用不锈钢锻件</td></tr>
+                 <tr><td>1302</td><td>ASTM F638-1988(R2001)</td><td>半导体引线键合用铝－1％镁合金细丝</td></tr>
+                 <tr><td>1303</td><td>ASTM F642-1979(R1984)</td><td>软组织手术固定有不锈钢柔性钢丝</td></tr>
+                 <tr><td>1304</td><td>ASTM F643-1979(R1984)</td><td>外科软组织固定用钴铬形变合金柔性丝</td></tr>
+                 <tr><td>1305</td><td>ASTM F644-1979(R1984)</td><td>外科骨骼固定用钴铬形变合金柔性丝</td></tr>
+                 <tr><td>1306</td><td>ASTM F666-1980</td><td>骨骼手术固定用不锈钢柔性钢丝</td></tr>
+                 <tr><td>1307</td><td>ASTM F688-2010</td><td>外科植入用钴镍铬钼形变合金中厚板、薄板和箔材</td></tr>
+                 <tr><td>1308</td><td>ASTM F745-2007</td><td>外科手术植入用铸后固溶退火态不锈钢</td></tr>
+                 <tr><td>1309</td><td>ASTM F799-2011</td><td>外科植入用经形变热处理的钴铬钼合金</td></tr>
+                 <tr><td>1310</td><td>ASTM F885-1984（R2011）</td><td>公称管径为NPS1/4~2的青铜截止阀外形尺寸标准规范</td></tr>
+                 <tr><td>1311</td><td>ASTM F963-2011</td><td>消费者安全规范：玩具安全</td></tr>
+                 <tr><td>1312</td><td>ASTM F992-1986(R2011)</td><td>阀门铭牌标准规范</td></tr>
+                 <tr><td>1313</td><td>ASTM F993-1986(R2011)</td><td>阀门锁紧装置标准规范</td></tr>
+                 <tr><td>1314</td><td>ASTM F1030-1986(R2008)</td><td>阀门操作装置的选择准则</td></tr>
+                 <tr><td>1315</td><td>ASTM F1098-1987(R2010)</td><td>公称管径有NPS2～24的蝶阀外形尺寸标准规范</td></tr>
+                 <tr><td>1316</td><td>ASTM F1565-2000(R2006)</td><td>蒸汽用减压阀规范</td></tr>
+                 <tr><td>1317</td><td>ASTM F1183-1996(R2011)</td><td>铝合金链环栅栏编织物</td></tr>
+                 <tr><td>1318</td><td>ASTM F1311-1990(R2006)</td><td>大口jing组装式碳钢法兰标准规范</td></tr>
+                 <tr><td>1319</td><td>ASTM F1345-2010a</td><td>锌－5％铝－混合稀土合金镀覆钢质链环栅栏编织物</td></tr>
+                 <tr><td>1320</td><td>ASTM F2357-2010</td><td>使用NORMAN工具"RCA"磨擦器测定薄膜开关上墨水和涂层抗磨性的标准试验方法</td></tr>
+                 <tr><td>1321</td><td>ASTM G1-2003</td><td>腐蚀试样的制备、清洁处理和评定用标准实施规范</td></tr>
+                 <tr><td>1322</td><td>ASTM G154-2006</td><td>非金属材料暴露用荧光灯紫外暴露装置的操作规范标准</td></tr>
+                 <tr><td>1323</td><td>ASTM G36-1994（R2006）</td><td>标准实用规程：在沸的氯化镁溶液中进行的应力腐蚀裂纹试验</td></tr>
+                 <tr><td>1324</td><td>ASTM G46-1994（R2005）</td><td>标准实用规程：麻点腐蚀的检验和评定</td></tr>
+                 <tr><td>1325</td><td>ASTM G48-2011</td><td>使用三氯化铁溶液做不锈钢及其合金的耐麻点腐蚀和抗裂口腐蚀性试验的标准方法</td></tr>
+                 <tr><td>1326</td><td>ASTM G85-2011</td><td>改良后盐雾实验的标准操作规程</td></tr>
+   
+                 
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        function myFunction() {
+          // 声明变量
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+
+          // 循环表格每一行，查找匹配项
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+              if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            } 
+          }
+        }
+        //提示： 如果你需要区分大小写可以移除 toUpperCase() 方法。
+        //提示： 如果你需要检索第二列（城市）可以将 tr[i].getElementsByTagName('td')[0] 修改为 [1] 。索引值从 0 开始，即 0 为第一列，1 为第二列，以此类推。
+    </script>
+</body>
+</html>
+
+
+
