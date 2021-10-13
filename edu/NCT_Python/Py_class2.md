@@ -499,9 +499,9 @@ A. True	B. False	C. None	D. 程序报错
    
    答案：见下面隐藏代码块
    
+   
    <div style="color:white";>
    import pygame, sys
-   
    def drawGameGrid():
        for x in range(20, 800, 20):
            pygame.draw.line(screen, (150,150,150), (x, 0), (x, 500))
@@ -526,7 +526,6 @@ A. True	B. False	C. None	D. 程序报错
        showScore(100)
        pygame.display.update()
    </div>
-   
    
 
 # 专题2 模块化编程
