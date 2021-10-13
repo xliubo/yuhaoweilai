@@ -154,6 +154,7 @@
 		code .green{color: #009900;}
 		code .red{color: #cc3300;}
 		code .l_brown{color:#ffbb99;}
+		code .darkgray{color:#a9a9a9;}
 		.content ol p{line-height: 1.8}  
 	</style>
 	<style type="text/css">
@@ -220,7 +221,27 @@
 				</a>
 			</li>
 			<li>
+				<a href="#clock" class="sidebar-link">设置刷新频率
+				</a>
+			</li>
+			<li>
 				<a href="#obj" class="sidebar-link">理解Surface与Rect
+				</a>
+			</li>
+			<li>
+				<a href="#event" class="sidebar-link">鼠标和键盘事件
+				</a>
+			</li>
+			<li>
+				<a href="#collide" class="sidebar-link">碰撞检测
+				</a>
+			</li>
+			<li>
+				<a href="#sprite" class="sidebar-link">精灵与精灵检测
+				</a>
+			</li>
+			<li>
+				<a href="#sound" class="sidebar-link">声音与音乐
 				</a>
 			</li>
 		</ul>
@@ -240,7 +261,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> pygame.QUIT:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
-					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update()</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
 				</code>
 			</pre>	
 			<ol>
@@ -427,13 +448,13 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
 
 					&nbsp;&nbsp;&nbsp;&nbsp;pygame.draw.<span class="blue">line</span>(screen, (<span class="brown">0,0,0</span>), (<span class="brown">0,0</span>), (<span class="brown">600,400</span>))
-					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update()</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
 				</code>
 			</pre>	
 			<ol>
 				<li>
 					<p>
-						<span>绘制基本图形通过pygame.draw模块实现</span>
+						<span>绘制图形需要使用到pygame.draw模块</span>
 					</p>	
 				</li>
 				<li>
@@ -469,23 +490,23 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> pygame.QUIT:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
-					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update()</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
 				</code>
 			</pre>
 			<ol>
 				<li>
 					<p>
-						<span>显示文字通过pygame.draw模块实现</span>
+						<span>显示文字需要使用到pygame.font模块</span>
 					</p>	
 				</li>
 				<li>
 					<p>
-						<span>font = pygame.font.Font('./font/Gabriola.ttf',50)设置字体和字号</span>
+						<span>font = pygame.font.Font('./font/Gabriola.ttf',50) 设置字体和字号</span>
 					</p>	
 				</li>
 				<li>
 					<p>
-						<span>text = font.render('I love China !',True, (255,0,0))设置要显示的文本，返回surface对象</span>
+						<span>text = font.render('I love China !',True, (255,0,0)) 设置要显示的文本，返回surface对象</span>
 					</p>	
 				</li>
 				<li>
@@ -500,10 +521,110 @@
 				</li>
 			</ol>
 			<a name="image"><h1>如何显示图片</h1></a>
+			<pre class="language-python">
+				<code>
+					<span class="pink">import</span> pygame, sys
+
+					pygame.<span class="blue">init</span>()
+					screen <span class="l_brown">=</span> pygame.display.<span class="blue">set_mode</span>((<span class="brown">600,400</span>))
+					pygame.display.<span class="blue">set_caption</span>(<span class="green">"Pygame游戏之旅"</span>)
+
+					img <span class="l_brown">=</span> pygame.image.<span class="blue">load</span>(<span class="green">'./img/pg.png'</span>)
+					<span class="darkgray"># img = pygame.transform.scale(img, (400,100))</span>
+					<span class="darkgray"># img = pygame.transform.rotate(img, 45)</span>
+					<span class="darkgray"># img = pygame.transform.rotozoom(img, 0, 0.3)</span>
+					rect <span class="l_brown">=</span> img.<span class="blue">get_rect</span>(center <span class="l_brown">=</span> (<span class="brown">300,200</span>))
+					screen.<span class="blue">blit</span>(img, rect)
+
+					<span class="pink">while</span> <span class="red">True</span>:
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> pygame.QUIT:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
+				</code>
+			</pre>
+			<ol>
+				<li>
+					<p>
+						<span>显示图片需要使用到pygame.image模块</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>img = pygame.image.load('./img/pg.png') 内存加载名为pg.png的图片，返回surface对象</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>rect = img.get_rect(center = (300,200)) 设置一个存放图片的矩形区域，返回rect对象</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>screen.blit(img, rect) 将图片surface对象绘制到rect矩形对象范围内</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>以下是对图片的操作方法：</span>
+					</p>
+					<p>
+						<span>img = pygame.transform.scale(img, (400,100)) 按长宽缩放surface对象</span>
+					</p>
+					<p>
+						<span>img = pygame.transform.rotate(img, 45) 旋转surface对象</span>
+					</p>
+					<p>
+						<span>img = pygame.transform.rotozoom(img, 0, 0.3) 旋转及等比例缩放surface对象</span>
+					</p>	
+				</li>
+			</ol>
+			<a name="clock"><h1>设置刷新频率</h1></a>
+			<pre class="language-python">
+				<code>
+					<span class="pink">import</span> pygame, sys
+
+					pygame.<span class="blue">init</span>()
+					screen <span class="l_brown">=</span> pygame.display.<span class="blue">set_mode</span>((<span class="brown">600,400</span>))
+					pygame.display.<span class="blue">set_caption</span>(<span class="green">"Pygame游戏之旅"</span>)
+					clock <span class="l_brown">=</span> pygame.time.<span class="blue">Clock</span>()
+
+					x <span class="l_brown">=</span> 0
+
+					<span class="pink">while</span> <span class="red">True</span>:
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> pygame.QUIT:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
+
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.draw.<span class="blue">circle</span>(screen, (<span class="brown">255,0,0</span>), (x,<span class="brown">200</span>), <span class="brown">15</span>, <span class="brown">1</span>)
+					&nbsp;&nbsp;&nbsp;&nbsp;x <span class="l_brown">+=</span> 10
+
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
+					&nbsp;&nbsp;&nbsp;&nbsp;clock.<span class="blue">tick</span>(15)
+				</code>
+			</pre>
+			<ol>
+				<li>
+					<p>
+						<span>设置刷新频率需要使用到pygame.time模块</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>clock = pygame.time.Clock() 创建时钟对象</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>clock.tick(15) 使用时钟对象的tick方法来设置刷新频率，1秒15帧</span>
+					</p>	
+				</li>
+			</ol>
 			<a name="obj"><h1>理解Surface与Rect</h1></a>
-			<a name="button"><h1>如何制作按钮</h1></a>
-			<a name="animition"><h1>如何制作动画</h1></a>
-			<a name="key"><h1>鼠标和键盘事件</h1></a>
+			<a name="event"><h1>鼠标和键盘事件</h1></a>
+			<a name="collide"><h1>碰撞检测</h1></a>
+			<a name="sprite"><h1>精灵与精灵组</h1></a>
+			<a name="sound"><h1>声音与音乐</h1></a>
 			<a name="bird"><h1>示例0：小鸟跳一跳</h1></a>
 			<a name="plane"><h1>示例1：飞机大战</h1></a>
 			<a name="snake"><h1>示例2：贪吃蛇</h1></a>
