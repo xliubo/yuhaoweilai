@@ -1388,12 +1388,18 @@
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
+          filter_arr = filter.split(" ")
 
           // 循环表格每一行，查找匹配项
           for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[2];
-            if (td) {
-              if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            td2 = tr[i].getElementsByTagName("td")[2];
+            td1 = tr[i].getElementsByTagName("td")[1];
+            condition = true
+            if (td2 || td1) {
+              for(k = 0;k < filter_arr.length;k++){
+              condition = condition&&(td2.innerHTML.toUpperCase().indexOf(filter_arr[k]) > -1 || td1.innerHTML.toUpperCase().indexOf(filter_arr[k]) > -1)
+              }
+              if (condition) {
                 tr[i].style.display = "";
               } else {
                 tr[i].style.display = "none";
@@ -1402,7 +1408,6 @@
           }
         }
         //提示： 如果你需要区分大小写可以移除 toUpperCase() 方法。
-        //提示： 如果你需要检索第二列（城市）可以将 tr[i].getElementsByTagName('td')[0] 修改为 [1] 。索引值从 0 开始，即 0 为第一列，1 为第二列，以此类推。
     </script>
 </body>
 </html>
