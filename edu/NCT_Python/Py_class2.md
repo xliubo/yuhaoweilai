@@ -499,34 +499,29 @@ A. True	B. False	C. None	D. 程序报错
    
    答案：见下面隐藏代码块
    
-   
    <div style="color:white";>
    import pygame, sys
-   def drawGameGrid():
+   def drawGameGrid(screen):
        for x in range(20, 800, 20):
            pygame.draw.line(screen, (150,150,150), (x, 0), (x, 500))
        for y in range(20, 500, 20):
            pygame.draw.line(screen, (150,150,150), (0, y), (800, y))
-   
-   def showScore(score):
+   def showScore(screen,score):
        font = pygame.font.Font('simkai.ttf',30)
        text = font.render('Score: %d'%score, True, (255,255,255))
        rect = text.get_rect()
        screen.blit(text, rect)
-   
    pygame.init()
    screen = pygame.display.set_mode((800,500))
    pygame.display.set_caption("画网格")
-   
    while True:
        for event in pygame.event.get():
            if event.type == pygame.QUIT:
                sys.exit()
-       drawGameGrid()
-       showScore(100)
+       drawGameGrid(screen)
+       showScore(screen,0)
        pygame.display.update()
    </div>
-   
 
 # 专题2 模块化编程
 
@@ -2614,7 +2609,92 @@ D.  科目：语文,成绩：95,排名：5
 
 ## 复习
 
+1. 按要求写程序
 
+   - 利用pygame库创建一个按钮类，保存文件名为button.py
+   - 利用创建的按钮类，在游戏窗口创建两个按钮，当点击“开始游戏“按钮进入游戏界面，当点击”退出游戏“按钮退出游戏。保存文件名为main.py
+
+   （效果见下图，pygame学习传送门： <a href="../../code/pygame/pygame_cookbook.html"><font color="red">传送</font></a>）
+
+   ![button_class](.\img\button_class.gif)
+
+   答案：见下面隐藏代码块
+
+   <div style="color:white";>#button.py
+   import pygame
+   class Button():
+       def __init__(self,screen,size,pos,btn_text="",color=(100,100,100)):
+           self.screen = screen
+           self.width,self.height = size
+           self.left,self.top = pos
+           self.btn_text = btn_text
+           self.color = color
+           self.font = pygame.font.Font('simkai.ttf', 50)
+       def is_hover(self):
+           mouse_x,mouse_y = pygame.mouse.get_pos()
+           if self.left<mouse_x<self.left+self.width and self.top<mouse_y<self.top+self.height:
+               return True
+           else:
+               return False
+       def display(self):
+           # if self.is_hover():
+           #     self.color = (255,100,100)
+           # else:
+           #     self.color = (100,100,100)
+           pygame.draw.rect(self.screen, self.color, (self.left, self.top, self.width, self.height))
+           pygame.draw.line(self.screen, (150,150,150), (self.left,self.top), (self.left+self.width,self.top),5)
+           pygame.draw.line(self.screen, (150,150,150), (self.left,self.top-2), (self.left,self.top+self.height),5)
+           pygame.draw.line(self.screen, (70,70,70), (self.left,self.top+self.height), (self.left+self.width,self.top+self.height),5)
+           pygame.draw.line(self.screen, (70,70,70), (self.left+self.width,self.top+self.height), (self.left+self.width,self.top),5)
+           text = self.font.render(self.btn_text, True, (255,255,255))
+           rect = text.get_rect(center = (self.left+self.width/2, self.top+self.height/2))
+           self.screen.blit(text, rect)
+   </div>
+
+   <div style="color:white";>#main.py
+   import pygame, sys
+   from button import Button
+   def drawGameGrid(screen):
+       for x in range(20, 800, 20):
+           pygame.draw.line(screen, (150,150,150), (x, 0), (x, 500))
+       for y in range(20, 500, 20):
+           pygame.draw.line(screen, (150,150,150), (0, y), (800, y))
+   def showScore(screen,score):
+       font = pygame.font.Font('simkai.ttf',30)
+       text = font.render('Score: %d'%score, True, (255,255,255))
+       rect = text.get_rect()
+       screen.blit(text, rect)
+   def main():
+       # 游戏初始化
+       pygame.init()
+       screen = pygame.display.set_mode((800,500))
+       pygame.display.set_caption('贪吃蛇')
+       clock = pygame.time.Clock()
+       screen.fill((0,0,0))
+       btn1 = Button(screen, (310,65), (250,150), '开始游戏')
+       btn2 = Button(screen, (310,65), (250,250), '退出游戏')
+       is_show = True
+       while True:
+          	for event in pygame.event.get():
+               if event.type == pygame.QUIT:
+                   sys.exit()
+               if pygame.mouse.get_pressed()[0] == True:
+                   if btn1.is_hover():
+                       is_show = False
+                       screen.fill((0,0,0))
+                   if btn2.is_hover():
+                       sys.exit()
+           if is_show:
+               btn1.display()
+               btn2.display()
+           else:
+               drawGameGrid(screen)
+               showScore(screen,0)
+           pygame.display.update()
+           clock.tick(15)
+   if __name__ == '__main__':
+       main()
+   </div>
 
 # 专题8 命名空间及作用域
 
