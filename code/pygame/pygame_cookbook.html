@@ -621,7 +621,69 @@
 				</li>
 			</ol>
 			<a name="obj"><h1>理解Surface与Rect</h1></a>
+			<p>
+				<span>&#10173;&nbsp;</span><span>Surface：在Pygame中窗口和图片都称为Surface，所谓Surface对象就是用来表示图像的对象;</span>
+				<br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;</span><span>将图片绘制到屏幕上使用blit方法，后绘制的图像覆盖先绘制的。</span>
+			</p>
+			<p>
+				<span>&#10173;&nbsp;</span><span>Rect：在Pygame中通过Rect对象存储和操作矩形区域，主要用于Surface对象的位置修改和碰撞检测;</span>
+				<br>
+				<span>&nbsp;&emsp;&emsp;&emsp;&emsp;</span><span>使用Surface.get_rect()方法可以获得一个Rect对象。该矩形对象（Rect）默认以 (0, 0)为起点。</span>
+			</p>
 			<a name="event"><h1>鼠标和键盘事件</h1></a>
+			<pre class="language-python">
+				<code>
+					<span class="pink">import</span> pygame, sys
+					<span class="pink">from</span> pygame.locals <span class="pink">import</span> *
+
+					pygame.<span class="blue">init</span>()
+					screen <span class="l_brown">=</span> pygame.display.<span class="blue">set_mode</span>((<span class="brown">600,400</span>))
+					pygame.display.<span class="blue">set_caption</span>(<span class="green">"Pygame游戏之旅"</span>)
+					clock <span class="l_brown">=</span> pygame.time.<span class="blue">Clock</span>()
+
+					<span class="pink">while</span> <span class="red">True</span>:
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">for</span> event <span class="pink">in</span> pygame.event.<span class="blue">get</span>():
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> QUIT:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.<span class="blue">exit</span>()
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> MOUSEBUTTONDOWN:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">print</span>(pygame.mouse.<span class="blue">get_pos</span>())
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.type <span class="l_brown">==</span> KEYDOWN:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">if</span> event.key <span class="l_brown">==</span> K_a:
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">print</span>(<span class="green">'键盘A被按下'</span>)
+
+					&nbsp;&nbsp;&nbsp;&nbsp;pygame.display.<span class="blue">update</span>()
+					&nbsp;&nbsp;&nbsp;&nbsp;clock.<span class="blue">tick</span>(15)
+				</code>
+			</pre>
+			<ol>
+				<li>
+					<p>
+						<span>键盘和鼠标事件要用到pygame.key，pygame.mouse，pygame.event三个模块</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>from pygame.locals import * 将常用的关键字导入，避免反复书写pygame</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>if event.type == MOUSEBUTTONDOWN: 判断鼠标是否被按下</span>
+						<br>
+						<span>pygame.mouse.get_pos() 获取鼠标的位置</span>
+					</p>	
+				</li>
+				<li>
+					<p>
+						<span>if event.type == KEYDOWN: 判断键盘是否被按下</span>
+						<br>
+						<span>if event.key == K_a: 判断被按下的是否为A键</span>
+					</p>	
+				</li>
+			</ol>
 			<a name="collide"><h1>碰撞检测</h1></a>
 			<a name="sprite"><h1>精灵与精灵组</h1></a>
 			<a name="sound"><h1>声音与音乐</h1></a>
