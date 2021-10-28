@@ -2599,6 +2599,195 @@ D.  科目：语文,成绩：95,排名：5
 
 ## 巩固练习
 
+<font color=blue>1. </font>按要求写程序
+
+创建一个五子棋的棋子类Chess，该实例化的棋子对象piece具有判定输赢的方法。
+
+（设棋盘大小为m行 * n列，黑色棋子用1表示，白色棋子用-1表示，无棋子用0表示）
+
+例如，有如下6行 * 7列的棋局：
+
+~~~python
+five_map = [[0,0,-1,0,0,0,0],
+			[0,1,0,-1,1,0,0],
+			[0,1,0,1,-1,0,0],
+			[0,1,1,0,1,-1,0],
+			[1,0,0,-1,0,0,0],
+			[0,1,0,0,-1,0,0]]
+~~~
+
+输入：黑色棋子，位置5行2列
+
+输出：黑方胜利
+
+输入：黑色棋子，位置5行5列
+
+输出：未胜利，请继续对局
+
+输入：白色棋子，位置5行7列
+
+输出：白方胜利
+
+
+
+答案：见下面代码块
+
+~~~python
+class Chess(object):
+	def __init__(self, color,m, n, map_lis):
+		self.color = color
+		self.m, self.n = m, n
+		self.row = len(map_lis)
+		self.column = len(map_lis[0])
+		self.map_lis = map_lis
+	def victory(self):
+		total = 0
+		#黑子胜利判断
+		if self.color == "black":
+			a = 1
+			# 横向搜索
+			for i in range(self.n+1, self.column):
+				if self.map_lis[self.m][i] == a:
+					total += a
+				else:
+					break
+			for i in range(self.n-1,-1,-1):
+				if self.map_lis[self.m][i] == a:
+					total += a
+				else:
+					break
+			if total>=4:
+				print('黑方胜利')
+				return
+			else:
+				total = 0
+			#纵向搜索
+			for i in range(self.m+1, self.row):
+				if self.map_lis[i][self.n] == a:
+					total += a
+				else:
+					break
+			for i in range(self.m-1,-1,-1):
+				if self.map_lis[i][self.n] == a:
+					total += a
+				else:
+					break
+			if total>=4:
+				print('黑方胜利')
+				return
+			else:
+				total = 0
+			#斜45度搜索
+			for i in range(1, min(self.m, self.column-1-self.n)+1):
+				if self.map_lis[self.m-i][self.n+i] == a:
+					total += a
+				else:
+					break
+			for i in range(1, min(self.n, self.row-1-self.m)+1):
+				if self.map_lis[self.m+i][self.n-i] == a:
+					total += a
+				else:
+					break
+			if total>=4:
+					print('黑方胜利')
+					return
+			else:
+				total = 0
+			#斜135度搜索
+			for i in range(1, min(self.row-1-self.m, self.column-1-self.n)+1):
+				if self.map_lis[self.m+i][self.n+i] == a:
+					total += a
+				else:
+					break
+			for i in range(1, min(self.m, self.n)+1):
+				if self.map_lis[self.m-i][self.n-i] == a:
+					total += a
+				else:
+					break
+			if total>=4:
+					print('黑方胜利')
+					return
+			else:
+				total = 0
+		#白子胜利判断
+		if self.color == "white":
+			a = -1
+			# 横向搜索
+			for i in range(self.n+1, self.column):
+				if self.map_lis[self.m][i] == a:
+					total += a
+				else:
+					break
+			for i in range(self.n-1,-1,-1):
+				if self.map_lis[self.m][i] == a:
+					total += a
+				else:
+					break
+			if total<=-4:
+				print('白方胜利')
+				return
+			else:
+				total = 0
+			#纵向搜索
+			for i in range(self.m+1, self.row):
+				if self.map_lis[i][self.n] == a:
+					total += a
+				else:
+					break
+			for i in range(self.m-1,-1,-1):
+				if self.map_lis[i][self.n] == a:
+					total += a
+				else:
+					break
+			if total<=-4:
+				print('白方胜利')
+				return
+			else:
+				total = 0
+			#斜45度搜索
+			for i in range(1, min(self.m, self.column-1-self.n)+1):
+				if self.map_lis[self.m-i][self.n+i] == a:
+					total += a
+				else:
+					break
+			for i in range(1, min(self.n, self.row-1-self.m)+1):
+				if self.map_lis[self.m+i][self.n-i] == a:
+					total += a
+				else:
+					break
+			if total<=-4:
+					print('白方胜利')
+					return
+			else:
+				total = 0
+			#斜135度搜索
+			for i in range(1, min(self.row-1-self.m, self.column-1-self.n)+1):
+				if self.map_lis[self.m+i][self.n+i] == a:
+					total += a
+				else:
+					break
+			for i in range(1, min(self.m, self.n)+1):
+				if self.map_lis[self.m-i][self.n-i] == a:
+					total += a
+				else:
+					break
+			if total<=-4:
+					print('白方胜利')
+					return
+			else:
+				total = 0
+#主程序
+map_lis =  [[0,0,-1,0,0,0,0],
+			[0,1,0,-1,1,0,0],
+			[0,1,0,1,-1,0,0],
+			[0,1,1,0,1,-1,0],
+			[1,0,0,-1,0,0,0],
+			[0,1,0,0,-1,0,0]]
+piece = Chess('white', 4, 6, map_lis)  #4行1列
+piece.victory()
+~~~
+
+
 
 
 ------
@@ -2632,7 +2821,7 @@ D.  科目：语文,成绩：95,排名：5
            self.font = pygame.font.Font('simkai.ttf', 50)
        def is_hover(self):
            mouse_x,mouse_y = pygame.mouse.get_pos()
-           if self.left<mouse_x<self.left+self.width and self.top<mouse_y<self.top+self.height:
+           if self.left&lt;mouse_x&lt;self.left+self.width and self.top&lt;mouse_y&lt;self.top+self.height:
                return True
            else:
                return False
@@ -2650,7 +2839,9 @@ D.  科目：语文,成绩：95,排名：5
            rect = text.get_rect(center = (self.left+self.width/2, self.top+self.height/2))
            self.screen.blit(text, rect)
    </div>
-
+   
+   
+   
    <div style="color:white";>#main.py
    import pygame, sys
    from button import Button
@@ -2911,15 +3102,105 @@ B2-->D2(作用域)
 
 2. 作用域
 
+   作用域是指命名空间可以被直接访问的区域。变量并不是在任何位置都可以访问的，作用域决定了可以访问的范围。
    
+   例如：
+   
+   ~~~python
+   def te():
+       a = 3
+       print(a,'我在函数内部,我是局部的变量')
+   te()
+   print(a,'我在函数外部，我是全局的变量')
+   ~~~
+   
+   python共有四种作用域：
+   
+   - 局部作用域：包含局部变量，是最内层作用域
+   - 全局作用域：包含全局变量，是当前程序的最外层作用域
+   - 嵌套作用域：包含非全局变量，介于两个嵌套函数之间（如下面示例）
+   - 内置作用域：包含内置变量和关键字
+   
+   ~~~python
+   def a():
+       x = 0
+       def b():
+           pass
+   #x即为嵌套作用域内的非全局变量
+   ~~~
+   
+   作用域的查找顺序：
+   
+   在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内置中找。
+
+![spacename](.\img\spacename.png)
 
 ## 知识点探秘
 
+<font color=blue>----></font>执行下列程序，输出结果是（）
 
+~~~python
+total = 0
+def sum(arg1, arg2):
+    global total
+    total = arg1 + arg2
+    return total
+print(sum(10, 20),total)
+~~~
+
+A. 0 0	B. 30 0	C. 30 30	D. 0 30
+
+答案：<font color='white'>C</font>
+
+<font color=blue>----></font>执行下列程序，输出结果是（）
+
+~~~python
+n = 1
+m = 0
+def double(a,b):
+    global m
+    m = a*b
+    n = b
+    return m+n
+result = double(10,20)
+print(m,n)
+~~~
+
+A. 200 20	B. 0 20	C. 0 1	D. 200 1
+
+答案：<font color='white'>D</font>
 
 ## 巩固练习
 
+<font color=blue>1. </font>下列描述正确的是（）
 
+​	A. Python在查找某一名称时，按照内置名称----->全局名称----->局部名称的顺序进行
+
+​	B. 全局作用域是最外层的作用域
+
+​	C. 函数内部声明的变量就是全局变量
+
+​	D. 关键字global可将局部变量声明为全局变量使用
+
+​	答案：<font color='white'>D</font>
+
+<font color=blue>2. </font>执行下列程序，输出结果是（）
+
+~~~python
+ls = []
+lt = []
+def knock(s):
+    ls = []
+    lt.append(s*2)
+    ls.append(s*3)
+    return s
+ts = knock('D~')
+print(lt, ls)
+~~~
+
+A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
+
+答案：<font color='white'>B</font>
 
 ------
 
@@ -2929,11 +3210,91 @@ B2-->D2(作用域)
 
 ## 复习
 
+<img src=".\img\snake_food.png" alt="snake_food" style="zoom:100%;" />
 
+1.按要求写程序
+
+- 创建Apple类，要求能在贪吃蛇游戏中随机产生一个红色的圆点作为贪吃蛇的食物（如上图）
+
+  答案：见下面隐藏代码块
+
+  <div style="color:white";>
+  import pygame, random
+  class Apple():
+      def __init__(self,screen,color,radius,snake_pos):
+          self.screen = screen
+          self.color = color
+          self.radius = radius
+          while True:
+              self.pos = [10+20*random.randint(0, 800/20-1),10+20*random.randint(0, 500/20-1)]
+              if self.pos not in snake_pos:
+                  self.center_x,self.center_y = self.pos[0],self.pos[1]
+                  break
+      def display(self):
+          pygame.draw.circle(self.screen, self.color, (self.center_x,self.center_y), self.radius)
+  </div>
+
+- 将上一章节的主程序main.py进行改写，要求将drawGameGrid()，showScore()两个函数写入到新的模块utils.py，改写后的主程序如下：
+
+  ~~~python
+  import pygame, sys
+  from button import Button
+  from food import Apple
+  from utils import drawGameGrid, showScore
+  def main():
+      # 游戏初始化
+      pygame.init()
+      screen = pygame.display.set_mode((800,500))
+      pygame.display.set_caption('贪吃蛇')
+      clock = pygame.time.Clock()
+      screen.fill((0,0,0))
+      btn1 = Button(screen, (310,65), (250,150), '开始游戏')
+      btn2 = Button(screen, (310,65), (250,250), '退出游戏')
+      apple = Apple(screen, (255,0,0), 8,[[0,0]])
+      is_show = True
+      while True:
+         	for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  sys.exit()
+              if pygame.mouse.get_pressed()[0] == True:
+                  if btn1.is_hover():
+                      is_show = False
+                      screen.fill((0,0,0))
+                  if btn2.is_hover():
+                      sys.exit()
+          if is_show:
+              btn1.display()
+              btn2.display()
+          else:
+              drawGameGrid(screen)
+              showScore(screen,0)
+              apple.display()
+          pygame.display.update()
+          clock.tick(15)
+  if __name__ == '__main__':
+      main()
+  ~~~
+
+  
 
 # 专题9 第三方库的获取及使用
 
 ## 考查方向
+
+~~~mermaid
+graph LR
+A(第三方库的获取和使用)-->B(第三库的获取)
+A-->C(jieba库的使用)
+A-->D(pyinstaller库的使用)
+A-->E(wordcloud库的使用)
+B-->X1(什么是第三方库)
+B-->X2(安装第三方库的三种方法)
+B-->X3(查找和安装的方法)
+C-->Y1(jieba库的安装及使用)
+D-->Z1(pyinstaller库的安装及使用)
+E-->Q2(wordcloud库的安装及使用)
+E-->Q1(wordcloud库和jieba库的综合使用)
+~~~
 
 
 
@@ -2941,17 +3302,30 @@ B2-->D2(作用域)
 
 ### 知识点1 第三方库的获取
 
+1. 什么是第三方库
 
+   python库：具有相关功能模块的集合，帮助编程者轻松实现强大的功能。python库分为标准库和第三方库。
+
+   
+
+2. 安装第三方库的三种方法
+
+3. 查找和安装的方法
 
 ### 知识点2 jieba库的使用
 
+1. jieba库的安装及使用
 
 
 ### 知识点3 pyinstaller库的使用
 
+1. pyinstaller库的安装及使用
 
 
 ### 知识点2 wordcloud库的使用
+
+1. wordcloud库的安装及使用
+2. wordcloud库和jieba库的综合使用
 
 ## 知识点探秘
 
