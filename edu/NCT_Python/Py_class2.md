@@ -3509,7 +3509,7 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
    ​		一段信息往往需要分析出关键词，高频词，这样可以使人迅速捕捉到有用信息。而wordcloud库和jieba库的结合使用，可以很好的解决这样的问题。
    
-   分析内容：鲁迅的小说《孔乙己》（ <a href="./dcs/kongyiji.md"><font color="green">传送</font></a>）
+   分析内容：鲁迅的小说《孔乙己》（ <a href="./dcs/kongyiji.html"><font color="green">传送</font></a>）
    
    ~~~python
    from wordcloud import WordCloud 
