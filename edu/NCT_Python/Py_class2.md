@@ -1331,7 +1331,7 @@ c-->e3(其他操作)
    | -------------- | ------------------------------------------------------------ |
    | f.read(x)      | 以字符串形式返回读取的数据，传参表示读取的字符个数，不传参则读取所有内容 |
    | f.readline(x)  | 读取一行，以字符串的形式返回数据。若传参表示读取该行的字符数 |
-   | f.readlines(x) | 读取所有行，以列表形式返回数据，列表中的每一个元素就是文件中的每一行。若传参表示读取的行数 |
+   | f.readlines(x) | 读取所有行，以列表形式返回数据，列表中的每一个元素就是文件中的每一行。若传参表示读取的字节数并返回最后一个字节所在的行 |
 
    ~~~python
    #读取文件的第二行
@@ -2841,7 +2841,6 @@ piece.victory()
    </div>
    
    
-   
    <div style="color:white";>#main.py
    import pygame, sys
    from button import Button
@@ -2870,11 +2869,12 @@ piece.victory()
                if event.type == pygame.QUIT:
                    sys.exit()
                if pygame.mouse.get_pressed()[0] == True:
-                   if btn1.is_hover():
-                       is_show = False
-                       screen.fill((0,0,0))
-                   if btn2.is_hover():
-                       sys.exit()
+       			if is_show:
+                       if btn1.is_hover():
+                           is_show = False
+                           screen.fill((0,0,0))
+                       if btn2.is_hover():
+                           sys.exit()
            if is_show:
                btn1.display()
                btn2.display()
@@ -3226,9 +3226,9 @@ A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
           self.color = color
           self.radius = radius
           while True:
-              self.pos = [10+20*random.randint(0, 800/20-1),10+20*random.randint(0, 500/20-1)]
+              self.pos = [random.randint(0, 800/20-1),random.randint(0, 500/20-1)] #[行号，列号]
               if self.pos not in snake_pos:
-                  self.center_x,self.center_y = self.pos[0],self.pos[1]
+                  self.center_x,self.center_y = 10+20*self.pos[0],10+20*self.pos[1]
                   break
       def display(self):
           pygame.draw.circle(self.screen, self.color, (self.center_x,self.center_y), self.radius)
@@ -3250,18 +3250,19 @@ A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
       screen.fill((0,0,0))
       btn1 = Button(screen, (310,65), (250,150), '开始游戏')
       btn2 = Button(screen, (310,65), (250,250), '退出游戏')
-      apple = Apple(screen, (255,0,0), 8,[[0,0]])
+      apple = Apple(screen, (255,0,0), 8,[[0,0]]) #蛇类未创建，暂时用[[0,0]]替代
       is_show = True
       while True:
          	for event in pygame.event.get():
               if event.type == pygame.QUIT:
                   sys.exit()
               if pygame.mouse.get_pressed()[0] == True:
-                  if btn1.is_hover():
-                      is_show = False
-                      screen.fill((0,0,0))
-                  if btn2.is_hover():
-                      sys.exit()
+                  if is_show:
+                      if btn1.is_hover():
+                          is_show = False
+                          screen.fill((0,0,0))
+                      if btn2.is_hover():
+                          sys.exit()
           if is_show:
               btn1.display()
               btn2.display()
@@ -3274,7 +3275,7 @@ A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
   if __name__ == '__main__':
       main()
   ~~~
-
+  
   
 
 # 专题9 第三方库的获取及使用
@@ -3289,7 +3290,7 @@ A-->D(pyinstaller库的使用)
 A-->E(wordcloud库的使用)
 B-->X1(什么是第三方库)
 B-->X2(安装第三方库的三种方法)
-B-->X3(查找和安装的方法)
+B-->X3(pip常用命令)
 C-->Y1(jieba库的安装及使用)
 D-->Z1(pyinstaller库的安装及使用)
 E-->Q2(wordcloud库的安装及使用)
@@ -3304,28 +3305,223 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
 1. 什么是第三方库
 
-   python库：具有相关功能模块的集合，帮助编程者轻松实现强大的功能。python库分为标准库和第三方库。
+   - python库：具有相关功能模块的集合，帮助编程者轻松实现强大的功能。
 
-   
+   - python库包括标准库和第三方库。
+
+   - 标准库是自带的，第三方库需要下载安装。
 
 2. 安装第三方库的三种方法
 
-3. 查找和安装的方法
+   pip工具安装：pip install + 库名，（国外服务器很慢建议使用国内的清华镜像）
+
+   自定义安装：安装第三方库提供的说明进行安装，多用于在pip中未登记的库或pip安装失败的库。
+
+   文件安装：可以用pip下载，但无法安装，因为文件没有被编译过（提供的文件是源码而非可执行文件，例如github上的源码文件），这就需要先进行编译，然后再进行安装。（其实吧…………清华镜像里基本都有编译好的，哪用那么麻烦！额哈哈哈哈！！！）
+
+   <font color = red>清华镜像：</font>
+
+   ```
+   pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+   ```
+
+3. pip常用命令
+
+   查看已安装的库：pip list
+
+   其它的命令：……用时候上网搜……
 
 ### 知识点2 jieba库的使用
 
 1. jieba库的安装及使用
+
+   jieba库是一个中文分词函数库，就是将中文文本进行拆分，获得单个词语。jieba库利用中文词库，分析汉字之间的关联概率，将概率大的组成词组，返回词组列表。
+
+   结巴库提供三种分词模式：
+
+   - 精确模式：函数jieba.lcut()，将文本精确的切分开。
+
+     参数为字符串类型，返回值为列表类型。
+
+   - 全模式：函数jieba.lcut(s,cut_all=True)，把文本中所有可能的词组都找出来。
+
+     参数为字符串类型，返回值为列表类型。
+
+   - 搜索模式：函数jieba.lcut_for_search(s)，在精确模式的基础上，对长词再进行切分。
+
+     参数为字符串类型，返回值为列表类型。
+
+   ~~~python
+   import jieba
+   s = '今天下雪雪好大懒懒不想出去玩！因为出去玩没有小朋友！'
+   li1 = jieba.lcut(s)
+   li2 = jieba.lcut(s,cut_all = True)
+   li3 = jieba.lcut_for_search(s)
+   print(li1)
+   print(li2)
+   print(li3)
+   ~~~
 
 
 ### 知识点3 pyinstaller库的使用
 
 1. pyinstaller库的安装及使用
 
+   pyinstaller库是将python程序打包成windows操作系统的可执行文件（后缀名为.exe）。
+   
+   - 常用命令：
+   
+     pyinstaller -F xxx.py				 	只生成单个exe文件
+   
+     pyinstaller -D xxx.py				    生成带有很多依赖文件的exe文件
+   
+     pyinstaller -i xxx.ico xxx.py		 生成带有图标的和很多依赖文件的exe文件
+   
+     pyinstaller -F -i xxx.ico xxx.py	 生成带有图标的单个exe文件
+   
+   - 其它命令或者多文件打包：……用时候上网搜……
+   
+2. python打包文件为什么会那么大？
+
+   ​		我们写的python脚本是不能脱离python解释器单独运行的，所以在打包的时候，至少会将python解释器和脚本一起打包，同样，为了打包的exe能正常运行，会把我们所有安装的第三方包一并打包到exe。
+
+   ​		即使我们的项目只使用的一个pgzero包，但是可能我们还安装了其他n个包，但是他不管，因为包和包只有依赖关系的。比如我们只装了一个pgzero包，但是pgzero包会顺带装了一些其他依赖的小包，所以为了安全，只能将所有第三方包+python解释器一起打包。
+
+   ​		即使我们的项目只是一个空文件，打包后依然有6到8兆。
+
+3. 利用虚拟环境打包
+
+   - pyinstaller在真实环境中打包会附带一些用不到的库和关联文件，使得打包的文件很大，这时我们可以利用虚拟环境来解决。
+
+   - 虚拟环境类似于一个独立的空间，在其中只安装能用到的库和关联文件，和真实环境区分开，这样在虚拟环境下打包的文件就可以缩小尺寸。而且在虚拟环境里编程不用担心影响外部环境的其它程序，可以随意更改删除，一旦出现问题可以重新创建一个新环境再来过，成本低代价小。
+
+   - 实现步骤：（以在D:盘的test文件夹内创建虚拟环境并打包一个lianxi.py程序为例，程序内容为上面的jieba示例）
+
+     - 创建虚拟环境目录
+
+       2. 打开test文件夹并在上方的文件路径框输入cmd并回车，进入命令提示符窗口
+
+       2. 在命令窗口输入以下命令，创建名为venv1的一个虚拟环境。
+
+          ~~~shell
+          python -m venv venv1
+          ~~~
+
+       3. 进入venv1文件夹，并激活虚拟环境
+
+          - 在命令窗口继续输入以下命令，进入venv1文件夹
+
+            ~~~shell
+            cd venv1
+            ~~~
+       
+          - 在命令窗口继续输入以下命令，激活虚拟环境
+
+            ~~~she
+            Scripts\activate.bat
+            ~~~
+       
+     - 在虚拟环境下打包
+
+       1. 将打包文件lianxi.py放在虚拟环境venv1中
+
+       2. 重新安装pyinstaller（很重要，不安装会使用真实环境的）及打包文件所依赖的库
+
+          ~~~shel
+          pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyinstaller
+          ~~~
+
+          ~~~shell
+          pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jieba
+          ~~~
+       
+       3. 打包
+       
+          ~~~shell
+          pyinstaller -F lianxi.py
+          ~~~
 
 ### 知识点2 wordcloud库的使用
 
 1. wordcloud库的安装及使用
+
+   <img src=".\img\wordcloud.png" alt="wordcloud" style="zoom:25%;" />
+
+   wordcloud库是一个词云展示库，是以直观艺术的方式将高频词汇进行视觉化展示，使浏览者可以快速获得文本关键信息。
+
+   代码示例1：
+
+   ~~~python
+   from wordcloud import WordCloud 
+   text = '''
+   葫芦娃  葫芦娃  一根藤上七朵花
+   小小树藤  是我家  啦啦啦啦
+   叮当当咚咚当当  小树藤
+   叮当当咚咚当当  是我家  啦啦啦啦
+   葫芦娃  葫芦娃  七个娃
+   葫芦娃  葫芦娃  一根藤上七个娃
+   风吹雨打  都不怕  啦啦啦啦
+   叮当当咚咚当当  葫芦娃
+   叮当当咚咚当当  本领大  啦啦啦啦
+   葫芦娃  葫芦娃  本领大
+   '''
+   wc = WordCloud(font_path='C:\\Windows\\Fonts\\STXINGKA.TTF',background_color='white')
+   wc.generate(text)
+   wc.to_file('1.png')
+   ~~~
+
+   代码示例2：
+
+   ~~~python
+   from wordcloud import WordCloud 
+   f = open('huluwa.txt','r',encoding='utf-8')  #将.txt保存时为utf-8编码
+   content = f.read()
+   wc = WordCloud(font_path="C:\\Windows\\Fonts\\msyhbd.ttf",width=800,height=600,background_color='white')
+   wc.generate(content)
+   wc.to_file('2.png')
+   f.close()
+   ~~~
+
+   代码示例3：（ <a href="./img/mask.jpg"><font color="red">mask.jpg</font></a>）
+
+   ~~~python
+   from wordcloud import WordCloud 
+   from PIL import Image
+   import numpy as np
+   text = '''
+   先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。
+   宫中府中，俱为一体，陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理，不宜偏私，使内外异法也。
+   侍中、侍郎郭攸之、费祎、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗陛下。愚以为宫中之事，事无大小，悉以咨之，然后施行，必能裨补阙漏，有所广益。
+   将军向宠，性行淑均，晓畅军事，试用于昔日，先帝称之曰能，是以众议举宠为督。愚以为营中之事，悉以咨之，必能使行阵和睦，优劣得所。
+   亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣论此事，未尝不叹息痛恨于桓、灵也。侍中、尚书、长史、参军，此悉贞良死节之臣，愿陛下亲之信之，则汉室之隆，可计日而待也。
+   臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉命于危难之间，尔来二十有一年矣。
+   先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙夜忧叹，恐托付不效，以伤先帝之明，故五月渡泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸凶，兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则攸之、祎、允之任也。
+   愿陛下托臣以讨贼兴复之效，不效，则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、祎、允等之慢，以彰其咎；陛下亦宜自谋，以咨诹善道，察纳雅言，深追先帝遗诏，臣不胜受恩感激。
+   今当远离，临表涕零，不知所言。
+   '''
+   img = np.array(Image.open('mask.jpg'))  #图片必须是白底的，文字占据非白底部分
+   wc = WordCloud(font_path='C:\\Windows\\Fonts\\STXINGKA.TTF',mask=img,background_color='white')
+   wc.generate(text)
+   wc.to_file('3.png')
+   ~~~
+
 2. wordcloud库和jieba库的综合使用
+
+   ​		一段信息往往需要分析出关键词，高频词，这样可以使人迅速捕捉到有用信息。而wordcloud库和jieba库的结合使用，可以很好的解决这样的问题。
+   
+   分析内容：鲁迅的小说《孔乙己》（ <a href="./dcs/kongyiji.md"><font color="green">传送</font></a>）
+   
+   ~~~python
+   from wordcloud import WordCloud 
+   import jieba
+   f = open('kongyiji.txt','r',encoding='utf-8')
+   text = f.read()
+   text = ''.join(jieba.cut(text))
+   wc = WordCloud(font_path="C:\\Windows\\Fonts\\msyhbd.ttf",width=800,height=600,background_color='white')
+   wc.generate(text)
+   wc.to_file('4.png')
+   f.close()
+   ~~~
 
 ## 知识点探秘
 
