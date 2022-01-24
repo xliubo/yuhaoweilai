@@ -621,14 +621,14 @@ A.  1	B.  97	C.  25	D.  0
      - 创建逻辑结构
    
    ~~~python
-   	ball.speedx,ball.speedy=2,1
+   	ball.dx,ball.dy=2,1
        def update():
-       ball.x+=ball.dx
-       ball.y+=ball.dy
-       if ball.right>=WIDTH or ball.left<=0:
-       	ball.dx=-ball.dx
-       if ball.top<=0 or ball.bottom>=HEIGHT:
-       	ball.dy=-ball.dy
+           ball.x+=ball.dx
+           ball.y+=ball.dy
+           if ball.right>=WIDTH or ball.left<=0:
+               ball.dx=-ball.dx
+           if ball.top<=0 or ball.bottom>=HEIGHT:
+               ball.dy=-ball.dy
    ~~~
    
    

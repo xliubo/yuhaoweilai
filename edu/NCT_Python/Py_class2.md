@@ -253,6 +253,7 @@ python中共有69个标准函数，可上网查看相关文档，例举几个，
        print(2)
    if isinstance(a, int):
        print(3)
+   ~~~
 
 3. ord(x) 和 chr(x)
 
@@ -497,9 +498,9 @@ A. True	B. False	C. None	D. 程序报错
    
    ![pygame0](.\img\pygame0.png)
    
-   答案：见下面隐藏代码块
+   答案：见下面代码块
    
-   <div style="color:white";>
+   ~~~python
    import pygame, sys
    def drawGameGrid(screen):
        for x in range(20, 800, 20):
@@ -514,14 +515,15 @@ A. True	B. False	C. None	D. 程序报错
    pygame.init()
    screen = pygame.display.set_mode((800,500))
    pygame.display.set_caption("画网格")
+   score = 0
    while True:
        for event in pygame.event.get():
            if event.type == pygame.QUIT:
                sys.exit()
        drawGameGrid(screen)
-       showScore(screen,0)
+       showScore(screen,score)
        pygame.display.update()
-   </div>
+   ~~~
 
 # 专题2 模块化编程
 
@@ -2083,7 +2085,7 @@ import pac1.pac2.my_module1
     	└── food.py
     	└── button.py
     	└── utils.py
-    	└── endInterface.py
+    	└── Interface.py
     ├── resources/
     	├── font/
     		└── Gabriola.ttf
@@ -2104,7 +2106,7 @@ snake.py		蛇程序模块
 food.py         食物程序模块
 button.py		按钮程序模块
 utils.py        工具程序模块
-gameover.py		结束画面程序模块
+Interface.py	流程控制模块（初始化、开始、运行、结束）
 resources/      资源文件夹
 font/           字体文件夹
 music/          音乐文件夹
@@ -2807,10 +2809,11 @@ piece.victory()
 
    ![button_class](.\img\button_class.gif)
 
-   答案：见下面隐藏代码块
+   答案：见下面代码块
 
-   <div style="color:white";>#button.py
-   import pygame
+   ~~~python
+   #button.py
+   import pygame   
    class Button():
        def __init__(self,screen,size,pos,btn_text="",color=(100,100,100)):
            self.screen = screen
@@ -2821,15 +2824,11 @@ piece.victory()
            self.font = pygame.font.Font('simkai.ttf', 50)
        def is_hover(self):
            mouse_x,mouse_y = pygame.mouse.get_pos()
-           if self.left&lt;mouse_x&lt;self.left+self.width and self.top&lt;mouse_y&lt;self.top+self.height:
+           if self.left<mouse_x<self.left+self.width and self.top<mouse_y<self.top+self.height:
                return True
            else:
                return False
        def display(self):
-           # if self.is_hover():
-           #     self.color = (255,100,100)
-           # else:
-           #     self.color = (100,100,100)
            pygame.draw.rect(self.screen, self.color, (self.left, self.top, self.width, self.height))
            pygame.draw.line(self.screen, (150,150,150), (self.left,self.top), (self.left+self.width,self.top),5)
            pygame.draw.line(self.screen, (150,150,150), (self.left,self.top-2), (self.left,self.top+self.height),5)
@@ -2838,54 +2837,66 @@ piece.victory()
            text = self.font.render(self.btn_text, True, (255,255,255))
            rect = text.get_rect(center = (self.left+self.width/2, self.top+self.height/2))
            self.screen.blit(text, rect)
-   </div>
+   ~~~
    
-   
-   <div style="color:white";>#main.py
+   ~~~python
+   #main.py
    import pygame, sys
    from button import Button
+   
    def drawGameGrid(screen):
        for x in range(20, 800, 20):
            pygame.draw.line(screen, (150,150,150), (x, 0), (x, 500))
        for y in range(20, 500, 20):
            pygame.draw.line(screen, (150,150,150), (0, y), (800, y))
+           
    def showScore(screen,score):
        font = pygame.font.Font('simkai.ttf',30)
        text = font.render('Score: %d'%score, True, (255,255,255))
        rect = text.get_rect()
        screen.blit(text, rect)
+       
    def main():
        # 游戏初始化
        pygame.init()
        screen = pygame.display.set_mode((800,500))
        pygame.display.set_caption('贪吃蛇')
        clock = pygame.time.Clock()
-       screen.fill((0,0,0))
        btn1 = Button(screen, (310,65), (250,150), '开始游戏')
        btn2 = Button(screen, (310,65), (250,250), '退出游戏')
        is_show = True
+       score = 0
+       # 游戏开始画面
        while True:
-          	for event in pygame.event.get():
+           for event in pygame.event.get():
                if event.type == pygame.QUIT:
                    sys.exit()
                if pygame.mouse.get_pressed()[0] == True:
-       			if is_show:
+                   if is_show:
                        if btn1.is_hover():
                            is_show = False
-                           screen.fill((0,0,0))
                        if btn2.is_hover():
                            sys.exit()
            if is_show:
                btn1.display()
                btn2.display()
            else:
-               drawGameGrid(screen)
-               showScore(screen,0)
+               break
            pygame.display.update()
-           clock.tick(15)
+       # 游戏运行画面    
+       while True:
+           screen.fill((0,0,0))
+           for event in pygame.event.get():
+               if event.type == pygame.QUIT:
+                   sys.exit()
+           drawGameGrid(screen)
+           showScore(screen,score)
+           pygame.display.update()
+           clock.tick(5) 
+           
    if __name__ == '__main__':
        main()
-   </div>
+   ~~~
 
 # 专题8 命名空间及作用域
 
@@ -3216,27 +3227,31 @@ A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
 
 - 创建Apple类，要求能在贪吃蛇游戏中随机产生一个红色的圆点作为贪吃蛇的食物（如上图）
 
-  答案：见下面隐藏代码块
+  答案：见下面代码块
 
-  <div style="color:white";>
+  ~~~python
+  #food.py
   import pygame, random
   class Apple():
-      def __init__(self,screen,color,radius,snake_pos):
+      def __init__(self,screen,snake_pos,color=(255,0,0),radius=8):
           self.screen = screen
           self.color = color
           self.radius = radius
+  
           while True:
               self.pos = [random.randint(0, 800/20-1),random.randint(0, 500/20-1)] #[行号，列号]
               if self.pos not in snake_pos:
                   self.center_x,self.center_y = 10+20*self.pos[0],10+20*self.pos[1]
                   break
+  
       def display(self):
           pygame.draw.circle(self.screen, self.color, (self.center_x,self.center_y), self.radius)
-  </div>
+  ~~~
 
 - 将上一章节的主程序main.py进行改写，要求将drawGameGrid()，showScore()两个函数写入到新的模块utils.py，改写后的主程序如下：
 
   ~~~python
+  #main.py
   import pygame, sys
   from button import Button
   from food import Apple
@@ -3247,31 +3262,39 @@ A. ['D\~D\~'] ['D\~D\~']	B. ['D\~D\~'] []	C. [] ['D\~D\~']	D. 程序报错
       screen = pygame.display.set_mode((800,500))
       pygame.display.set_caption('贪吃蛇')
       clock = pygame.time.Clock()
-      screen.fill((0,0,0))
       btn1 = Button(screen, (310,65), (250,150), '开始游戏')
       btn2 = Button(screen, (310,65), (250,250), '退出游戏')
-      apple = Apple(screen, (255,0,0), 8,[[0,0]]) #蛇类未创建，暂时用[[0,0]]替代
+      apple = Apple(screen,[])
+      score = 0
       is_show = True
+      # 游戏开始画面
       while True:
-         	for event in pygame.event.get():
+          for event in pygame.event.get():
               if event.type == pygame.QUIT:
                   sys.exit()
               if pygame.mouse.get_pressed()[0] == True:
                   if is_show:
                       if btn1.is_hover():
                           is_show = False
-                          screen.fill((0,0,0))
                       if btn2.is_hover():
                           sys.exit()
           if is_show:
               btn1.display()
               btn2.display()
           else:
-              drawGameGrid(screen)
-              showScore(screen,0)
-              apple.display()
+              break
           pygame.display.update()
-          clock.tick(15)
+      # 游戏运行画面
+      while True:
+          screen.fill((0,0,0))
+          for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  sys.exit()
+          drawGameGrid(screen)
+          apple.display()
+          showScore(screen,score)
+          pygame.display.update()
+          clock.tick(5)
   if __name__ == '__main__':
       main()
   ~~~
@@ -3327,9 +3350,15 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
 3. pip常用命令
 
-   查看已安装的库：pip list
+   pip install ： 安装Python的库
 
-   其它的命令：……用时候上网搜……
+   pip uninstall：卸载Python的库
+   
+   pip show ：查看已安装的库/包的详细信息
+   
+   pip list ：查看当前环境中已安装的所有库
+   
+   pip search : 在线搜索相关名称的库（数据库服务器在国外）
 
 ### 知识点2 jieba库的使用
 
@@ -3525,11 +3554,76 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
 ## 知识点探秘
 
+<font color=blue>----></font>python中能给用于安装第三方库的是（）
 
+A. help	B. pip	C. download	D. show
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>下列程序可以统计文本中由两个字组成的词语的数量，则___处应填写的内容是（）
+
+~~~python
+import jieba
+txt = '''古人云：“不为良相，便为良医。”泱泱中华，历史源远流长，行业繁多，唯相医并论。
+白衣天使，多么高贵的称号。吾向往之！
+行医之道，须德才兼备，不计得失，以拯救天下苍生为己任。'''
+words = jieba.lcut(txt)
+n = 0
+for i in range(0,len(words)):
+    if ___:
+        n += 1
+print(n)
+~~~
+
+A. word[i] == 1	B. len(word[i]) == 1	C. word[i] == 2	D. 0  len(word[i]) == 2
+
+答案：<font color='white'>D</font>
+
+<font color=blue>----></font>下列关于第三方库的说法正确的是（）
+
+A. 使用wordcloud库可以生成词云图，图形化展示文本的关键信息	
+
+B. 使用pyinstaller库可以生成词云图，图形化展示文本的关键信息	
+
+C. pyinstaller库不能生成可直接运行的程序
+
+D. wordcloud库如果不结合jieba库，就无法生成词云
+
+答案：<font color='white'>A</font>
 
 ## 巩固练习
 
+<font color=blue>1. </font>pip方法可以完成第三方库的下载、安装、卸载、查找和查看等操作。下列属于pip子命令的是（）
 
+​	A. installer	B. import	C. pyinstaller	D. search
+
+​	答案：<font color='white'>D</font>
+
+<font color=blue>2. </font>下列程序可以统计将文字内容进行分词后生成词云图，则___处应填写的内容是（）
+
+~~~python
+import jieba
+import wordcloud
+txt = '''高楼大厦巍然屹立，是因为有坚强的支柱。
+理想和信仰就是人生大厦的支柱：航船破浪前行，
+是因为有指示方向的罗盘，理想和信仰就是人生航船的罗盘，
+列车奔驰千里，是因为有引导它的铁轨，理想和信仰就是人生列车上的铁轨。'''
+___________
+wc = wordcloud.WordCloud(font_path='C:\WINDOWS\FONTS\MSYHL.TTC',width=800,height=600,background_color='white').generate(words)
+wc.to_file('wordcloud3.png')
+~~~
+
+​	A. words  =  ' '.join(jieba.lcut(txt))	
+
+​	B. words  =  ' '.jieba.lcut(txt)
+
+​	C. txt  =  ' '.jieba.lcut(words)	
+
+​	D. txt  =  ' '.join(jieba.lcut(words))
+
+​	答案：<font color='white'>A</font>
+
+<font color=blue>3. </font>利用jieba和wordcloud库，编写一段程序分析李白的诗词《蜀道难》（ <a href="./dcs/shudaonan.html"><font color="green">传送</font></a>）并生成词云。
 
 ------
 
@@ -3539,39 +3633,510 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
 ## 复习
 
+1.按要求写程序
 
+![snake](.\img\snake.gif)
+
+- 使用pygame创建Snake类，要求在贪吃蛇游戏中随机产生一个蓝头绿身的贪吃蛇（如上图）
+
+  - 蛇吃到食物得分增加
+  - 蛇不能回头
+  - 游戏结束条件：超出窗口边界或碰到自己身体
+
+  答案：见下面代码块
+
+  ~~~python
+  #snake.py
+  import pygame, random
+  import copy
+  class Snake():
+      def __init__(self, screen):
+          self.screen = screen
+          self.direction = 'right'
+          self.snake_pos = []
+          for i in range(0,3):
+              if i == 0:
+                  self.snake_pos.append([random.randint(0, 800/20-1),random.randint(0, 500/20-1)]) #添加蛇头列行号
+              else:
+                  self.snake_pos.append([self.snake_pos[0][0]-i,self.snake_pos[0][1]])   #添加蛇尾列行号
+      def display(self):
+          head_colors = [(0, 80, 255), (0, 255, 255)]
+          tail_colors = [(0, 155, 0), (0, 255, 0)]
+          #绘制头部
+          head_rect1 = pygame.Rect(20*self.snake_pos[0][0],20*self.snake_pos[0][1], 20, 20)
+          head_rect2 = pygame.Rect(20*self.snake_pos[0][0]+4,20*self.snake_pos[0][1]+4, 20-8, 20-8)
+          pygame.draw.rect(self.screen, head_colors[0], head_rect1)
+          pygame.draw.rect(self.screen, head_colors[1], head_rect2)
+          #绘制尾巴
+          for i in range(1,len(self.snake_pos)):
+              tail_rect1 = pygame.Rect(20*self.snake_pos[i][0],20*self.snake_pos[i][1], 20, 20)
+              tail_rect2 = pygame.Rect(20*self.snake_pos[i][0]+4,20*self.snake_pos[i][1]+4, 20-8, 20-8)
+              pygame.draw.rect(self.screen, tail_colors[0], tail_rect1)
+              pygame.draw.rect(self.screen, tail_colors[1], tail_rect2)
+  
+      def set_direction(self,e):
+          a = self.snake_pos[0][1]-1!=self.snake_pos[1][1]
+          b = self.snake_pos[0][1]+1!=self.snake_pos[1][1]
+          c = self.snake_pos[0][0]-1!=self.snake_pos[1][0]
+          d = self.snake_pos[0][0]+1!=self.snake_pos[1][0]
+          if (e == 'up' and a) or (e == 'down' and b) or (e == 'left' and c) or (e == 'right' and d):
+              self.direction = e
+  
+      def move(self,apple):
+          self.snake_pos.insert(0, copy.deepcopy(self.snake_pos[0])) #深拷贝可以避免被拷贝对象跟着拷贝对象修改
+          if self.direction == 'up':
+                  self.snake_pos[0][1] -= 1
+          if self.direction == 'down':
+                  self.snake_pos[0][1] += 1
+          if self.direction == 'left':
+                  self.snake_pos[0][0] -= 1
+          if self.direction == 'right':
+                  self.snake_pos[0][0] += 1
+          if self.snake_pos[0] == apple.pos:
+              return True
+          else:
+              self.snake_pos.pop()
+  
+      def Is_gameover(self):
+          a = self.snake_pos[0] in self.snake_pos[1:]
+          b = self.snake_pos[0][0]<0 or self.snake_pos[0][0]>800/20-1
+          c = self.snake_pos[0][1]<0 or self.snake_pos[0][1]>500/20-1
+          if a or b or c:
+              #print(a,b,c)
+              return True
+  ~~~
+  
+  ~~~python
+  #main.py
+  import pygame, sys
+  from button import Button
+  from food import Apple
+  from utils import drawGameGrid, showScore
+  from snake import Snake
+  def main():
+      # 游戏初始化
+      pygame.init()
+      screen = pygame.display.set_mode((800,500))
+      pygame.display.set_caption('贪吃蛇')
+      clock = pygame.time.Clock()
+      btn1 = Button(screen, (310,65), (250,150), '开始游戏')
+      btn2 = Button(screen, (310,65), (250,250), '退出游戏')
+      snake = Snake(screen)
+      apple = Apple(screen, snake.snake_pos)
+      score = 0
+      is_show = True
+      # 游戏开始画面
+      while True:
+          for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  sys.exit()
+              if pygame.mouse.get_pressed()[0] == True:
+                  if is_show:
+                      if btn1.is_hover():
+                          is_show = False
+                      if btn2.is_hover():
+                          sys.exit()
+          if is_show:
+              btn1.display()
+              btn2.display()
+          else:
+              break
+          pygame.display.update()
+      # 游戏运行画面
+      while True:
+          screen.fill((0,0,0))
+          for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  sys.exit()
+              if event.type == pygame.KEYDOWN:
+                  if event.key in [pygame.K_UP,pygame.K_DOWN,pygame.K_RIGHT,pygame.K_LEFT]:
+                      snake.set_direction({pygame.K_UP:'up',pygame.K_DOWN:'down',pygame.K_RIGHT:'right',pygame.K_LEFT:'left'}[event.key])
+          drawGameGrid(screen)
+          apple.display()
+          snake.display()
+          if snake.Is_gameover():
+              break
+          if snake.move(apple):
+              apple = Apple(screen,snake.snake_pos)
+              score +=1
+          showScore(screen,score)
+          pygame.display.update()
+          clock.tick(5)
+          
+  if __name__ == '__main__':
+      main()
+  ~~~
+  
+  
 
 # 专题10 基本的Python标准库
 
 ## 考查方向
 
-
+~~~mermaid
+graph LR
+a(基本的python标准库)-->b1(turtle库)-->c1(绘制几何图形)
+b1-->c2(改变颜色)
+b1-->c3(其它)
+a-->b2(math库)-->d1(估算)
+b2-->d2(常见数学运算)
+b2-->d3(其它)
+b3(random库)-->a
+e1(生成随机数)-->b3
+e2(随机选择)-->b3
+b4(time库)-->a
+f1(获取时间)-->b4
+f2(格式化时间)-->b4
+f3(暂停程序)-->b4
+~~~
 
 ## 知识点清单
 
 ### 知识点1 random库
 
+random库用于生成随机数
 
+1. 生成随机数
+
+   - random( )函数：生成一个<font color = red>[0 , 1)</font>区间内的浮点数,左闭右开
+   - randint(a,b)函数：生成一个<font color = red>[a , b]</font>区间内的浮点数,a,b为整数
+   - randrange( )函数：从range( )函数生成的数列里随机抽取一个数，参数的使用方法同range( )函数
+
+   ~~~python
+   import random
+   a = random.random()
+   b = random.randint(1,10)
+   c = random.randrange(2,8,2)
+   print(a,b,c)
+   ~~~
+
+2. 随机选择
+
+   - choice(x)函数：随机返回其中的一个元素，x为序列类型的数据
+   - sample(x,num)函数：随机抽取若干个元素并返回一个列表，x为序列或是集合类型的数据，num为抽取个数
+   - shuffle(x)函数：将列表随机打乱重排,无返回值，x为列表
+   
+   ~~~python
+   import random
+   lis = [1,2,3,4,5,6,7]
+   a = random.choice(lis)
+   b = random.sample(lis,3)
+   random.shuffle(lis)
+   print(a,b,lis)
+   ~~~
 
 ### 知识点2 time库
 
+time库用于“操作”时间
 
+1. 获取时间
+
+   - time( )函数：获取当前时间的时间戳（从格林威治时间1970年01月01日00时00分00秒到当前时间所经历的秒数，中国属东八区从8点开始算）
+
+   - localtime(x)函数：参数x为时间戳，用于将时间戳表示为结构化时间(输出顺序为：年月日时分秒，星期[0代表周一]，一年中的第几天，是否为夏时令[0表否，正表是])，省略参数x表示获取当前时间
+
+   ~~~python
+   import time
+   now = time.time()
+   print(now) #显示当前时间戳
+   
+   local_0 = time.localtime(0)
+   local_1 = time.localtime()
+   print(local_0) #显示时间戳开始时间
+   print(local_1) #显示当前电脑时间
+   time.sleep(1)
+   
+   new_now = time.time()
+   print(new_now-now) #显示程序运行的时间间隔
+   ~~~
+
+2. 格式化时间
+
+   无论是时间戳还是经localtime函数处理过的时间，仍然不符合各地人们的习惯，所以需要将localtime函数处理后的时间格式化满足人们需求。
+
+   - strftime(x，y)函数：用于生成便于查看的时间样式；参数x表示格式化字符串，参数y表示localtime函数的返回值
+
+     ~~~python
+     import time
+     now = time.localtime()
+     time = time.strftime('%y-%m-%d %h:%m:%s',now)
+     print(time)
+     ~~~
+
+   格式化指令：
+
+   | 字 符 指 令 |              含 义              |
+   | :---------: | :-----------------------------: |
+   |     %d      |       表示日期，介于01~31       |
+   |     %H      |       表示小时，介于00~23       |
+   |     %I      |   表示12进制的小时，介于01~12   |
+   |     %j      | 表示一年中的第几天，介于001-366 |
+   |     %m      |       表示月份，介于01~12       |
+   |     %M      |       表示分钟，介于00~59       |
+   |     %p      |      表示上午下午，AM或PM       |
+   |     %S      |       表示秒数，介于00~61       |
+   |     %w      |    表示星期，介于0~6,0表周日    |
+   |     %W      |    表一年中第几周，介于00~53    |
+   |     %x      |      本地化的适当日期表示       |
+   |     %X      |     本地化的是当时时间表示      |
+   |     %y      |  表示不带世纪的年份，介于00~99  |
+   |     %Y      |        表示带世纪的年份         |
+
+3. 暂停程序
+
+   sleep(x)函数：等待x秒。即将当前运行的线程挂起，等待指定时间后，然后再运行。
 
 ### 知识点3 turtle库
 
+1. 绘制几何图形
 
+   - dot(x,y)函数：生成圆点，x表直径，y表颜色，若不设参数，直径默认为pensize[画笔粗细]+4或pensize*2中的较大值
+
+   - circle(x,extent=*,steps=\*)函数：画圆或画弧或画内接正多边形，x表半径或边长，extent表画弧时的圆心角,steps 表画多边形的边数
+
+     ~~~python
+     import turtle as t
+     t.dot(20)
+     t.forward(50)
+     t.circle(10)
+     t.forward(50)
+     t.circle(20,extent=90)
+     t.forward(50)
+     t.circle(10,steps=6)
+     t.done()
+     ~~~
+
+2. 改变颜色
+
+   turtle的颜色表示可以有三种方式：
+
+   ☆ 颜色字符串	☆RGB为0~255元组	☆RGB为0~1元组
+
+   - bgcolor(x)函数：设置画布背景颜色，x表颜色，可以是颜色字符串或者RGB的元组。RGB元组需要colormode函数设置
+
+     ~~~python
+     import turtle as t
+     import time
+     for i in range(3):
+     	t.bgcolor('red')
+     	time.sleep(0.5)
+     	t.colormode(cmode = 255)
+     	t.bgcolor((0,255,0))
+     	time.sleep(0.5)
+     	t.colormode(cmode = 1)
+     	t.bgcolor((0,0,1))
+     	time.sleep(0.5)
+     t.done()
+     ~~~
+
+   - fillcolor(x)函数：给图形填充颜色，x表颜色；必须与begin_fill()设置填充起点和end_fill()设置填充终点配合使用
+
+     ~~~python
+     import turtle as t
+     t.bgcolor('salmon')
+     t.fillcolor('yellow')
+     t.begin_fill()
+     for i in range(6):
+     	t.circle(50,steps=4)
+     	t.right(60)
+     t.end_fill()
+     t.done()  
+     ~~~
+
+3. 其它
+
+   - setup(w,h,x,y)函数：设置窗口大小和位置。w表宽，h表高，x表初始位置距电脑屏幕左边的距离（负值为距屏右），y表初始位置距电脑屏幕上边的距离（负值为距屏下），初始默认居中
+
+   - write(str,font=\*,align=\*)函数：书写文字,str表书写的字符串内容，font表设置字体，元组类型，align表对齐方式
+
+     ~~~python
+     import turtle as t
+     t.setup(800,600,-1,0)
+     t.write('你好！',font=('楷体',50,'bold'),align='center')
+     t.done()
+     ~~~
 
 ### 知识点4 math库
 
+数学可谓"科学之本"，如果python没有众多的好用的数学处理工具，也就不会成为当今最流行的程序语言之一！
 
+math库提供了数学计算的最基础工具。
+
+1. 估算
+
+   - ceil(num)函数：向上取整，获得不小于参数的最小整数，参数num为数字类型
+
+   - floor(num)函数：向下取整，获得不大于参数的最大整数，参数num为数字类型
+
+     ~~~python
+     import math
+     s = 3.14
+     a = math.ceil(s)
+     b = math.floor(s)
+     print(a,b)
+     ~~~
+
+2. 常见数学运算
+
+   - fabs(num)函数：求绝对值，参数num为数字类型
+
+   - pow(x,y)函数：求幂，表x的y次幂，参数为数字类型
+
+   - factorial(n)函数：求n阶乘，n为整数
+
+   - sqrt(m)函数：求m平方根，参数m为正数
+
+   - gcd(m,n)函数：求m,n最大公约数，参数为整数
+
+     ~~~python
+     from math import *
+     print(fabs(-2.5))
+     print(pow(3,-2.5))
+     print(factorial(5))
+     print(sqrt(2))
+     print(gcd(20,12))
+     ~~~
+
+3. 其他
+
+   pi：常量
+   
+   radians(x)方法：将角度x从度数转换为弧度
+   
+   degrees(x)方法：将角度x从弧度转换为度数
+   
+   ~~~python
+   import math
+   a = math.pi
+   b = math.radians(90)
+   c = math.degrees(math.pi/2)
+   print(a,b,c)
+   ~~~
 
 ## 知识点探秘
 
+<font color=blue>----></font>假设当前时间为：2020年4月3日18时30分29秒。执行下列程序，输出结果是（）
 
+~~~python
+import time
+a = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+print(a)
+~~~
+
+A. 2020-04-03 18:30:29	
+
+B. 2020年4月3日 18时30分29秒	
+
+C. 2020-04-04/03/20 18:30:29	
+
+D. 1585908622.1234481
+
+答案：<font color='white'>A</font>
+
+<font color=blue>----></font>运行下列代码，输入：5，输出结果可能是（）
+
+~~~python
+import random
+a = int(input("输入一个整数："))
+b = "我爱我的国，向这个时代最敬爱的防疫战士致敬！"
+str1 = ""
+for i in range(a):
+    str1 += random.choice(b)
+print(str1)
+~~~
+
+A. 我爱战士	
+
+B. 我时最！！	
+
+C. 的疫国敬个！	
+
+D. 我我@敬我
+
+答案：<font color='white'>B</font>
+
+<font color=blue>----></font>执行下列程序，输出结果可能是（）
+
+~~~python
+import random
+lst = []
+for i in range(4):
+    a = random.randrange(0,50,5)
+    lst.append(a)
+print(lst)
+~~~
+
+A. [5,10,15,20,25]	
+
+B. [10,24,40,39]	
+
+C. [20,25,45,30]	
+
+D. [0,20,30]
+
+答案：<font color='white'>C</font>
 
 ## 巩固练习
 
+<font color=blue>1. </font>下列描述正确的是（）
 
+​	A. random.random(a,b)可以随机生成介于a和b之间的整数	
+
+​	B. time.time()可以获取当前时间，并以计算机的本地时间形式表示	
+
+​	C. math.fabs()可以获取两个数的最大公约数
+
+​	D. 以上说法都不正确
+
+​	答案：<font color='white'>D</font>
+
+<font color=blue>2. </font>能画出下面图案的选项是（）
+
+~~~python
+#A.
+import turtle as t
+t.bgcolor('black')
+t.fillcolor('yellow')
+t.endfill()
+for i in range(6):
+    t.circle(50,extent=180)
+    t.left(120)
+t.begin_fill()
+t.done()
+
+#B.
+import turtle as t
+t.bgcolor('black')
+for i in range(6):
+    t.circle(50,extent=180)
+    t.left(120)
+t.fillcolor('yellow')
+t.begin_fill()
+t.end_fill()
+t.done()
+
+#C.
+import turtle as t
+t.bgcolor('black')
+t.fillcolor('yellow')
+t.begin_fill()
+for i in range(6):
+    t.circle(50,extent=180)
+    t.left(120)
+t.end_fill()
+t.done()
+
+#D.
+import turtle as t
+t.begin_fill()
+for i in range(6):
+    t.circle(50,extent=180)
+    t.left(120)
+t.end_fill()
+t.done()
+~~~
+
+​	答案：<font color='white'>C</font>
 
 ------
 
@@ -3586,7 +4151,7 @@ E-->Q1(wordcloud库和jieba库的综合使用)
 
 # 附录
 
-## 附录一	真题演练及参考答案<a href="./pdf/py1_result.pdf"><font color="white">py1_result</font></a>
+## 附录一	真题演练及参考答案<a href="./pdf/py2_result.pdf"><font color="white">py1_result</font></a>
 
 真题演练： <a href="./pdf/py2_test.pdf"><font color="red">py2_test</font></a>
 
