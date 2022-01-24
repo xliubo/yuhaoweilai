@@ -58,7 +58,7 @@
       }
       
     </style>
-    <title>Website Navi</title>
+    <title>实用工具</title>
   </head>
   <body>
     <div id="app" v-cloak>
@@ -83,21 +83,21 @@
         <el-col :xs="{span:24,offset:0}" :sm="{span:18,offset:0}" :md="{span:18,offset:0}">
           <div class="grid-content" >
             <el-row :gutter='20'>
-              <el-col :xs="{span:24,offset:0}" :sm="{span:20,offset:0}" :md="{span:20,offset:0}">
+              <el-col :span="24">
                 <div class="grid-content ">
                   <el-row >
-                    <el-col :span="24" v-for="j in 7" :key="j">
+                    <el-col :span="24" v-for="j in 1" :key="j">
                       <div class="grid-content"> 
 
                         <el-card class="box-card">
                           <template #header>
                             <div class="card-header">
                               <span>{{ form_name(j) }}</span>
-                              <el-link :underline="false" v-bind:href="more(j)" target="_blank"><el-button class="button" type="text">{{ form_btn }}</el-button></el-link>
+                              <el-link :underline="false" v-bind:href="more(j)" ><el-button class="button" type="text">{{ form_btn }}</el-button></el-link>
                             </div>
                           </template>
                           <div class="text item">
-                            <el-row :gutter="20">
+                            <el-row :gutter="20" v-for="k in 2" :key="k">
                               <el-col :xs="{span:24,offset:0}" :sm="{span:8,offset:0}" v-for="i in 3" :key="i">
                                 <div class="grid-content">
                                 <!-- ------------------------------- -->
@@ -105,12 +105,12 @@
                                       <el-card class="box-card box_margin" >
                                         <template #header>
                                           <div class="card-header">
-                                            <span>{{ cardname(j,i) }}</span>
-                                            <el-link :underline="false" v-bind:href="link(j,i)" target="_blank"><el-button size="small" class="button" type="primary" round>{{ goto_url }}</el-button></el-link>
+                                            <span>{{ cardname(k,i) }}</span>
+                                            <el-link :underline="false" v-bind:href="link(k,i)" target="_blank"><el-button size="small" class="button" type="primary" round>{{ goto_url }}</el-button></el-link>
                                           </div>
                                         </template>
                                         <div  v-for="o in 1" :key="o" class="text item">
-                                          <el-row :span="24">{{ intro(j,i) }}</el-row>
+                                          <el-row :span="24">{{ intro(k,i) }}</el-row>
                                         </div>
                                       </el-card>
  
@@ -126,22 +126,6 @@
                     </el-col>
                   </el-row>
 
-                </div>
-              </el-col>
-              <el-col :xs="{span:0,offset:0}" :sm="{span:4,offset:0}" :md="{span:4,offset:0}">
-                <div class="grid-content ">
-                  <!-- ------------------------------- -->
-                        <el-card class="box-card">
-                          <template #header>
-                            <div class="card-header">
-                              <span>导 航</span>
-                            </div>
-                          </template>
-                          <div v-for="j in 7" :key="j" class="text item">
-                            <el-button class="button" type="text">{{ form_name(j) }}</el-button>
-                          </div>
-                        </el-card>
-                  <!-- -------------------------------- -->
                 </div>
               </el-col>
             </el-row>
@@ -161,7 +145,7 @@
       const App = {
         data() {
           return {           
-            form_btn:'更多',
+            form_btn:'返回',
             goto_url:'前往访问',
           };
         },
@@ -169,52 +153,37 @@
           form_name(j){
             var j
             var form_name= new Array()
-            form_name = ["Web前端开发","HTML学习资源","PYTHON学习资源","电子硬件","代码托管","实用工具","其它常用"]
+            form_name = ["实用工具"]
             return form_name[j-1]
           },
-          cardname(j,i){
-            var j,i
+          cardname(k,i){
+            var k,i
             var card_name= new Array()
-            card_name= [["element-plus","neumorphism","iconfont"],
-                        ["techbrood","0","0"],
-                        ["LeetCode-Python","0","0"],
-                        ["ocrobot","太极创客","0"],
-                        ["gitee","github","0"],
-                        ["airportal","tableizer","excel-to-html"],
-                        ["0","0","0"],
-                        ]
-            return card_name[j-1][i-1] 
-            },
-         intro(j,i){
-            var j,i
+            card_name= [["airportal","tableizer","excel-to-html"],
+                        ["removebg","picb","0"],
+                       ]
+            return card_name[k-1][i-1] 
+          },
+         intro(k,i){
+            var k,i
             var content= new Array()
-            content = [["前端组件库：基于Vue","CSS元素拟态","阿里巴巴矢量图标库"],
-                      ["HTML教程+手册","0","0"],
-                      ["使用python LeetCode刷题","0","0"],
-                      ["arduino编程手册","arduino开源创客","0"],
-                      ["国内代码托管","国外代码托管","0"],
-                      ["文件传输服务","表格转CSS样式","excel转Html"],
-                      ["0","0","0"],
+            content = [["文件传输服务","表格转CSS样式","excel转Html"],
+                       ["图片背景消除","图床","0"],
                       ]
-            return content[j-1][i-1] 
-            },
-         link(j,i){
-            var j,i
+            return content[k-1][i-1] 
+          },
+         link(k,i){
+            var k,i
             var url= new Array()
-            url = [["https://element-plus.gitee.io/zh-CN/","https://neumorphism.io/","https://www.iconfont.cn/"],
-                   ["https://techbrood.com/","0","0"],
-                   ["https://github.com/JiayangWu/LeetCode-Python","0","0"],
-                   ["http://wiki.ocrobot.com/doku.php?id=learning","http://www.taichi-maker.com/","0"],
-                   ["https://gitee.com/","https://github.com/","0"],
-                   ["https://airportal.cn/","https://tableizer.journalistopia.com/","http://www.docpe.com/excel/excel-to-html.aspx"],
-                   ["0","0","0"],
+            url = [["https://airportal.cn/","https://tableizer.journalistopia.com/","http://www.docpe.com/excel/excel-to-html.aspx"],
+                   ["https://www.remove.bg/zh","https://www.picb.cc/","0"],
                   ]
-            return url[j-1][i-1]
-            },
-          more(j){
+            return url[k-1][i-1]
+          },
+         more(j){
             var j
             var more_url= new Array()
-            more_url = ["","","","","","6_utils.html",""]
+            more_url = ["website_navi.html"]
             return more_url[j-1]
           },
         },
